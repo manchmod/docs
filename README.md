@@ -1,5 +1,5 @@
 ---
-description: documentation and notes on things
+description: documentation and notes on things.
 ---
 
 # docs
