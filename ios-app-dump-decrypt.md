@@ -4,8 +4,6 @@ description: Dump and Decrypt IOS apps with a Jailbroken iPhone
 
 # IOS App Dump / Decrypt
 
-## IOS App Dump / Decrypt
-
 ### overview
 
 [https://ivrodriguez.com/decrypting-ios-applications-ios-12-edition/](https://ivrodriguez.com/decrypting-ios-applications-ios-12-edition/)
