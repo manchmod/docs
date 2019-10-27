@@ -1,6 +1,21 @@
 baseURL = "/"
 languageCode = "en-us"
-title = "docs"
 theme = "hugo-theme-learn"
+title = "documentation"
+
+[params]
+description = "Documentation Site"
+author = "Greg Notch"
+showVisitedLinks = true
+disableBreadcrumb = false
+disableNextPrev = false
+
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
+
+[Languages]
+[Languages.en]
+title = "Documentation Site"
+weight = 1
+languageName = "English"
+
