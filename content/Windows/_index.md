@@ -1,12 +1,11 @@
----
-title: "Windows"
-date: 2019-10-27T11:30:50-04:00
-draft: false
----
++++
+title = "Windows"
+date = 2019-10-26T20:55:48-04:00
+weight = 5
++++
 
-### Link Roll
+### Links
 
-
-<div style="width:110px">Date Added</div>|Description|Link|
+|Date Added|Description|Link|
 |:---|:---|---|
 |2019-10-27| Hugo Learn Docs | https://learn.netlify.com/en/ |
