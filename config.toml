@@ -4,18 +4,19 @@ theme = "hugo-theme-learn"
 title = "documentation"
 
 [params]
-description = "Documentation Site"
+description = "Documentation"
 author = "Greg Notch"
 showVisitedLinks = true
 disableBreadcrumb = false
 disableNextPrev = false
+#themeVariant = "blue"
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
 
 [Languages]
 [Languages.en]
-title = "Documentation Site"
+title = "Documentation"
 weight = 1
 languageName = "English"
 
