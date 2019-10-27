@@ -1,14 +1,8 @@
-+++
-title = "Python"
-date = 2019-10-26T20:55:34-04:00
-weight = 5
-chapter = true
-#pre = "<b>1. </b>"
-+++
-
-# Python
-
-Python snippets and hacks
+---
+title: "Windows"
+date: 2019-10-27T11:30:50-04:00
+draft: false
+---
 
 ### Link Roll
 
