@@ -10,6 +10,20 @@ pre = "<b>X. </b>"
 
 Documentation for various things I'm working on: links, references, config fragments, snippets, etc.
 
+
+create new page
+```
+cd content
+hugo new --kind page VMware/MacVMware.md
+```
+
+create new chapter
+```
+cd content
+hugo new --kind chapter python/_index.md
+```
+
+
 ### Links
 
 
