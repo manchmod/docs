@@ -8,4 +8,5 @@ weight = 5
 
 |Date Added|Description|Link|
 |:---|:---|---|
-|2019-10-27| Hugo Learn Docs | https://learn.netlify.com/en/ |
+|2019-10-27| NSX-T 2.5 Release Notes | https://docs.vmware.com/en/VMware-NSX-T-Data-Center/2.5/rn/VMware-NSX-T-Data-Center-250-Release-Notes.html |
+|2019-10-27| NSX-T BGP Configuration | https://www.spillthensxt.com/base-bgp-configuration-in-nsx-t/|

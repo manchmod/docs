@@ -35,6 +35,11 @@ iproxy 2222 22
 
 [https://www.frida.re/docs/ios/\#with-jailbreak](https://www.frida.re/docs/ios/#with-jailbreak)
 
+### tracing with friday
+
+https://techblog.mediaservice.net/2017/09/tracing-arbitrary-methods-and-function-calls-on-android-and-ios
+
+
 ### python2 virtualenv
 
 [https://help.dreamhost.com/hc/en-us/articles/215489338-Installing-and-using-virtualenv-with-Python-2](https://help.dreamhost.com/hc/en-us/articles/215489338-Installing-and-using-virtualenv-with-Python-2)

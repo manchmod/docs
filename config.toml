@@ -9,6 +9,7 @@ author = "Greg Notch"
 showVisitedLinks = true
 disableBreadcrumb = false
 disableNextPrev = false
+ordersectionsby = "title"
 #themeVariant = "blue"
 
 [outputs]
