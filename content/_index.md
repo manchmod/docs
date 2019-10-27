@@ -6,6 +6,6 @@ chapter = true
 pre = "<b>X. </b>"
 +++
 
-# Documentation
+# Greg's Documentation
 
-This is some documentation
+Documentation for various things I'm working on, references, config fragments, snippets, etc.
