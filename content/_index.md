@@ -13,7 +13,7 @@ Documentation for various things I'm working on: links, references, config fragm
 ### Link Roll
 
 
-<div style="width:110px">Date Added</div>|Description|Link|
+<div style="width:95px">Date Added</div>|Description|Link|
 |:---|:---|---|
 |2019-10-27| Hugo Learn Docs | https://learn.netlify.com/en/ |
 |2019-10-27| what if I wrote something egregiously long winded, and kept going on and on forever, and then pasted a really really long link as well. | https://docs.vmware.com/en/VMware-NSX-T-Data-Center/2.5/rn/VMware-NSX-T-Data-Center-250-Release-Notes.html

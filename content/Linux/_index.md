@@ -7,6 +7,6 @@ draft: false
 ### Link Roll
 
 
-<div style="width:110px">Date Added</div>|Description|Link|
+<div style="width:95px">Date Added</div>|Description|Link|
 |:---|:---|---|
 |2019-10-27| Hugo Learn Docs | https://learn.netlify.com/en/ |
