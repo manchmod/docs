@@ -1,9 +1,7 @@
 +++
-title = "IOS App Dump"
+title = "IOS App Dump / Decrypt"
 description = "Dump and Decrypt IOS apps with a Jailbroken iPhone"
 +++
-
-# IOS App Dump / Decrypt
 
 ### overview
 
