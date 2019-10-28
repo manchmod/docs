@@ -33,6 +33,9 @@ source "/usr/local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline
 
 ## config locations
 
+https://powerline.readthedocs.io/en/latest/configuration/local.html#powerline-script-overrides
+
+
 ```
 # get powerline install location
 pip show powerline-status | grep Location | awk '{print $2}'
