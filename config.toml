@@ -10,7 +10,7 @@ showVisitedLinks = true
 disableBreadcrumb = false
 disableNextPrev = false
 ordersectionsby = "title"
-#themeVariant = "blue"
+#themeVariant = "red"
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
