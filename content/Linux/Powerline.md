@@ -38,5 +38,6 @@ https://powerline.readthedocs.io/en/latest/usage/other.html#tmux-statusline
 
 ```
 # add to .tmux.conf
+run-shell "powerline-daemon -q"
 source "/usr/local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf"
 ```
