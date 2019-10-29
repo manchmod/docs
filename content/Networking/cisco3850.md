@@ -17,7 +17,7 @@ https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/epc/command/epc-cr-book/epc-cr
 https://rick.cogley.info/post/run-a-tftp-server-on-mac-osx/
 
 
-## working config parts
+## config fragments
 
 ```
 !
