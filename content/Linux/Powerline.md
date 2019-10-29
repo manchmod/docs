@@ -17,9 +17,10 @@ pip install powerline-status
 
 https://github.com/powerline/fonts
 
-meslo slashed (LG S)
-GoMono
-Cousine
+- meslo slashed (LG S)
+- GoMono
+- Cousine
+- Droid Sans Mono Slashed ***
 
 ## add powerline to tmux
 
@@ -29,6 +30,10 @@ https://powerline.readthedocs.io/en/latest/usage/other.html#tmux-statusline
 # add to .tmux.conf
 run-shell "powerline-daemon -q"
 source "/usr/local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf"
+
+# if necessary run (on linux this will be in .local/bin with the python modules)
+powerline-config tmux setup
+
 ```
 
 ## config locations
