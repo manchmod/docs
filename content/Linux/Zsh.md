@@ -15,4 +15,6 @@ autoload -U zsh-newuser-install
 zsh-newuser-install -f
 ```
 
+## fix compinit errors for sudo 
 
+https://github.com/robbyrussell/oh-my-zsh/issues/6835
