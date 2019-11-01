@@ -1,8 +1,26 @@
 ---
-title: "PowerCLI Scraps"
+title: "PowerCLI"
 date: 2019-10-27T14:02:17-04:00
 draft: false
 ---
+
+### PowerCLI Changelog
+
+https://vdc-download.vmware.com/vmwb-repository/dcr-public/306e3e41-2a54-497e-8377-11a1cf36c107/76c39d63-455d-4f3a-af2a-368f3ea6647c/changelog.html
+
+### Power CLI Users Guide
+
+https://code.vmware.com/docs/7335/powercli-11-0-0-user-s-guide
+
+## Power CLI CMDlet reference
+
+https://code.vmware.com/docs/7336/cmdlet-reference
+
+### PowerCLI Install
+```
+Install-Module -Name VMWare.PowerCLI
+```
+
 
 ### Ignore self signed certs
 
@@ -39,6 +57,9 @@ Foreach-object ($vm in $vms) {
 new-networkadapter -vm $vms -NetworkName "〈Port group name〉" -Type "VMXNET3" –startconnected
 }
 ```
+
+
+
 
 ### Links
 

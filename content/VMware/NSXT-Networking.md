@@ -26,17 +26,6 @@ http://www.vmwarearena.com/vmware-nsx-installation-part-8-configuring-vxlan-on-t
 
 https://kb.vmware.com/s/article/2081294
 
-
-## VMWare Networking Info
-
-### Vlan configuration - vmware
-
-https://kb.vmware.com/s/article/1003806
-
-### Esxi network debugging commands
-
-https://blogs.vmware.com/vsphere/2018/12/esxi-network-troubleshooting-tools.html
-
 ### Sample VST config
 
 https://kb.vmware.com/s/article/1004074?CoveoV2.CoveoLightningApex.getInitializationData=1&r=3&other.KM_Utility.getArticleDetails=1&other.KM_Utility.getArticleMetadata=1&other.KM_Utility.getUrl=1&other.KM_Utility.getUser=1&other.KM_Utility.getAllTranslatedLanguages=1&ui-comm-runtime-components-aura-components-siteforce-qb.Quarterback.validateRoute=1
