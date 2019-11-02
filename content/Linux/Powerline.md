@@ -52,6 +52,16 @@ $powerline/powerline/config_files/themes/tmux
 $powerline/powerline/config_files/config.json
 ``` 
 
+## powerline segment documentation
+
+https://powerline.readthedocs.io/en/master/configuration/segments/common.html#module-powerline.segments.common.net
+
+
+## tmux_getcwd shellcmd
+
+https://github.com/erikw/tmux-powerline/blob/master/lib/tmux_adapter.sh
+
+
 ## add powerline to zshrc
 
 get installation root

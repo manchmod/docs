@@ -3,9 +3,15 @@ title = "Tmux"
 description = "Tmux configuration"
 +++
 
+## cheat sheet
+
+https://gist.github.com/MohamedAlaa/2961058
+
 ## tutorial
 
 https://lukaszwrobel.pl/blog/tmux-tutorial-split-terminal-windows-easily/
+
+https://medium.com/@joe_wolfe_21/the-ultimate-terminal-67e93665459d
 
 ## dotfile
 
