@@ -8,10 +8,24 @@ draft: false
 
 https://rancher.com/docs/rancher/v2.x/en/installation/single-node/
 
+see below for quickstart (assuming docker running on a unix host)
 
-- configure rancher config externalization from docker container
+### Persistent Data
 
+Rancher uses etcd as datastore. When using the Single Node Install, the embedded etcd is being used. The persistent data is at the following path in the container: /var/lib/rancher. You can bind mount a host volume to this location to preserve data on the host it is running on.
+(put in /opt/rancher, chown'd to user:docker, g+w)
 
+Note that this will NOT work with snap installed versions of docker on ubuntu
+
+```
+Launch Command (maps rancher data to local directory)
+
+docker run -d --restart=unless-stopped \
+  --name rancher \
+  -p 80:80 -p 443:443 \
+  -v /opt/rancher:/var/lib/rancher \
+  rancher/rancher:latest
+```
 
 ## manual quick start
 
@@ -21,6 +35,8 @@ https://rancher.com/docs/rancher/v2.x/en/quick-start-guide/deployment/quickstart
 
 https://rancher.com/docs/rancher/v2.x/en/cluster-provisioning/rke-clusters/node-pools/vsphere/
 
+
+Error with pre-create check: "host 'Compute' not found"; Timeout waiting for ssh key
 
 
 ## updating rancher docker image
