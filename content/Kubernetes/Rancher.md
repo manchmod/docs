@@ -12,6 +12,17 @@ https://rancher.com/docs/rancher/v2.x/en/installation/single-node/
 - configure rancher config externalization from docker container
 
 
+
+## manual quick start
+
+https://rancher.com/docs/rancher/v2.x/en/quick-start-guide/deployment/quickstart-manual-setup/
+
+## creating a vpshere cluster
+
+https://rancher.com/docs/rancher/v2.x/en/cluster-provisioning/rke-clusters/node-pools/vsphere/
+
+
+
 ## updating rancher docker image
 
 https://rancher.com/docs/rancher/v2.x/en/upgrades/upgrades/single-node/
