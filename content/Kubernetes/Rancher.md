@@ -38,6 +38,11 @@ https://rancher.com/docs/rancher/v2.x/en/cluster-provisioning/rke-clusters/node-
 
 Error with pre-create check: "host 'Compute' not found"; Timeout waiting for ssh key
 
+"Host" setting wrong. Need to leave blank for Cluster with DRS.
+
+Error with pre-create check: "default resource pool resolves to multiple instances, please specify"; Timeout waiting for ssh key
+
+Need to create a Resource Pool for this
 
 ## updating rancher docker image
 
