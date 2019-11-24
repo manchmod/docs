@@ -19,6 +19,18 @@ https://theforeman.org/plugins/katello/3.13/installation/index.html
 
 https://access.redhat.com/documentation/en-us/red_hat_satellite/6.2/html/content_management_guide/nfs_share
 
+oh you motherfucker, SELinux doesnt allow NFS. disable that motherfucker in
+```
+/etc/selinux/config
+SELINUX=disabled
+reboot
+
+#verify
+getenforce
+
+```
+
+
 
 #### Install Prep (Assumes EPEL already there)
 ```

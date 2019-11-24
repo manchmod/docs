@@ -36,6 +36,9 @@ hammer repository synchronize --async --organization-id 1 \
 --product "CentOS 8 Linux for x86_64" \
 --id "$i"; 
 
+hammer repository synchronize --organization-id 1 --product "CentOS 8 Linux for x86_64" --id 1
+
+
 # confirm sync state
 
 hammer product list  --name "CentOS 8 Linux for x86_64" --organization-id 1
@@ -65,6 +68,8 @@ hammer gpg create --organization-id 1 \
 ```
 
 #### Add Repos
+
+Once you do this you need to disable ssl.
 
 ```
 # BaseOS
