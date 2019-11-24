@@ -36,3 +36,8 @@ tar zxf Python-3.7.2.tgz
 ./configure --enable-optimizations
 make -j4 altinstall
 ```
+
+## NFS tools
+```
+yum install nfs-utils
+```
