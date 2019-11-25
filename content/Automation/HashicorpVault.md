@@ -18,17 +18,33 @@ export VAULT_SKIP_VERIFY=true
 vault -tls-skip-verify
 ```
 
+#### create vault
+
+https://www.vaultproject.io/docs/commands/operator/init.html
+
+```
+vault operator init 
+
+# only make 3 unseal keys and only require one of them to unseal (sane for single user)
+vault operator init \
+    -key-shares=3 \
+    -key-threshold=1 \
+
+# encrypt vault keys with GPG 
+vault operator init \
+    -key-shares=3 \
+    -key-threshold=1 \
+    -pgp-keys="/Users/gnotch/Dropbox/crt/yubi-20180814-public-gpg.txt"
+```
 #### unseal vault & login
-(3x with 3 diff keys)
+(by default, 3x with 3 diff unseal keys)
 ```
 vault operator unseal
+vault login
 ```
 
 #### using secrets
 ```
-# login
-vault login
-
 # create path + secrets engine
 vault secrets enable -path=data kv
 
