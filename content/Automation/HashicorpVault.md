@@ -25,10 +25,10 @@ https://www.vaultproject.io/docs/commands/operator/init.html
 ```
 vault operator init 
 
-# only make 3 unseal keys and only require one of them to unseal (sane for single user)
+# only make 1 unseal keys and only require one of them to unseal (sane for single user)
 vault operator init \
-    -key-shares=3 \
-    -key-threshold=1 \
+    -key-shares=1 \
+    -key-threshold=1 
 
 # encrypt vault keys with GPG 
 vault operator init \
@@ -43,19 +43,56 @@ vault operator unseal
 vault login
 ```
 
-#### using secrets
+#### working with vaults
 ```
 # create path + secrets engine
-vault secrets enable -path=data kv
+vault secrets enable -path=winternotch kv
 
-# put
-vault kv put data/hello foo=world
-vault kv put data/hello foo=world bar=yes
-
-# get
-vault kv get data/hello
+# list secrets
+vault secrets list
+vault secrets list -detailed
 
 ```
+
+#### using secrets
+```
+
+# put
+vault kv put winternotch/test foo=no
+vault kv put winternotch/test foo=yes bar=no
+
+# get
+vault kv get winternotch/test 
+
+# list 
+vault kv list winternotch/
+
+```
+
+#### packer variable to key mapping
+```
+# key storage
+vault kv put secret/hello foo=world
+
+# packer variable
+{
+  "variables": {
+    "my_secret": "{{ vault `/secret/data/hello` `foo`}}"
+  }
+}
+
+# example
+vault kv put winternotch/vsphere_username value="administrator@winternotch.com"
+"vsphere_username": "{{ vault `winternotch/data/vsphere_username` `value`}}",
+
+```
+
+#### VAULT_TOKEN
+vault login just creates `~/.vault-token`
+If you want other processes to use it from the einvronment, you must put the value of the token into env var with
+
+`export VAULT_TOKEN=`
+
 
 #### Ignore TLS validation
 ```

@@ -7,7 +7,7 @@ draft: false
 https://theforeman.org/plugins/katello/3.13/installation/index.html
 
 
-#### Prereqs
+#### Preflight
 
 - The machine needs at least 8G of ram and 2 VCPU (12 and 4 recommended)
 
@@ -19,7 +19,8 @@ https://theforeman.org/plugins/katello/3.13/installation/index.html
 
 https://access.redhat.com/documentation/en-us/red_hat_satellite/6.2/html/content_management_guide/nfs_share
 
-oh you motherfucker, SELinux doesnt allow NFS. disable that motherfucker in
+oh you motherfucker, SELinux doesnt allow NFS. disable that shit with the following
+
 ```
 /etc/selinux/config
 SELINUX=disabled
@@ -29,7 +30,6 @@ reboot
 getenforce
 
 ```
-
 
 
 #### Install Prep (Assumes EPEL already there)
@@ -68,5 +68,14 @@ foreman-installer --scenario katello
 
 foreman-installer --scenario katello -i 
 
+# The full log is at /var/log/foreman-installer/katello.log
+
 ```
 
+#### Additional Proxies 
+
+- Katello is running at https://foreman.winternotch.com
+- To install an additional Foreman proxy on separate machine continue by running:
+```
+foreman-proxy-certs-generate --foreman-proxy-fqdn "$FOREMAN_PROXY" --certs-tar "/root/$FOREMAN_PROXY-certs.tar"
+```

@@ -3,6 +3,14 @@ title = "Tmux"
 description = "Tmux configuration"
 +++
 
+## quick commands
+
+hit man command (command-b) then
+
+|Command|Description|
+|---|---|
+|C-o | swap panes|
+
 ## cheat sheet
 
 https://gist.github.com/MohamedAlaa/2961058
@@ -26,7 +34,6 @@ http://tangledhelix.com/blog/2012/04/28/iterm2-keymaps-for-tmux/
 ## customizing info
 
 https://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/
-
 
 
 ## iterm scrollback

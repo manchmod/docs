@@ -143,3 +143,4 @@ hammer activation-key add-subscription --organization-id 1 \
   --name "centos8" \
   --quantity "1" \
   --subscription-id "2"
+```

@@ -6,7 +6,7 @@ draft: false
 
 ### Foreman Quick Install
 
-## NOTE: You cannot install Katello over Foreman. This is for standalone only
+### NOTE: You cannot install Katello over Foreman. This is for standalone only
 
 https://theforeman.org/manuals/1.23/quickstart_guide.html
 
@@ -20,7 +20,6 @@ sudo yum -y install foreman-installer
 sudo foreman-installer
 ```
 
-
 ### Foreman Plugins Install
 
 List Plugins available to install
@@ -28,17 +27,25 @@ List Plugins available to install
 sudo foreman-installer --help | grep enable-
 ```
 
-#### compute plugins
+#### adding plugins
+```
+# can be added post install, eg 
+foreman-installer --enable-foreman-compute-vmware
 
 --enable-foreman-compute-vmware 
 --enable-foreman-compute-ec2 
 --enable-foreman-compute-gce
 --enable-foreman-plugin-digitalocean 
 
-#### other plugins
 --enable-foreman-plugin-ansible 
 --enable-foreman-plugin-openscap
+```
 
 
+##### Puppet
+```
 
+puppet agent --test
+puppet module install puppetlabs/ntp
 
+```

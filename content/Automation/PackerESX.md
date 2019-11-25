@@ -4,11 +4,17 @@ date: 2019-10-27T15:06:15-04:00
 draft: false
 ---
 
+
+|Date Added|Description|Link|
+|:---|:---|---|
+|2019-11-24| Jetbrains Packer Builder Vsphere| https://github.com/jetbrains-infra/packer-builder-vsphere| 
+|2019-11-24| notch.org vmware automation | https://git.notch.org/notch/vmware-automation |
+|2019-11-24| VMware Cloud-Init GuestInfo | https://github.com/vmware/cloud-init-vmware-guestinfo | 
+
 ## VMware Packer Scripts for CentOS
 
-Code located here https://git.notch.org/notch/vmware-automation
 
-### Basics 
+### Overview 
 
 A packer template and associated scripts to provision a hardened CentOS 7 build
 
@@ -29,6 +35,66 @@ More info here: https://www.packer.io/docs/builders/vmware-iso.html
 In its final state, this script should be run from or on a machine that can provision guests using DHCP or an expected static range isolated from the rest of our network
 
 This script currently builds machines with static IP addresses - this should be templated so we can re-use a single OVF and dynamically set IP before boot
+
+### requirements
+https://blog.ukotic.net/2019/03/05/configuring-esxi-prerequisites-for-packer/
+
+NOTE: this works against an esxi host and not vcenter
+
+- ssh enabled on the esxi host
+- govc (`brew install govmomi/tap/govc`)
+- ovftool (can be part of Fusion, tools at /Applications/VMware\ Fusion.app/Contents/Library/)
+- packer 
+- web server
+    - ks.cfg
+    - vmware-cloud-init rpm
+- GuestIPHack is required, enable by running this
+`esxcli system settings advanced set -o /Net/GuestIPHack -i 1`
+
+##### enable VNC  in the ESXi firewall (5900-6000)
+```
+chmod 644 /etc/vmware/firewall/service.xml
+chmod +t /etc/vmware/firewall/service.xml
+vi /etc/vmware/firewall/service.xml
+```
+
+add this right before /ConfigRoot
+```
+<service id="1000">
+  <id>packer-vnc</id>
+  <rule id="0000">
+    <direction>inbound</direction>
+    <protocol>tcp</protocol>
+    <porttype>dst</porttype>
+    <port>
+      <begin>5900</begin>
+      <end>6000</end>
+    </port>
+  </rule>
+  <enabled>true</enabled>
+  <required>true</required>
+</service>
+```
+
+```
+chmod 444 /etc/vmware/firewall/service.xml
+esxcli network firewall refresh
+
+# list rules
+esxcli network firewall ruleset list
+esxcli network firewall ruleset rule list
+
+```
+
+
+### running packer
+
+```
+packer build -force centos7-hardened-esx.json
+
+# debug logging
+PACKER_LOG=1 packer build -force centos7-hardened-esx.json
+```
 
 
 ### guest-tools
@@ -52,10 +118,7 @@ Examples are in guesttools dir
 
 ### Assigning the cloud-config data to the VM's GuestInfo
 
-
-
 Guestinfo can be assigned to VMs using the vmware-cmd command on the console, or a tool like PowerCLI or govc.
-
 
 https://tech.lazyllama.com/2010/06/22/passing-info-from-powercli-into-your-vm-using-guestinfo-variables/
 
@@ -98,7 +161,7 @@ $ govc vm.change -vm "${VM}" -e guestinfo.userdata.encoding=gzip+base64
 #### Power on VM
 
 
-#### Winternotch Local 
+#### Winternotch GOVC 
 ```
 source ~/Dropbox/src/govc-winternotch-vars.sh
 govc ls /Winternotch/vm
