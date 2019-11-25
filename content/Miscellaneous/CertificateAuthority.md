@@ -15,3 +15,47 @@ draft: false
 |2019-8-14|openssl quick reference|https://www.digicert.com/ssl-support/openssl-quick-reference-guide.htm|
 |2019-8-14|soarez gist| https://gist.github.com/Soarez/9688998|
 
+
+### Generate TLS Certificate
+```
+openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out MyCertificate.crt -keyout MyKey.key
+```
+
+
+### Generate4 TLS Certificate with SAN
+
+#### Config file (san.cnf)
+```
+[req]
+default_bits = 2048
+prompt = no
+default_md = sha256
+x509_extensions = v3_req
+distinguished_name = dn
+
+[dn]
+C = ES
+ST = MyState
+L = MyCity
+O = MyOrg
+emailAddress = email@mydomain.com
+CN = mydomain.com
+
+[v3_req]
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = mydomain.com
+DNS.2 = www.mydomain.com
+```
+
+and for IP based SAN
+```
+[alt_names]
+IP.1 = 127.0.0.1
+```
+
+#### Command
+```
+openssl req -new -x509 -newkey rsa:2048 -sha256 -nodes -keyout my.key -days 3560 -out my.crt -config san.cnf
+```
