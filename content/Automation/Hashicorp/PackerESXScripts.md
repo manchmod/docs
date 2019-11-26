@@ -1,5 +1,5 @@
 ---
-title: "Packer ESX"
+title: "Packer ESX Scripts"
 date: 2019-10-27T15:06:15-04:00
 draft: false
 ---
@@ -7,7 +7,6 @@ draft: false
 
 |Date Added|Description|Link|
 |:---|:---|---|
-|2019-11-24| Jetbrains Packer Builder Vsphere| https://github.com/jetbrains-infra/packer-builder-vsphere| 
 |2019-11-24| notch.org vmware automation | https://git.notch.org/notch/vmware-automation |
 |2019-11-24| VMware Cloud-Init GuestInfo | https://github.com/vmware/cloud-init-vmware-guestinfo | 
 
