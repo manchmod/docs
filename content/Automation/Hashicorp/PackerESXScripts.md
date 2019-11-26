@@ -35,10 +35,13 @@ In its final state, this script should be run from or on a machine that can prov
 
 This script currently builds machines with static IP addresses - this should be templated so we can re-use a single OVF and dynamically set IP before boot
 
+### CAVEATS - README! 
+- this ONLY works against an esxi host and not vcenter
+- for some reason this only works against local storage in the esxi host. vmkfstools appears to make a truncated vmdk when used against NFS, at least in my environment.
+- you cannot use a distributed port group for the network, those can only be used by vcenter. You must use a local portgruop.
+
 ### requirements
 https://blog.ukotic.net/2019/03/05/configuring-esxi-prerequisites-for-packer/
-
-NOTE: this works against an esxi host and not vcenter
 
 - ssh enabled on the esxi host
 - govc (`brew install govmomi/tap/govc`)
