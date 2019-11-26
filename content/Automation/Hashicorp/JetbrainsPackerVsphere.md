@@ -1,5 +1,5 @@
 ---
-title: "Jetbrains Packer Builder vSphere"
+title: "Jetbrains Packer vSphere"
 date: 2019-10-27T15:06:15-04:00
 draft: false
 ---
@@ -17,4 +17,12 @@ draft: false
 git clone https://github.com/jetbrains-infra/packer-builder-vsphere
 cd packer-builder-vsphere
 docker-compose run build
+```
+
+#### install plugins
+https://www.packer.io/docs/extending/plugins.html#installing-plugins
+```
+cd packer-builder-vsphere
+mkdir -p $HOME/.packer.d/plugins
+cp bin/*.macos $HOME/.packer.d/plugins
 ```
