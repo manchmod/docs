@@ -26,3 +26,22 @@ cd packer-builder-vsphere
 mkdir -p $HOME/.packer.d/plugins
 cp bin/*.macos $HOME/.packer.d/plugins
 ```
+
+#### example configs
+
+https://github.com/jetbrains-infra/packer-builder-vsphere/tree/master/examples/
+
+#### centos examples (unmerged pulls)
+
+centos8 : https://github.com/nelg/packer-builder-vsphere
+
+centos7 : https://github.com/remijouannet/packer-builder-vsphere
+
+### running packer
+
+```
+packer build -force centos7-hardened-esx.json
+
+# debug logging
+PACKER_LOG=1 packer build -force centos7-hardened-esx.json
+```

@@ -7,6 +7,7 @@ draft: false
 
 |Date Added|Description|Link|
 |:---|:---|---|
+|2019-11-24| vmware-iso Packer Docs | https://www.packer.io/docs/builders/vmware-iso.html |
 |2019-11-24| notch.org vmware automation | https://git.notch.org/notch/vmware-automation |
 |2019-11-24| VMware Cloud-Init GuestInfo | https://github.com/vmware/cloud-init-vmware-guestinfo | 
 
@@ -99,81 +100,3 @@ PACKER_LOG=1 packer build -force centos7-hardened-esx.json
 ```
 
 
-### guest-tools
-
-https://github.com/vmware/cloud-init-vmware-guestinfo
-
-Providing vmware metadata support for cloud-init via vmtoolsd
-
-```
-vmtoolsd --cmd 'info-get /vm/path'
-```
-
-3 configuration files are required:
-
-- network configuration file
-- metadata file
-- cloud-config file
-
-Examples are in guesttools dir
-
-
-### Assigning the cloud-config data to the VM's GuestInfo
-
-Guestinfo can be assigned to VMs using the vmware-cmd command on the console, or a tool like PowerCLI or govc.
-
-https://tech.lazyllama.com/2010/06/22/passing-info-from-powercli-into-your-vm-using-guestinfo-variables/
-
-
-#### Configuring govc
-(source env var file)
-
-```
-$ alias govc=$(pwd)/govc_darwin_amd64
-$ export GOVC_URL=vcenter.foo.com
-$ export GOVC_USERNAME=x@x.com
-$ export GOVC_PASSWORD=password
-$ export GOVC_INSECURE=1
-```
-
-#### Find VM with ls
-```
-$ govc ls
-$ govc ls /datacenter/
-$ govc ls /datacenter/vm/
-$ export VM="/datacenter/vm/vm-name"
-```
-
-#### Create files and set env variables
-```
-$ cd guesttools
-$ export CLOUD_CONFIG=$(gzip -c9 <cloud-config.yaml | base64)
-$ export METADATA=$(sed 's~NETWORK_CONFIG~'"$(gzip -c9 <network.config.yaml | \
-                    base64)"'~' <metadata.json | gzip -9 | base64)
-```
-
-#### Assign vm metadata
-```
-$ govc vm.change -vm "${VM}" -e guestinfo.metadata="${METADATA}"
-$ govc vm.change -vm "${VM}" -e guestinfo.metadata.encoding=gzip+base64
-$ govc vm.change -vm "${VM}" -e guestinfo.userdata="${CLOUD_CONFIG}"
-$ govc vm.change -vm "${VM}" -e guestinfo.userdata.encoding=gzip+base64
-```
-
-#### Power on VM
-
-
-#### Winternotch GOVC 
-```
-source ~/Dropbox/src/govc-winternotch-vars.sh
-govc ls /Winternotch/vm
-export VM="/Winternotch/vm/Base Images/centos7-base"
-export CLOUD_CONFIG=$(gzip -c9 < guesttools/winternotch-cloud-config.yaml | base64)
-export METADATA=$(sed 's~NETWORK_CONFIG~'"$(gzip -c9 < guesttools/winternotch-network-config.yaml | \
-                    base64)"'~' <guesttools/metadata.json | gzip -9 | base64)
-                    
-govc vm.change -vm "${VM}" -e guestinfo.metadata="${METADATA}"
-govc vm.change -vm "${VM}" -e guestinfo.metadata.encoding=gzip+base64
-govc vm.change -vm "${VM}" -e guestinfo.userdata="${CLOUD_CONFIG}"
-govc vm.change -vm "${VM}" -e guestinfo.userdata.encoding=gzip+base64
-```
