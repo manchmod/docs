@@ -33,6 +33,10 @@ Guestinfo can be assigned to VMs using the vmware-cmd command on the console, or
 
 https://tech.lazyllama.com/2010/06/22/passing-info-from-powercli-into-your-vm-using-guestinfo-variables/
 
+#### Generating $6$ password for cloud-init config
+```
+mkpasswd --method=SHA-512 --rounds=4096
+```
 
 #### Configuring govc
 
