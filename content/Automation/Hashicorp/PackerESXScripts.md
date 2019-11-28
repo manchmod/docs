@@ -8,10 +8,14 @@ draft: false
 |Date Added|Description|Link|
 |:---|:---|---|
 |2019-11-24| vmware-iso Packer Docs | https://www.packer.io/docs/builders/vmware-iso.html |
-|2019-11-24| notch.org vmware automation | https://git.notch.org/notch/vmware-automation |
 |2019-11-24| VMware Cloud-Init GuestInfo | https://github.com/vmware/cloud-init-vmware-guestinfo | 
+|2019-11-24| Configuring ESXi Prereqs | https://blog.ukotic.net/2019/03/05/configuring-esxi-prerequisites-for-packer/|
 
 ## VMware Packer Scripts for CentOS
+
+#### code is available here https://git.notch.org/notch/vmware-automation/tree/master/vmware-packer
+
+### NOTE: While this technique and code works, I'm would strongly suggest dropping this in favor of using the packer plugins and scripts that Jetbrains has on github. See the article on that in this section. The information here is still useful if you are interested in how this all works.
 
 
 ### Overview 
@@ -42,7 +46,7 @@ This script currently builds machines with static IP addresses - this should be 
 - you cannot use a distributed port group for the network, those can only be used by vcenter. You must use a local portgruop.
 
 ### requirements
-https://blog.ukotic.net/2019/03/05/configuring-esxi-prerequisites-for-packer/
+
 
 - ssh enabled on the esxi host
 - govc (`brew install govmomi/tap/govc`)
@@ -88,7 +92,6 @@ esxcli network firewall ruleset list
 esxcli network firewall ruleset rule list
 
 ```
-
 
 ### running packer
 

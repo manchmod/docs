@@ -7,24 +7,45 @@ draft: false
 |:---|:---|---|
 |2019-11-26| CloudInit Docs | https://cloudinit.readthedocs.io/en/latest/v | 
 |2019-11-26| Cloud-init for Vsphere | https://blah.cloud/infrastructure/using-cloud-init-for-vm-templating-on-vsphere/|
+|2019-11-26| DO Cloud-Init Intro | https://www.digitalocean.com/community/tutorials/an-introduction-to-cloud-config-scripting | 
+|2019-11-26| DO Cloud-Init Tutorial |https://www.digitalocean.com/community/tutorials/how-to-use-cloud-config-for-your-initial-server-setup|
+|2019-11-26| VMware Cloud Init Guestinfo| https://github.com/vmware/cloud-init-vmware-guestinfo|
 
-### guest-tools
 
-https://github.com/vmware/cloud-init-vmware-guestinfo
+## Deploying a clone of a template with config
 
-Providing vmware metadata support for cloud-init via vmtoolsd
+### Prerequistites
+
+- vcenter server
+- govc installed (version > 0.21)
+- template of vm created (see JetBrainsPackerVsphere.md)
+
+this assumes you have 3 things
+	- cloud-config script
+	- network-config script
+	- metadata.json 
+
+
+### Providing vmware metadata support for cloud-init via vmtoolsd
 
 ```
 vmtoolsd --cmd 'info-get /vm/path'
 ```
 
-3 configuration files are required:
+#### Create files and set env variables
+```
+$ export CLOUD_CONFIG=$(gzip -c9 <cloud-config.yaml | base64)
+$ export METADATA=$(sed 's~NETWORK_CONFIG~'"$(gzip -c9 <network.config.yaml | \
+                    base64)"'~' <metadata.json | gzip -9 | base64)
+```
 
-- network configuration file
-- metadata file
-- cloud-config file
-
-Examples are in guesttools dir
+#### Assign vm metadata
+```
+$ govc vm.change -vm "${VM}" -e guestinfo.metadata="${METADATA}"
+$ govc vm.change -vm "${VM}" -e guestinfo.metadata.encoding=gzip+base64
+$ govc vm.change -vm "${VM}" -e guestinfo.userdata="${CLOUD_CONFIG}"
+$ govc vm.change -vm "${VM}" -e guestinfo.userdata.encoding=gzip+base64
+```
 
 
 ### Assigning the cloud-config data to the VM's GuestInfo
@@ -34,19 +55,13 @@ Guestinfo can be assigned to VMs using the vmware-cmd command on the console, or
 https://tech.lazyllama.com/2010/06/22/passing-info-from-powercli-into-your-vm-using-guestinfo-variables/
 
 #### Generating $6$ password for cloud-init config
+not sure if this actually works
+
 ```
 mkpasswd --method=SHA-512 --rounds=4096
 ```
 
-#### Configuring govc
 
-```
-$ alias govc=$(pwd)/govc_darwin_amd64
-$ export GOVC_URL=vcenter.foo.com
-$ export GOVC_USERNAME=x@x.com
-$ export GOVC_PASSWORD=password
-$ export GOVC_INSECURE=1
-```
 
 #### Find VM with ls
 ```

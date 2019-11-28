@@ -14,6 +14,7 @@ draft: false
 |2019-11-23| Syncing Repos to Katello | https://computingforgeeks.com/sync-centos-8-repositories-on-satellite-katello-foreman/ |
 |2019-11-23| Subscribing a CentoOS server to Katello | https://computingforgeeks.com/how-to-subscribe-centos-server-to-katello-foreman/ | 
 
+
 ### VMware Cloud Init
 
 |Date Added|Description|Link|
