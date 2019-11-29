@@ -62,6 +62,12 @@ mkpasswd --method=SHA-512 --rounds=4096
 ```
 
 
+#### make clone
+- image in library
+- clone image with govc
+- whip up paramters into env vars
+- govc vm.change them 
+- boot and reap rewards.
 
 #### Find VM with ls
 ```

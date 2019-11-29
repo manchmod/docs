@@ -6,6 +6,8 @@ draft: false
 
 https://theforeman.org/plugins/katello/3.13/installation/index.html
 
+http://www.outsidaz.org/2017/02/12/adventures-in-katello-part-1/
+
 
 #### Preflight
 

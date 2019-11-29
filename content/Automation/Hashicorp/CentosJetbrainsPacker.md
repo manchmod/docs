@@ -10,9 +10,12 @@ draft: false
 |2019-11-24| Jetbrains Packer Builder Vsphere| https://github.com/jetbrains-infra/packer-builder-vsphere| 
 |2019-11-24| VMware Guestinfo Cloud-Init| https://github.com/vmware/cloud-init-vmware-guestinfo/releases|
 
+Centos Kickstart Reference | https://docs.centos.org/en-US/centos/install-guide/Kickstart2/ |
+RHEL7 Kickstart Guide | https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-simple-install-kickstart|
+
 ## Building a Hardened Centos VM Template using Packer 
 
-We are going to build for centos-7, which is not one of the examples that Jetbrains provides, but there are several pull requests on the github repo which contain some examples to work from. We're going to use packer to build a centos vm from a base ISO using kickstart, configure it further using cloud-init, and finally use packer provisioners to run some hardening scripts against it. 
+We are going to build for centos-7, which is not one of the examples that Jetbrains provides. However, there are several pull requests on the github repo which contain some examples to work from. At a high level, we're going to use packer to build a centos vm from a base ISO using kickstart, configure it further using cloud-init, and finally use packer provisioners to run some hardening scripts against it. The goal is a template vm (either in or out of a VMware Content Library) that can be provisioned via govc or terraform as a clone (linked or full)
 
 ##### my centos7 implementation is here: https://git.notch.org/notch/vmware-automation/tree/master/winternotch-hardened-centos7
 
@@ -40,13 +43,13 @@ This is a redhat format unattended install script which does the following:
 - installs the cloud-init RPM
 - installs the special vmware-cloud-init-guestinfo RPM. 
 	NOTE: you need a yum repo to serve this up. I store it on a katello server but really any yum repo will do, or you can point directly to the github repo if your environment has internet access
-	`https://github.com/vmware/cloud-init-vmware-guestinfo/releases/download/v1.1.0/cloud-init-vmware-guestinfo-1.1.0-1.el7.noarch.rpm`
+	`https://github.com/vmware/cloud-init-vmware-guestinfo/releases/download/v1.1.0/cloud-init-vmware-guestinfo-1.1.0-1.el7.noarch.rpm` . you just need to make sure this repo is added to your ks.cfg.
 - Copies the initial cloud-init script. This is very important because the default cloud-init that comes with the rpm by default uses dhcp for IPs (which is fine, but doesnt allow it to work in non dhcp environments) Even more importantly it disables password based logins, which will prevent packer from being able to log into the vm and complete its provisioning run later. So we take this opportunity to lay down our own initial cloudinit config so we can control what happens on the next boot
 - once all of this is complete, kickstart ejects the removable media and reboots the machine
 
 ##### Cloud-Init Script
 This is the bootstrap cloud init script. Once kickstart reboots the machine and it comes up, cloud-init takes over the configuration of the machine.
-	
+
 - reconfigures centos user, adds a ssh key and maintains the centos password. really this will only ever be used to debug the image and the image creation process, which should be done in a controlled environment, so this is OK. Later on in the process we will remove this user entirely, probably with puppet.
 - disables the root user entirely
 - removes default sshd keys and certificates
@@ -70,13 +73,50 @@ This is the "provisioner" part of the Packer script. What we use this for is to 
 
 Once this is complete, packer shuts down the image, and turns it into a template in vcenter that you can clone.
 
-### Prerequistites
-- vcenter server
+### Prerequisites
+- vcenter server. API access required
 - esxi host (note that no ssh or vnc should be required on the host, you just need the name of one in the cluster to build on)
 - hashicorp vault 
 	- setup with credentials for vcenter server
 - packer
 - jetbrains packer plugins installed in $HOME/.packer.d/plugins
+- yum repo of some sort to serve up custom rpms (potentially optional)
+- network connectivity between the location where scripts are run, the vcenter and esxi servers, and the DV-switch where the VM will reside (packer will log into the vm and run scripts)
+
+
+### Setup
+
+#### packer script (json)
+for the vsphere configuration, there are a number of ways to do this, including standalone esx. This is just how I did it. the jetbrains git repo has more information, and the parameters you need might change depending on your approach)
+
+- server name
+- vcenter username and password. I use vault, you can hardcode if you really want, but thats a *bad* idea. 
+- datacenter name
+- datastore name (storage where you want the image to go, packer_cache will go there too )
+- cluster 
+- esxi host (this is the host in the cluster that will do the build, must be in datacenter, and have access to the datastore)
+- ISO url and checksum (make sure this is up to date with current iso)
+
+
+#### ks.cfg
+network config (DHCP or static)
+```
+network --device=eth0 --bootproto=dhcp --activate
+network --device=eth0 --bootproto=static --ip=10.4.20.161 --netmask=255.255.255.0 --gateway=10.4.20.1 --nameserver=10.4.20.211 --hostname=centos7 --activate
+
+```
+yum repos
+```
+repo --name="base" --baseurl="http://mirror.centos.org/centos/$releasever/os/$basearch"
+repo --name="updates" --baseurl="http://mirror.centos.org/centos/$releasever/updates/$basearch"
+repo --name="epel" --baseurl="http://download.fedoraproject.org/pub/epel/$releasever/$basearch"
+repo --name="winternotch" --baseurl="http://foreman.winternotch.com/pulp/repos/Default_Organization/Library/custom/Winternotch_Packages/Winternotch_Repo/"
+```
+at the end, make sure the bootstrap cloud-init filename you are copying is correct
+```
+cp /floppy/winternotch-cloud.cfg /mnt/sysimage/etc/cloud/cloud.cfg
+```
+#### cloud-init script
 
 
 
@@ -96,6 +136,8 @@ mkdir -p $HOME/.packer.d/plugins
 cp bin/*.macos $HOME/.packer.d/plugins
 ```
 
+### Configuration
+
 #### example configs
 
 https://github.com/jetbrains-infra/packer-builder-vsphere/tree/master/examples/
@@ -110,17 +152,17 @@ centos7 : https://github.com/remijouannet/packer-builder-vsphere
 
 ```
 # normal build
-packer build winternotch-centos7.json
+packer build hardened-centos7.json
 
 # force continuation if artifacts exist
-packer build -force centos7-hardened-esx.json
+packer build -force hardened-centos7.json
 
 # dont destroy vm on abort (to debug errors)
-packer build -on-error=abort winternotch-centos7.json
+packer build -on-error=abort hardened-centos7.json
 
 # debug logging
-PACKER_LOG=1 packer build -force centos7-hardened-esx.json
+PACKER_LOG=1 packer build -force hardened-centos7.json
 
 # step by step debugging 
-packer build -debug winternotch-centos7.json
+packer build -debug whardened-centos7.json
 ```

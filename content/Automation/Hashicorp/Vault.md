@@ -6,6 +6,9 @@ draft: false
 |Date Added|Description|Link|
 |:---|:---|---|
 |2019-11-26| VaultEnv | https://github.com/channable/vaultenv | 
+|2019-11-29| Vault generic_secret provider | https://www.terraform.io/docs/providers/vault/d/generic_secret.html|
+|2019-11-29| Vault kv engine | https://www.vaultproject.io/docs/secrets/kv/|
+|2019-11-29| Vault Auth Token API |https://www.vaultproject.io/api/auth/token/index.html| 
 
 ### Setup
 

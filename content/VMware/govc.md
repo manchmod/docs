@@ -48,7 +48,7 @@ $ export GOVC_INSECURE=1
   govc vm.clone -vm template-vm -snapshot $(govc snapshot.tree -vm template-vm -C) new-vm
 ```
 
-#### clone template
+#### clone template from library 
 ```
   govc library.deploy /library_name/ovf_template vm_name
   govc library.deploy /library_name/ovf_template -options deploy.json
@@ -67,13 +67,6 @@ govc import.spec file.ova | python -m json.tool > ubuntu.json
 govc import.spec file.ova | jq > spec.json
 ```
 
-#### Assign vm metadata
-```
-$ govc vm.change -vm "${VM}" -e guestinfo.metadata="${METADATA}"
-$ govc vm.change -vm "${VM}" -e guestinfo.metadata.encoding=gzip+base64
-$ govc vm.change -vm "${VM}" -e guestinfo.userdata="${CLOUD_CONFIG}"
-$ govc vm.change -vm "${VM}" -e guestinfo.userdata.encoding=gzip+base64
-```
 
 #### change vm size
 `govc vm.change -vm vm_name -c 4 -m 4096`
@@ -89,8 +82,11 @@ $ govc vm.change -vm "${VM}" -e guestinfo.userdata.encoding=gzip+base64
   govc guest.ps -vm $name -U roo
 ```
 
-
-### Vsphere
+### Vsphere Commands 
 
 #### get event log
 `govc events`
+
+
+
+
