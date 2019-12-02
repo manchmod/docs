@@ -67,6 +67,20 @@ hammer repository create --organization-id 1 \
 
 sclo repo: http://mirror.cogentco.com/pub/linux/centos/7/sclo/x86_64/
 
+#### EPEL
+```
+hammer repository create --organization-id 1 \
+  --product "CentOS 7 Linux for x86_64" \
+  --name "CentOS 7 EPEL RPMS" \
+  --label "CentOS_7_EPEL_RPMS" \
+  --content-type "yum" \
+  --download-policy "on_demand" \
+  --gpg-key "RPM-GPG-KEY-CentOS-7" \
+  --url "http://mirror.cogentco.com/pub/linux/epel/7/x86_64/" \
+  --mirror-on-sync "no"
+```
+
+
 #### Create Content View
 ```
 hammer content-view create --organization-id 1 \

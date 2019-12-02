@@ -25,4 +25,9 @@ cloud-init analyze show -i /var/log/cloud-init.log
 vmtoolsd --cmd "info-get guestinfo.userdata"
 
 
+#
+cloud-init --debug init
+
+cloud-init --debug modules -m config
+
 ```
