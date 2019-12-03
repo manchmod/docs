@@ -22,5 +22,6 @@ apt-cache policy docker-ce
 
 (install)
 sudo apt install docker-ce
+sudo apt install docker-compose
 sudo systemctl status docker
 ```
