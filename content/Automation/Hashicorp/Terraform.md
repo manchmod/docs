@@ -16,15 +16,7 @@ draft: false
 |2019-12-1|terraform course examples|https://github.com/wardviaene/terraform-course/blob/master/demo-10/instance.tf|
 |2019-12-1|terraform and vsphere with cloudinit examples|https://floating.io/2019/04/iaas-terraform-and-vsphere/|
 
-### main configuration files
 
-main.tf
-
-variables.tf
-
-outputs.tf
-
-tfvars
 
 
 ### running
@@ -40,6 +32,23 @@ terraform destroy -auto-approve
 
 ```
 
+### debugging
+```
+# show the actual config that was deployed, useful for debugging cloud-init parameters.
+terraform show
+
+
+```
+
+### configuration files
+
+main.tf
+
+variables.tf
+
+outputs.tf
+
+tfvars
 
 #### fffffuuu
 

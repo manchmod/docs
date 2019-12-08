@@ -10,6 +10,13 @@ directory layout
 
 https://cloudinit.readthedocs.io/en/latest/topics/dir_layout.html
 
+### UserData and Metadata
+
+config files passed in as gzip compressed base64 encoded strings from terraform or govc
+
+[cyberchef](https://gchq.github.io/CyberChef) is your friend for debugging these.
+ 
+
 ### debugging
 https://cloudinit.readthedocs.io/en/latest/topics/debugging.html
 
@@ -23,7 +30,6 @@ cloud-init analyze show -i /var/log/cloud-init.log
 # see what vmtoolsd sent
 
 vmtoolsd --cmd "info-get guestinfo.userdata"
-
 
 #
 cloud-init --debug init
