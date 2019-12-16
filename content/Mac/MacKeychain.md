@@ -14,7 +14,7 @@ draft: false
 
 ```
 # grab SSL cert in DER format
-openssl s_client -showcerts -connect HOST443 </dev/null 2>/dev/null|openssl x509 -outform DER > /tmp/cerfificate.der
+openssl s_client -showcerts -connect HOST:443 </dev/null 2>/dev/null|openssl x509 -outform DER > /tmp/cerfificate.der
 
 # add to keychain
 /usr/bin/security -v add-trusted-cert -r trustAsRoot -e hostnameMismatch -d -p ssl -p  smime -p  codeSign -p  IPSec  -p basic -p  swUpdate -p  pkgSign -p eap -p timestamping -u -1 -k /Users/gnotch/Library/Keychains/login.keychain-db cerfificate.der
