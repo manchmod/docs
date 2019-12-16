@@ -29,7 +29,7 @@ cloud-init analyze show -i /var/log/cloud-init.log
 
 # see what vmtoolsd sent
 
-vmtoolsd --cmd "info-get guestinfo.userdata"
+vmtoolsd --cmd "info-get guestinfo.userdata" 
 
 #
 cloud-init --debug init
