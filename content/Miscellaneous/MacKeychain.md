@@ -9,8 +9,6 @@ draft: false
 |2019-11-24| Jamf Adding Keychain Discussion| https://www.jamf.com/jamf-nation/discussions/22294/adding-a-certificate-to-the-system-keychain-set-to-always-trust| 
 
 
-
-
 ### Mac KeyChain Stuff
 
 
@@ -29,7 +27,6 @@ openssl s_client -showcerts -connect HOST443 </dev/null 2>/dev/null|openssl x509
 
 # System Keychain Trustroot
 /usr/bin/security -v add-trusted-cert -r trustRoot -e hostnameMismatch -d -k /Library/Keychains/System.keychain /tmp/certificate.der
-
 
 
 ```
