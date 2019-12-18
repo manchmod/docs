@@ -63,5 +63,12 @@ for i in $(seq 6 8); do \
   done
 ```
 
+#### Client 
+```
+# upload initial eratta
+katello-package-upload -f
+```
+
+
 
 

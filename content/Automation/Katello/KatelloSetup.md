@@ -9,7 +9,7 @@ https://theforeman.org/plugins/katello/3.13/installation/index.html
 http://www.outsidaz.org/2017/02/12/adventures-in-katello-part-1/
 
 
-#### Preflight
+### Preflight
 
 - The machine needs at least 8G of ram and 2 VCPU (12 and 4 recommended)
 
@@ -17,13 +17,14 @@ http://www.outsidaz.org/2017/02/12/adventures-in-katello-part-1/
 
 - TL;DR create big external volumes for /var/spool/squid &/var/lib/pulp
 
-- I nfs mount a volume to /var/katello and symlink
 
-https://access.redhat.com/documentation/en-us/red_hat_satellite/6.2/html/content_management_guide/nfs_share
-
-oh you motherfucker, SELinux doesnt allow NFS. disable that shit with the following
-
+#### selinux
 ```
+# allow read on /var/www/html
+chcon -R -h -t httpd_sys_content_t /var/www/html
+
+# YOLO
+
 /etc/selinux/config
 SELINUX=disabled
 reboot
@@ -33,6 +34,33 @@ getenforce
 
 ```
 
+#### firewall
+```
+firewall-cmd --list-ports
+firewall-cmd --list-services
+
+
+firewall-cmd --permanent --add-service=http
+firewall-cmd --permanent --add-service=https
+firewall-cmd --permanent --add-port=5000/tcp
+firewall-cmd --permanent --add-port=5646-5647/tcp
+firewall-cmd --permanent --add-port=5671/tcp
+firewall-cmd --permanent --add-port=8000/tcp
+firewall-cmd --permanent --add-port=8080/tcp
+firewall-cmd --permanent --add-port=8140/tcp
+firewall-cmd --permanent --add-port=9090/tcp
+firewall-cmd --permanent --add-port=67-69/udp
+firewall-cmd --permanent --add-port=53/udp
+firewall-cmd --permanent --add-port=53/tcp
+firewall-cmd --reload
+
+# YOLO
+
+systemctl stop firewalld
+systemctl disable firewalld
+systemctl status firewalld
+
+```
 
 #### Install Prep (Assumes EPEL already there)
 ```

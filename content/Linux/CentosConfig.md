@@ -41,3 +41,7 @@ make -j4 altinstall
 ```
 yum install nfs-utils
 ```
+
+## SELinux
+
+https://wiki.centos.org/HowTos/SELinux/
