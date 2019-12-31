@@ -4,6 +4,9 @@ date: 2019-10-27T15:06:15-04:00
 draft: false
 ---
 
+https://www.puppetcookbook.com/
+
+
 ### check client status
 ```
 /opt/puppetlabs/bin/puppet agent --test
