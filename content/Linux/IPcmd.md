@@ -36,3 +36,9 @@ ip route add 10.10.20.0/24 via 192.168.50.100 dev eth0
 ip route del 10.10.20.0/24
 ```
 
+#### MacOS
+
+you can install the ip command on MacOS with
+```
+brew install iproute2mac
+```

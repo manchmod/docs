@@ -24,3 +24,12 @@ GetMAC()
 ```
 echo 00:16:3e$(gethostip 10.1.2.11 | awk '{ print tolower(substr($3,3)) }' |sed 's/.\{2\}/:&/g' )
 ```
+
+
+#### Iterate across a list of items in a file
+
+read a list of IP addresses from a file and do a dig reverse look up
+
+```
+ while read ip; do dig +noall +answer -x $ip; done < ip-list.txt
+```
