@@ -13,8 +13,9 @@ draft: false
 |2019-11-29|tf issues | https://itnext.io/things-i-wish-i-knew-about-terraform-before-jumping-into-it-43ee92a9dd65|
 |2019-11-29|local and remote exec provisioners |https://sdorsett.github.io/post/2018-12-26-using-local-exec-and-remote-exec-provisioners-with-terraform/|
 |2019-11-29|simple k8s example | https://github.com/vmware/simple-k8s-test-env/blob/master/e2e/vsphere.tf|
-|2019-12-1|terraform course examples|https://github.com/wardviaene/terraform-course/blob/master/demo-10/instance.tf|
 |2019-12-1|terraform and vsphere with cloudinit examples|https://floating.io/2019/04/iaas-terraform-and-vsphere/|
+
+
 
 
 
