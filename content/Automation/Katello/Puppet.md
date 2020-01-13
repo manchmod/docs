@@ -25,6 +25,11 @@ cd /opt/puppetlabs/bin
 
 ```
 
+### specify environment
+```
+puppet module --environment test list
+```
+
 ### validate (on server)
 ```
 puppet parser validate site.pp
