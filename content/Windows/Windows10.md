@@ -15,3 +15,23 @@ https://www.groovypost.com/howto/create-local-account-windows-10/
 ```
 
 https://www.thomasmaurer.ch/2016/05/windows-sysprep-for-virtual-machines/
+
+
+### extend a volume
+
+
+[launching disk management snapin](https://www.isunshare.com/windows-10/7-ways-to-open-disk-management-in-windows-10.html)
+
+```
+open elevated cmd.exe
+diskmgmt.msc
+```
+
+[partition article](https://www.howtogeek.com/101862/how-to-manage-partitions-on-windows-without-downloading-any-other-software/)
+
+right click on existing partition and select "extend", and follow wizard.
+
+
+### windows 10 updater download
+
+https://www.microsoft.com/en-us/software-download/windows10

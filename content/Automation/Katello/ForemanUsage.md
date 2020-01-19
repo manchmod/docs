@@ -28,6 +28,53 @@ foreman-installer --enable-foreman-compute-vmware
 ```
 
 
+### foreman debugging
+
+```
+# basic health check
+foreman-maintain health check
+
+```
+
+#### postgres commands
+
+```
+# tasks
+su - postgres -c "psql foreman -c 'select * from foreman_tasks_tasks'"
+
+# locks
+ su - postgres -c "psql foreman -c 'select * from foreman_tasks_locks'"
+
+# really wide query, su to postgres and do this
+
+PAGER="less -S"  psql foreman -c 'select * from foreman_tasks_tasks'
+
+```
+
+#### rake commands
+
+```
+foreman-rake katello:upgrade_check
+
+# clean task log
+foreman-rake foreman_tasks:cleanup TASK_SEARCH="" AFTER=1d
+
+#resync db, useful after task cleanup
+foreman-rake katello:reimport
+
+
+# rake console
+foreman-rake console
+
+# delete task by ID, from rake console
+ForemanTasks::Task.find("e140a579-a4a2-4a5f-9c32-97b6ae3700e8").destroy
+
+
+```
+[orphan task cleanup ](https://cstan.io/?p=8976&lang=en)
+
+
+
 ### Puppet
 ```
 
