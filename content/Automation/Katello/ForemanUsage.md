@@ -4,7 +4,10 @@ date: 2019-10-27T15:06:15-04:00
 draft: false
 ---
 
-https://theforeman.org/manuals/1.23/index.html#1.Foreman1.23Manual
+[Foreman Manual](https://theforeman.org/manuals/1.23/index.html#1.Foreman1.23Manual)
+
+[cstan - orphan task cleanup](https://cstan.io/?p=8976&lang=en)
+
 
 ### Foreman Plugins
 
@@ -71,7 +74,6 @@ ForemanTasks::Task.find("e140a579-a4a2-4a5f-9c32-97b6ae3700e8").destroy
 
 
 ```
-[orphan task cleanup ](https://cstan.io/?p=8976&lang=en)
 
 
 

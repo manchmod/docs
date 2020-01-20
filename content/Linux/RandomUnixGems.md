@@ -33,3 +33,9 @@ read a list of IP addresses from a file and do a dig reverse look up
 ```
  while read ip; do dig +noall +answer -x $ip; done < ip-list.txt
 ```
+
+#### find and xargs
+
+couldnt write a better tut myself...
+
+[everythingcli find/xargs](https://www.everythingcli.org/find-exec-vs-find-xargs/)
