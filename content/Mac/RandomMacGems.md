@@ -18,4 +18,11 @@ you can install the ip command on MacOS. see [here](https://docs.notch.org/linux
 brew install iproute2mac
 ```
 
+#### disable notarization check in Catalina
+
+```
+sudo xattr -dr com.apple.quarantine /Applications/Chromium.app
+```
+
+then right click, open
 
