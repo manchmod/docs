@@ -26,3 +26,12 @@ sudo xattr -dr com.apple.quarantine /Applications/Chromium.app
 
 then right click, open
 
+#### Installing Catalina in VMware ESXi
+
+https://www.jomebrew.com/2019/10/macos-catalina-beta-on-vmwwre-esxi-67-u2.html
+
+override serial/hw in vmx file (serial must be valid, and of same HW type)
+```
+serialNumber = "SERIAL-NUM"
+hw.model = "MacPro6,1"
+```
