@@ -30,6 +30,10 @@ https://docs.vmware.com/en/VMware-NSX-T/2.2/com.vmware.nsxt.admin.doc/GUID-E6E2F
 com.vmware.nsx.management.nsxt
 
 
+## clients
+
+https://docs.vmware.com/en/VMware-NSX-T-Data-Center/2.5/administration/GUID-756EF955-F2C1-47DD-946B-1B5E6DDC7BDA.html
+
 ## nsx-t manager central CLI
 
 http://cloudmaniac.net/nsx-t-central-cli-operations-troubleshooting/

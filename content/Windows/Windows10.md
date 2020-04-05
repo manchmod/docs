@@ -35,3 +35,10 @@ right click on existing partition and select "extend", and follow wizard.
 ### windows 10 updater download
 
 https://www.microsoft.com/en-us/software-download/windows10
+
+
+### Troubleshooting GPO (and speed)
+
+https://4sysops.com/archives/troubleshooting-group-policy-part-4-client-problems/
+
+http://woshub.com/troubleshoot-slow-gpo-processing-and-login-speed-impact/
