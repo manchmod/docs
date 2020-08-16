@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Documentation</title>
+    <link>/linux/</link>
+    <description>Recent content in Linux on Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 27 Oct 2019 11:31:00 -0400</lastBuildDate>
+    
+	<atom:link href="/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Centos Config</title>
+      <link>/linux/centosconfig/</link>
+      <pubDate>Sun, 27 Oct 2019 15:53:35 -0400</pubDate>
+      
+      <guid>/linux/centosconfig/</guid>
+      <description>set up network/hostname nmtui Remove EPEL yum remove epel-release Restore Main Config sys-unconfig Disable Firewall sudo systemctl stop firewalld sudo systemctl disable firewalld Python 3.7 install yum install gcc openssl-devel bzip2-devel libffi-devel cd /usr/src curl -O https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tgz tar zxf Python-3.7.2.tgz ./configure --enable-optimizations make -j4 altinstall NFS tools yum install nfs-utils SELinux https://wiki.centos.org/HowTos/SELinux/</description>
+    </item>
+    
+    <item>
+      <title>ip command</title>
+      <link>/linux/ipcmd/</link>
+      <pubDate>Sun, 27 Oct 2019 15:53:35 -0400</pubDate>
+      
+      <guid>/linux/ipcmd/</guid>
+      <description>for those of us used to ifconfig for 25 years&amp;hellip;.
+show ip interfaces # equivalent to ifconfig -a ip addr show add/remove ip address ip addr add 192.168.50.5 dev eth1 ip addr del 192.168.50.5/24 dev eth1 default gateway ip route add default via 192.168.50.100 link up ip link set eth1 up ip link set eth1 down routes ip route show ip route add 10.10.20.0/24 via 192.168.50.100 dev eth0 ip route del 10.</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu Config</title>
+      <link>/linux/ubuntuconfig/</link>
+      <pubDate>Sun, 27 Oct 2019 15:53:35 -0400</pubDate>
+      
+      <guid>/linux/ubuntuconfig/</guid>
+      <description>set hostname sudo hostnamectl set-hostname linuxconfig Futhermore, check for the existence of /etc/cloud/cloud.cfg configuration. If the file exists edit the file and change the settings within:
+FROM: preserve_hostname: false TO: preserve_hostname: true reset hostid for dhcp https://unix.stackexchange.com/questions/419321/why-are-my-cloned-linux-vms-fighting-for-the-same-ip
+systemd-networkd uses a different method to generate the DUID than dhclient. dhclient by default uses the link-layer address while systemd-networkd uses the contents of /etc/machine-id. Since the VMs were cloned, they have the same machine-id and the DHCP server returns the same IP for both.</description>
+    </item>
+    
+    <item>
+      <title>Powerline</title>
+      <link>/linux/powerline/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/powerline/</guid>
+      <description>install powerline https://powerline.readthedocs.io/en/latest/
+(ensure you are installing this into the right pip place)
+pip install powerline-status install patched powerline fonts https://github.com/powerline/fonts
+ meslo slashed (LG S) GoMono Cousine Droid Sans Mono Slashed ***  add powerline to tmux https://powerline.readthedocs.io/en/latest/usage/other.html#tmux-statusline
+# add to .tmux.conf run-shell &amp;quot;powerline-daemon -q&amp;quot; source &amp;quot;/usr/local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf&amp;quot; # if necessary run (on linux this will be in .local/bin with the python modules) powerline-config tmux setup config locations https://powerline.readthedocs.io/en/latest/configuration/local.html#powerline-script-overrides
+# get powerline install location pip show powerline-status | grep Location | awk &#39;{print $2}&#39; # main config $powerline/powerline/config_files/themes/tmux # tmux theme $powerline/powerline/config_files/config.</description>
+    </item>
+    
+    <item>
+      <title>Random Unix Gems</title>
+      <link>/linux/randomunixgems/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/randomunixgems/</guid>
+      <description>Generate Unique MAC address for host GiantDorks Bash Function
+GetMAC() { if [ -n &amp;#34;$1&amp;#34; ]; then OID=&amp;#34;00:16:3e&amp;#34; RAND=$(echo $1 | md5sum | sed &amp;#39;s/\(..\)\(..\)\(..\).*/\1:\2:\3/&amp;#39;) echo &amp;#34;$OID:$RAND&amp;#34; else echo &amp;#34;ERROR: please supply hostname to create MAC address from, e.g.:&amp;#34; echo &amp;#34; $FUNCNAMEmyhost&amp;#34; fi } CommandLineFu OneLiner
+echo 00:16:3e$(gethostip 10.1.2.11 | awk &#39;{ print tolower(substr($3,3)) }&#39; |sed &#39;s/.\{2\}/:&amp;amp;/g&#39; ) Iterate across a list of items in a file read a list of IP addresses from a file and do a dig reverse look up</description>
+    </item>
+    
+    <item>
+      <title>Tmux</title>
+      <link>/linux/tmux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/tmux/</guid>
+      <description>quick commands hit man command (command-b) then
+   Command Description     C-o swap panes    cheat sheet https://gist.github.com/MohamedAlaa/2961058
+tutorial https://lukaszwrobel.pl/blog/tmux-tutorial-split-terminal-windows-easily/
+https://medium.com/@joe_wolfe_21/the-ultimate-terminal-67e93665459d
+dotfile https://github.com/tangledhelix/dotfiles/blob/master/tmux.conf
+iterm2 keymaps http://tangledhelix.com/blog/2012/04/28/iterm2-keymaps-for-tmux/
+customizing info https://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/
+iterm scrollback Main&amp;gt; terminal may access clipboard advanced &amp;gt; scroll wheel sends arrow keys when in alternate screen mode profile &amp;gt; both save lines to scrollback when…. boxes checked https://dan.carley.co/blog/2013/01/11/tmux-scrollback-with-iterm2/
+https://stackoverflow.com/questions/36594420/how-can-i-turn-off-scrolling-the-history-in-iterm2
+https://medium.freecodecamp.org/tmux-in-practice-scrollback-buffer-47d5ffa71c93
+vim solarized vim, tmux, truecolor</description>
+    </item>
+    
+    <item>
+      <title>Zsh</title>
+      <link>/linux/zsh/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/zsh/</guid>
+      <description>install oh-my-zsh (yolo!) sh -c &amp;quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&amp;quot; redo new user setup autoload -U zsh-newuser-install zsh-newuser-install -f fix compinit errors for sudo https://github.com/robbyrussell/oh-my-zsh/issues/6835</description>
+    </item>
+    
+  </channel>
+</rss>

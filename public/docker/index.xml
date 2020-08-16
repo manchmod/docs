@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on Documentation</title>
+    <link>/docker/</link>
+    <description>Recent content in Docker on Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 27 Oct 2019 11:31:11 -0400</lastBuildDate>
+    
+	<atom:link href="/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Docker Basics</title>
+      <link>/docker/dockerbasics/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/docker/dockerbasics/</guid>
+      <description>running images NOTE: order of arguments matters, imagename must be at the end.
+docker run -p 7777/7777 -d &amp;lt;imagename&amp;gt; NOT docker run &amp;lt;imagename&amp;gt; -d -p 7777/7777 you will get an extremely unhelpful error message like if you do not
+docker: Error response from daemon: OCI runtime create failed: container_linux.go:346: starting container process caused &amp;quot;exec: \&amp;quot;-p\&amp;quot;: executable file not found in $PATH&amp;quot;: unknown. run docker image in background docker run -d &amp;lt;image&amp;gt; run docker image mapping a port docker run -p 80:80/tcp run command (shell) in running container docker exec -it &amp;lt;container_id&amp;gt; /bin/bash run command (shell) in image docker run -it &amp;lt;image&amp;gt; /bin/bash building images build docker image from dockerfile in CWD with tag docker build .</description>
+    </item>
+    
+    <item>
+      <title>Docker Setup</title>
+      <link>/docker/dockersetup/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/docker/dockersetup/</guid>
+      <description>installing docker on ubuntu 18.04 DO NOT USE UBUNTU SNAP, SNAP NOT SUPPORTED ANY MORE (20191117) guide: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
+(setup) sudo apt install apt-transport-https ca-certificates curl software-properties-common curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - sudo add-apt-repository &amp;quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable&amp;quot; sudo apt update (check to make sure docker will be installed from the right place) apt-cache policy docker-ce (install) sudo apt install docker-ce sudo apt install docker-compose sudo systemctl status docker </description>
+    </item>
+    
+  </channel>
+</rss>

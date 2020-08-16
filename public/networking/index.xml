@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Networking on Documentation</title>
+    <link>/networking/</link>
+    <description>Recent content in Networking on Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 Oct 2019 20:55:54 -0400</lastBuildDate>
+    
+	<atom:link href="/networking/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Iperf</title>
+      <link>/networking/iperf/</link>
+      <pubDate>Sun, 27 Oct 2019 15:48:57 -0400</pubDate>
+      
+      <guid>/networking/iperf/</guid>
+      <description>logfile iperf -o ./iperf.out -f MBytes -c 10.190.184.11 -t 30 -d -y c bidirectional. 300 seconds iperf -e -f MBytes -c 10.190.184.11 -t 300 -i 1 -d single direction iperf -e -f MBytes -c 10.190.184.11 -t 300 -i 1 </description>
+    </item>
+    
+    <item>
+      <title>Wireshark SSL Handshake</title>
+      <link>/networking/wiresharksslhandshake/</link>
+      <pubDate>Sun, 27 Oct 2019 13:52:21 -0400</pubDate>
+      
+      <guid>/networking/wiresharksslhandshake/</guid>
+      <description>ssl handshake searches in wireshark ssl.handshake.extensions_server_name == &amp;quot;graph.facebook.com&amp;quot; ssl.handshake.extensions_server_name != &amp;quot;graph.facebook.com&amp;quot; &amp;amp;&amp;amp; ssl.handshake.extensions_server_name != &amp;quot;itunes.apple.com&amp;quot; &amp;amp;&amp;amp; ssl.handshake.type ==1 </description>
+    </item>
+    
+    <item>
+      <title>Arista</title>
+      <link>/networking/arista/</link>
+      <pubDate>Sun, 27 Oct 2019 12:32:02 -0400</pubDate>
+      
+      <guid>/networking/arista/</guid>
+      <description>getting vm working on esxi https://www.arista.com/en/cg-veos-router/veos-router-launching-vmware-esxi-60-and-65
+https://eos.arista.com/forum/how-to-boot-veos-combined-on-esxi/
+bgp design https://the-bitmask.com/2017/08/02/arista-veos-l3slv-part3/
+initial config https://www.arista.com/assets/data/pdf/user-manual/um-eos/Chapters/Initial%20Configuration%20and%20Recovery.pdf
+zerotouch cancel (reboots) login admin username admin secret pxq123 interface management 1 ip address 192.0.2.8/24 end copy running-config startup-config </description>
+    </item>
+    
+    <item>
+      <title>Cisco 3850</title>
+      <link>/networking/cisco3850/</link>
+      <pubDate>Sun, 27 Oct 2019 12:32:02 -0400</pubDate>
+      
+      <guid>/networking/cisco3850/</guid>
+      <description>wireshark on switch https://www.cisco.com/c/en/us/support/docs/switches/catalyst-3850-series-switches/117639-configure-wireshark-00.html
+capture reference https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/epc/command/epc-cr-book/epc-cr-m1.html#wp1398253443
+mac tftp server https://rick.cogley.info/post/run-a-tftp-server-on-mac-osx/
+config fragments ! vlan 99 name 99 ! interface GigabitEthernet1/0/11 description smesxi-vmnic1 switchport mode trunk 3850(config)#int Gi1/0/11 3850(config-if)#switchport trunk allowed vlan all trunking interface GigabitEthernet1/0/23 description ubnt24-uplink2 switchport mode trunk channel-group 1 mode active ! interface GigabitEthernet1/0/24 description ubnt24-uplink1 switchport mode trunk channel-group 1 mode active ! </description>
+    </item>
+    
+  </channel>
+</rss>

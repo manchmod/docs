@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Katello on Documentation</title>
+    <link>/automation/katello/</link>
+    <description>Recent content in Katello on Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 23 Nov 2019 11:31:11 -0400</lastBuildDate>
+    
+	<atom:link href="/automation/katello/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Foreman Usage</title>
+      <link>/automation/katello/foremanusage/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/automation/katello/foremanusage/</guid>
+      <description>Foreman Manual
+cstan - orphan task cleanup
+Foreman Plugins List Plugins available to install
+sudo foreman-installer --help | grep enable- adding plugins # can be added post install, eg foreman-installer --enable-foreman-compute-vmware --enable-foreman-compute-vmware --enable-foreman-compute-ec2 --enable-foreman-compute-gce --enable-foreman-plugin-digitalocean --enable-foreman-plugin-ansible --enable-foreman-plugin-openscap foreman debugging # basic health check foreman-maintain health check postgres commands # tasks su - postgres -c &amp;quot;psql foreman -c &#39;select * from foreman_tasks_tasks&#39;&amp;quot; # locks su - postgres -c &amp;quot;psql foreman -c &#39;select * from foreman_tasks_locks&#39;&amp;quot; # really wide query, su to postgres and do this PAGER=&amp;quot;less -S&amp;quot; psql foreman -c &#39;select * from foreman_tasks_tasks&#39; rake commands foreman-rake katello:upgrade_check # clean task log foreman-rake foreman_tasks:cleanup TASK_SEARCH=&amp;quot;&amp;quot; AFTER=1d #resync db, useful after task cleanup foreman-rake katello:reimport # rake console foreman-rake console # delete task by ID, from rake console ForemanTasks::Task.</description>
+    </item>
+    
+    <item>
+      <title>Katello CentOS 7</title>
+      <link>/automation/katello/katellocentos7/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/automation/katello/katellocentos7/</guid>
+      <description>Initial Setup create product hammer product create --organization-id 1 \ --name &amp;quot;CentOS 7 Linux for x86_64&amp;quot; \ --description &amp;quot;Repositories to use with CentOS 7 Linux&amp;quot; import key hammer gpg create --organization-id 1 \ --key &amp;quot;RPM-GPG-KEY-CentOS-7&amp;quot; \ --name &amp;quot;RPM-GPG-KEY-CentOS-7&amp;quot; http://mirror.cogentco.com/pub/linux/centos/7/os/x86_64/
+Add Repos BaseOS hammer repository create --organization-id 1 \ --product &amp;quot;CentOS 7 Linux for x86_64&amp;quot; \ --name &amp;quot;CentOS 7 Base RPMS&amp;quot; \ --label &amp;quot;CentOS_7_Base_RPMS&amp;quot; \ --content-type &amp;quot;yum&amp;quot; \ --download-policy &amp;quot;on_demand&amp;quot; \ --gpg-key &amp;quot;RPM-GPG-KEY-CentOS-7&amp;quot; \ --url &amp;quot;http://mirror.</description>
+    </item>
+    
+    <item>
+      <title>Katello CentOS 8</title>
+      <link>/automation/katello/katellocentos8/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/automation/katello/katellocentos8/</guid>
+      <description>CentOS 8 Mirrors nearby http://mirror.cogentco.com/pub/linux/centos/8/
+http://mirror.vtti.vt.edu/centos/8/BaseOS/x86_64/
+Adding Centos 8 Repository https://computingforgeeks.com/sync-centos-8-repositories-on-satellite-katello-foreman/
+Initial Setup # Create CentOS 8 Product hammer product create --organization-id 1 \ --name &amp;quot;CentOS 8 Linux for x86_64&amp;quot; \ --description &amp;quot;Repositories to use with CentOS 8 Linux&amp;quot; # import centos PKI mkdir /etc/pki/rpm-gpg/import/ cd /etc/pki/rpm-gpg/import/ wget https://www.centos.org/keys/RPM-GPG-KEY-CentOS-Official hammer gpg create --organization-id 1 \ --key &amp;quot;RPM-GPG-KEY-CentOS-Official&amp;quot; \ --name &amp;quot;RPM-GPG-KEY-CentOS-8&amp;quot; Add Repos # BaseOS hammer repository create --organization-id 1 \ --product &amp;quot;CentOS 8 Linux for x86_64&amp;quot; \ --name &amp;quot;CentOS 8 Base RPMS&amp;quot; \ --label &amp;quot;CentOS_8_Base_RPMS&amp;quot; \ --content-type &amp;quot;yum&amp;quot; \ --download-policy &amp;quot;on_demand&amp;quot; \ --gpg-key &amp;quot;RPM-GPG-KEY-CentOS-8&amp;quot; \ --url &amp;quot;http://mirror.</description>
+    </item>
+    
+    <item>
+      <title>Katello Setup</title>
+      <link>/automation/katello/katellosetup/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/automation/katello/katellosetup/</guid>
+      <description>https://theforeman.org/plugins/katello/3.13/installation/index.html
+http://www.outsidaz.org/2017/02/12/adventures-in-katello-part-1/
+Preflight   The machine needs at least 8G of ram and 2 VCPU (12 and 4 recommended)
+  The path /var/spool/squid/ is used as a temporary location for some types of repository syncs and may grow to consume 10s of GB of space before the files are migrated to /var/lib/pulp. You may wish to put this on the same partition as /var/lib/pulp.
+  TL;DR create big external volumes for /var/spool/squid &amp;amp;/var/lib/pulp</description>
+    </item>
+    
+    <item>
+      <title>Katello Usage</title>
+      <link>/automation/katello/katellousage/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/automation/katello/katellousage/</guid>
+      <description>Katello commands # stop katello katello-service stop # start katello katello-service start # main production log tail -f /var/log/foreman/production.log Hammer commands # list org, get ID hammer organization list # list products hammer product list --organization-id 1 # list repositories for product hammer repository list --organization-id 1 --product &amp;quot;CentOS 8 Linux for x86_64&amp;quot; # sync repos hammer repository synchronize --async --organization-id 1 \ --product &amp;quot;CentOS 8 Linux for x86_64&amp;quot; \ --id &amp;quot;$i&amp;quot;; hammer repository synchronize --organization-id 1 --product &amp;quot;CentOS 8 Linux for x86_64&amp;quot; --id 1 # confirm sync state hammer product list --name &amp;quot;CentOS 8 Linux for x86_64&amp;quot; --organization-id 1 Sync Repos # centos8 for i in $(seq 1 5); do \ hammer repository synchronize --async --organization-id 1 \ --product &amp;quot;CentOS 8 Linux for x86_64&amp;quot; \ --id &amp;quot;$i&amp;quot;; \ done # centos7 for i in $(seq 6 8); do \ hammer repository synchronize --async --organization-id 1 \ --product &amp;quot;CentOS 7 Linux for x86_64&amp;quot; \ --id &amp;quot;$i&amp;quot;; \ done Client # upload initial eratta katello-package-upload -f </description>
+    </item>
+    
+    <item>
+      <title>Puppet</title>
+      <link>/automation/katello/puppet/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/automation/katello/puppet/</guid>
+      <description>https://www.puppetcookbook.com/
+check client status /opt/puppetlabs/bin/puppet agent --test Install some modules cd /opt/puppetlabs/bin ./puppet module list ./puppet module install puppetlabs/ntp ./puppet module install puppetlabs/motd ./puppet module install puppetlabs/accounts ./puppet module install saz-sudo specify environment puppet module --environment test list validate (on server) puppet parser validate site.pp </description>
+    </item>
+    
+  </channel>
+</rss>

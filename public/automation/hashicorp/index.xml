@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hashicorp on Documentation</title>
+    <link>/automation/hashicorp/</link>
+    <description>Recent content in Hashicorp on Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 23 Nov 2019 11:31:11 -0400</lastBuildDate>
+    
+	<atom:link href="/automation/hashicorp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Centos JetBrains Packer</title>
+      <link>/automation/hashicorp/centosjetbrainspacker/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/automation/hashicorp/centosjetbrainspacker/</guid>
+      <description>Date Added Description Link     2019-11-24 Jetbrains Packer Builder Vsphere https://github.com/jetbrains-infra/packer-builder-vsphere   2019-11-24 VMware Guestinfo Cloud-Init https://github.com/vmware/cloud-init-vmware-guestinfo/releases    Centos Kickstart Reference | https://docs.centos.org/en-US/centos/install-guide/Kickstart2/ | RHEL7 Kickstart Guide | https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-simple-install-kickstart|
+Building a Hardened Centos VM Template using Packer We are going to build for centos-7, which is not one of the examples that Jetbrains provides. However, there are several pull requests on the github repo which contain some examples to work from.</description>
+    </item>
+    
+    <item>
+      <title>Cloudinit</title>
+      <link>/automation/hashicorp/cloudinit/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/automation/hashicorp/cloudinit/</guid>
+      <description>basics directory layout
+https://cloudinit.readthedocs.io/en/latest/topics/dir_layout.html
+UserData and Metadata config files passed in as gzip compressed base64 encoded strings from terraform or govc
+cyberchef is your friend for debugging these.
+debugging https://cloudinit.readthedocs.io/en/latest/topics/debugging.html
+# grab logs cloud-init collect-logs # analyze cloud init cloud-init analyze show -i /var/log/cloud-init.log # see what vmtoolsd sent vmtoolsd --cmd &amp;quot;info-get guestinfo.userdata&amp;quot; # cloud-init --debug init cloud-init --debug modules -m config </description>
+    </item>
+    
+    <item>
+      <title>Hashicorp Terraform</title>
+      <link>/automation/hashicorp/terraform/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/automation/hashicorp/terraform/</guid>
+      <description>Date Added Description Link     2019-11-26 Terraform Docs https://www.terraform.io/docs   2019-11-29 tf 0.12 release notes https://discuss.hashicorp.com/t/terraform-0-12-14-released/3898   2019-11-29 Vault Provider https://www.terraform.io/docs/providers/vault/index.html   2019-11-29 Vault Generic Secret Provider https://www.terraform.io/docs/providers/vault/d/generic_secret.html   2019-11-29 Terraform clone on vsphere https://sdorsett.github.io/post/2018-12-24-using-terraform-to-clone-a-virtual-machine-on-vsphere/   2019-11-29 tf issues https://itnext.io/things-i-wish-i-knew-about-terraform-before-jumping-into-it-43ee92a9dd65   2019-11-29 local and remote exec provisioners https://sdorsett.github.io/post/2018-12-26-using-local-exec-and-remote-exec-provisioners-with-terraform/   2019-11-29 simple k8s example https://github.com/vmware/simple-k8s-test-env/blob/master/e2e/vsphere.tf   2019-12-1 terraform and vsphere with cloudinit examples https://floating.</description>
+    </item>
+    
+    <item>
+      <title>Hashicorp Vault</title>
+      <link>/automation/hashicorp/vault/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/automation/hashicorp/vault/</guid>
+      <description>Date Added Description Link     2019-11-26 VaultEnv https://github.com/channable/vaultenv   2019-11-29 Vault generic_secret provider https://www.terraform.io/docs/providers/vault/d/generic_secret.html   2019-11-29 Vault kv engine https://www.vaultproject.io/docs/secrets/kv/   2019-11-29 Vault Auth Token API https://www.vaultproject.io/api/auth/token/index.html    Setup start server vault server -config=/Users/gnotch/Dropbox/vault/vault.hcl unseal vault &amp;amp; login (by default, 3x with 3 diff unseal keys)
+vault operator unseal vault login Ignore TLS validation export VAULT_SKIP_VERIFY=true vault -tls-skip-verify VAULT_TOKEN vault login just creates ~/.</description>
+    </item>
+    
+    <item>
+      <title>Vanilla Packer ESX Scripts</title>
+      <link>/automation/hashicorp/vanillapackeresxscripts/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/automation/hashicorp/vanillapackeresxscripts/</guid>
+      <description>Date Added Description Link     2019-11-24 vmware-iso Packer Docs https://www.packer.io/docs/builders/vmware-iso.html   2019-11-24 VMware Cloud-Init GuestInfo https://github.com/vmware/cloud-init-vmware-guestinfo   2019-11-24 Configuring ESXi Prereqs https://blog.ukotic.net/2019/03/05/configuring-esxi-prerequisites-for-packer/    VMware Packer Scripts for CentOS code is available here https://git.notch.org/notch/vmware-automation/tree/master/vmware-packer NOTE: While this technique and code works, I&amp;rsquo;m would strongly suggest dropping this in favor of using the packer plugins and scripts that Jetbrains has on github. See the article on that in this section.</description>
+    </item>
+    
+    <item>
+      <title>Vmware Govc Cloudinit</title>
+      <link>/automation/hashicorp/vmwaregovccloudinit/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/automation/hashicorp/vmwaregovccloudinit/</guid>
+      <description>Date Added Description Link     2019-11-26 CloudInit Docs https://cloudinit.readthedocs.io/en/latest/v   2019-11-26 Cloud-init for Vsphere https://blah.cloud/infrastructure/using-cloud-init-for-vm-templating-on-vsphere/   2019-11-26 DO Cloud-Init Intro https://www.digitalocean.com/community/tutorials/an-introduction-to-cloud-config-scripting   2019-11-26 DO Cloud-Init Tutorial https://www.digitalocean.com/community/tutorials/how-to-use-cloud-config-for-your-initial-server-setup   2019-11-26 VMware Cloud Init Guestinfo https://github.com/vmware/cloud-init-vmware-guestinfo    Deploying a clone of a template with config Prerequistites  vcenter server govc installed (version &amp;gt; 0.21) template of vm created (see JetBrainsPackerVsphere.md)  this assumes you have 3 things - cloud-config script - network-config script - metadata.</description>
+    </item>
+    
+  </channel>
+</rss>

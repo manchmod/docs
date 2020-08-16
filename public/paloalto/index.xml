@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Palo Alto on Documentation</title>
+    <link>/paloalto/</link>
+    <description>Recent content in Palo Alto on Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 Oct 2019 20:55:54 -0400</lastBuildDate>
+    
+	<atom:link href="/paloalto/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Palo Cheat Sheet</title>
+      <link>/paloalto/paloclicheatsheet/</link>
+      <pubDate>Sun, 27 Oct 2019 12:32:02 -0400</pubDate>
+      
+      <guid>/paloalto/paloclicheatsheet/</guid>
+      <description>Show general system health information.
+ show system info
+Show percent usage of disk partitions.
+ show system disk-space
+Show the maximum log file size.
+ show system logdb-quota
+Show running processes.
+ show system software status
+Show processes running in the management plane.
+ show system resources
+Show resource utilization in the dataplane.
+ show running resource-monitor
+Show the licenses installed on the device.
+ request license info
+Show when commits, downloads, and/or upgrades are completed.</description>
+    </item>
+    
+    <item>
+      <title>Palo Notes</title>
+      <link>/paloalto/palonotes/</link>
+      <pubDate>Sun, 27 Oct 2019 12:32:02 -0400</pubDate>
+      
+      <guid>/paloalto/palonotes/</guid>
+      <description>seting client timeout https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000CmATCA0
+commit config https://docs.paloaltonetworks.com/pan-os/7-1/pan-os-cli-quick-start/use-the-cli/commit-configuration-changes
+vm information sources https://docs.paloaltonetworks.com/pan-os/7-1/pan-os-web-interface-help/device/device-vm-information-sources
+pan-python https://github.com/kevinsteves/pan-python
+api browser http://api-lab.paloaltonetworks.com/introduction.html#the-api-browser
+Ansible API Ansible Palo Alto Automation API
+Pandevice Python Framework PanDevice Tutorial
+PanDevice Chats PanDevice Chat 2</description>
+    </item>
+    
+  </channel>
+</rss>

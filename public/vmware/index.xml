@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VMware on Documentation</title>
+    <link>/vmware/</link>
+    <description>Recent content in VMware on Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 Oct 2019 20:55:48 -0400</lastBuildDate>
+    
+	<atom:link href="/vmware/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>VSphere / ESXi</title>
+      <link>/vmware/vsphereesxi/</link>
+      <pubDate>Sun, 27 Oct 2019 15:57:57 -0400</pubDate>
+      
+      <guid>/vmware/vsphereesxi/</guid>
+      <description>vmware home lab http://techgenix.com/vmware-home-lab/
+Vsan 2 node https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/vcat/vmware-virtual-san-two-node-architecture-service-provider-use-cases.pdf
+VCenter CA Certs https://esxsi.com/2017/09/11/vcenter-ca-certs
+Vmotion https://kb.vmware.com/s/article/2054994
+setting web client timeout https://kb.vmware.com/s/article/2040626
+host affinity https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.resmgmt.doc/GUID-0591F865-91B5-4311-ABA6-84FBA5AAFB59.html
+VSphere CLI reference https://code.vmware.com/docs/6676/vsphere-command-line-interface-reference
+setting maintenance mode from CLI syntax slightly wrong for 6.7 but basics correct https://www.vladan.fr/esxi-maintenance-mode/
+vrni https://www.virtualizationhowto.com/2019/01/installing-vrealize-network-insight-4-0-platform-and-proxy-appliances/
+fixing 10G ethernet problem on smesxi esxcli network nic down -n vmnic0 esxcli network nic up -n vmnic0 [root@smesxi:~] esxcli network nic set --speed 1000 --duplex full -n vmnic2 [root@smesxi:~] esxcli network nic set --speed 1000 --duplex full -n vmnic3 vsish -e set /net/pNics/vmnic3/linkSet 1 vmkload_mod -u drivername vmkload_mod drivername vmware cli - create documentation https://github.</description>
+    </item>
+    
+    <item>
+      <title>NSX-T Links</title>
+      <link>/vmware/nsxt/</link>
+      <pubDate>Sun, 27 Oct 2019 15:41:33 -0400</pubDate>
+      
+      <guid>/vmware/nsxt/</guid>
+      <description>home lab config https://ithinkvirtual.com/2019/02/19/nsx-t-home-lab-part-5-configuring-nsx-t-networking/
+learning http://www.vstellar.com/2018/07/27/learning-nsx-t-part-1-introduction/ http://www.vstellar.com/2018/07/27/learning-nsx-t-part-2-nsx-t-architecture/
+http://www.vstellar.com/page/3/
+edge cluster creation https://docs.vmware.com/en/VMware-NSX-T/2.2/com.vmware.nsxt.install.doc/GUID-898099FC-4ED2-4553-809D-B81B494B67E7.html
+unregister vcenter extension https://docs.vmware.com/en/VMware-NSX-T/2.2/com.vmware.nsxt.admin.doc/GUID-E6E2F017-1106-48C5-ABCA-3D3E9130A863.html
+com.vmware.nsx.management.nsxt
+clients https://docs.vmware.com/en/VMware-NSX-T-Data-Center/2.5/administration/GUID-756EF955-F2C1-47DD-946B-1B5E6DDC7BDA.html
+nsx-t manager central CLI http://cloudmaniac.net/nsx-t-central-cli-operations-troubleshooting/
+add ssh key for admin to nsx edge controller set user admin ssh-keys label 2018yyubi type ssh-rsa value [key] vmware nsx videos https://www.youtube.com/user/vmwarensx/featured
+https://docs.vmware.com/en/VMware-NSX-T-Data-Center/2.4/administration/GUID-3F163DEE-1EE6-4D80-BEBF-8D109FDB577C.html
+nsx-t routing Next Steps with NSX-T Edge Routing and BGP
+NSX-T Logical Routing Architecture
+2.4 Edge Transport Appliance
+BGP between T0 and Physical Network</description>
+    </item>
+    
+    <item>
+      <title>NSX-T Networking</title>
+      <link>/vmware/nsxt-networking/</link>
+      <pubDate>Sun, 27 Oct 2019 15:41:33 -0400</pubDate>
+      
+      <guid>/vmware/nsxt-networking/</guid>
+      <description>NSX / DVSwitch https://www.tech-coffee.net/deploy-a-converged-network-with-vsphere-6-5/
+net-dvs http://buildvirtual.net/utilize-net-dvs-to-troubleshoot-vnetwork-distributed-switch-configurations/
+dv video https://www.youtube.com/watch?v=_m9PMWrIGyQ
+NSX http://nxgcloud.com/index.php/2017/03/23/nsx-home-lab-16-deploy-nsx-components/
+http://www.vmwarearena.com/vmware-nsx-installation-part-8-configuring-vxlan-on-the-esxi-hosts/
+create logical network segment ID (a critical step) https://kb.vmware.com/s/article/2081294
+Sample VST config https://kb.vmware.com/s/article/1004074?CoveoV2.CoveoLightningApex.getInitializationData=1&amp;amp;r=3&amp;amp;other.KM_Utility.getArticleDetails=1&amp;amp;other.KM_Utility.getArticleMetadata=1&amp;amp;other.KM_Utility.getUrl=1&amp;amp;other.KM_Utility.getUser=1&amp;amp;other.KM_Utility.getAllTranslatedLanguages=1&amp;amp;ui-comm-runtime-components-aura-components-siteforce-qb.Quarterback.validateRoute=1
+updating NSX VIBS http://www.vmwarearena.com/how-to-manually-install-nsx-6-3-0-vibs-on-esxi-6-5-hosts/
+https://vswitchzero.com/2018/09/05/manual-upgrade-of-nsx-host-vibs/
+Configure DHCP / Relay https://letsv4real.com/2017/06/06/configure-dhcp-services-in-vmware-nsx/
+Dynamic Routing / BGP need to redistribute statics, including allowing default gateways to be pushed from ESG to DLR
+http://www.vstellar.com/2018/05/20/configure-and-manage-routing-in-nsx/
+https://www.virtually-limitless.com/vcix-nv-study-guide/configure-dynamic-routing-protocols-ospf-bgp-is-is/
+route redistribution https://docs.vmware.com/en/VMware-NSX-Data-Center-for-vSphere/6.4/com.vmware.nsx.admin.doc/GUID-6DE97E5F-A147-4294-B162-08CB90B2699A.html
+weaker explanations https://blog.bertello.org/2015/02/nsx-for-newbies-part-6-distributed-logical-router-dlr/
+older but ok http://www.routetocloud.com/2014/06/nsx-distributed-logical-router/
+uninstall NSX-V https://docs.vmware.com/en/VMware-NSX-Data-Center-for-vSphere/6.4/com.vmware.nsx.install.doc/GUID-33D4FCB4-A8C8-4307-B638-AA6BBA0AD2A5.html</description>
+    </item>
+    
+    <item>
+      <title>govc</title>
+      <link>/vmware/govc/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/vmware/govc/</guid>
+      <description>Date Added Description Link     2019-11-26 Govc Usage https://github.com/vmware/govmomi/blob/master/govc/USAGE.md    Setup installing brew tap govmomi/tap/govc &amp;amp;&amp;amp; brew install govmomi/tap/govc
+note that this might not be the latest version. my homebrew only had 0.19 which notably didn&amp;rsquo;t contain the library commands. I just grabbed the latest release from here: https://github.com/vmware/govmomi/releases and put it in ~/bin
+Configuring govc for use source govc-vars.sh $ alias govc=$(pwd)/govc_darwin_amd64 $ export GOVC_URL=vcenter.</description>
+    </item>
+    
+    <item>
+      <title>Mac VMware</title>
+      <link>/vmware/macvmware/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/vmware/macvmware/</guid>
+      <description>govc brew install govmomi/tap/govc mac powershell brew tap caskroom/cask brew cask install powershell PowerCLI Install-Module -Name VMware.PowerCLI -Scope CurrentUser Get-Command -Module *VMWare* </description>
+    </item>
+    
+    <item>
+      <title>OVF / OVA</title>
+      <link>/vmware/ofv-ova/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/vmware/ofv-ova/</guid>
+      <description>OVF Tool https://www.vmware.com/support/developer/ovf/index.html
+Links https://gist.github.com/willianantunes/c8e4ad230c30297c4a1b
+https://vuptime.io/2017/03/06/vmware-dive-into-ovf-properties/
+http://everything-virtual.com/2016/05/06/creating-a-centos-7-2-vmware-gold-template/
+https://stackoverflow.com/questions/33613308/how-can-i-make-a-ova-which-works-with-static-ip-addreses
+https://thevirtualist.org/creating-customizable-linux-ovf-template/</description>
+    </item>
+    
+    <item>
+      <title>Upgrading</title>
+      <link>/vmware/upgrading/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/vmware/upgrading/</guid>
+      <description>VMware files https://datavak.eu/vmware/
+VMware patch tracker https://esxi-patches.v-front.de/ESXi-6.7.0.html#2018-10-16
+VMware Upgrade https://vmiss.net/2018/10/17/upgrade-esxi-67-u1-vmware-vsphere-update-manager/
+https://virtualizationreview.com/articles/2018/10/22/upgrading-to-vcsa-67u1.aspx
+Updating from CLI (in this case the Jan 2019 version of 6.7.0U1)
+# Cut and paste these commands into an ESXi shell to update your host with this Imageprofile # See the Help page for more instructions # esxcli network firewall ruleset set -e true -r httpClient esxcli software profile update -p ESXi-6.7.0-20190104001-standard \ -d https://hostupdate.vmware.com/software/VUM/PRODUCTION/main/vmw-depot-index.xml esxcli network firewall ruleset set -e false -r httpClient # # Reboot to complete the upgrade </description>
+    </item>
+    
+    <item>
+      <title>VMware Networking </title>
+      <link>/vmware/vmware-networking/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/vmware/vmware-networking/</guid>
+      <description>Vlan configuration - vmware https://kb.vmware.com/s/article/1003806
+Esxi network debugging commands https://blogs.vmware.com/vsphere/2018/12/esxi-network-troubleshooting-tools.html</description>
+    </item>
+    
+    <item>
+      <title>PowerCLI</title>
+      <link>/vmware/powercli/</link>
+      <pubDate>Sun, 27 Oct 2019 14:02:17 -0400</pubDate>
+      
+      <guid>/vmware/powercli/</guid>
+      <description>PowerCLI Changelog https://vdc-download.vmware.com/vmwb-repository/dcr-public/306e3e41-2a54-497e-8377-11a1cf36c107/76c39d63-455d-4f3a-af2a-368f3ea6647c/changelog.html
+Power CLI Users Guide https://code.vmware.com/docs/7335/powercli-11-0-0-user-s-guide
+Power CLI CMDlet reference https://code.vmware.com/docs/7336/cmdlet-reference
+PowerCLI Install Install-Module -Name VMWare.PowerCLI Ignore self signed certs Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -Confirm:$false Connect to vcenter connect-viserver -protocol https –server SERVERNAME Get information on VMs Get-VM | fl | more Get-VM | where-object {$_.PowerState –eq “PoweredOff”} Get-VM 〈yourvm〉 | Stop-VMguest iterate across VMs foreach ($var in $vars){ Do something… } Get-vm | where-object {$_.MemoryGB –eq 4 } | select -ExpandProperty Name | out-file c:\VMs.</description>
+    </item>
+    
+    <item>
+      <title>VMware APIs</title>
+      <link>/vmware/vmwareapi/</link>
+      <pubDate>Sun, 27 Oct 2019 14:02:17 -0400</pubDate>
+      
+      <guid>/vmware/vmwareapi/</guid>
+      <description>vsphere api stuff https://www.digitalocean.com/community/tutorials/how-to-use-web-apis-in-python-3
+https://code.vmware.com/apis/366/vsphere-automation https://github.com/vmware/vsphere-automation-sdk-python https://www.vmware.com/support/developer/vcsa-mgmt-sdk/index.html
+https://code.vmware.com/web/sdk/6.7/vsphere-automation-python https://vdc-download.vmware.com/vmwb-repository/dcr-public/3f9d46be-a5f4-452c-8b1c-ae2bb05bc0a6/58d6917d-4da9-45b1-869a-f68550834f8e/vsphere/index.html</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mac on Documentation</title>
+    <link>/mac/</link>
+    <description>Recent content in Mac on Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 27 Oct 2019 11:31:11 -0400</lastBuildDate>
+    
+	<atom:link href="/mac/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Apple Remote Desktop</title>
+      <link>/mac/appleremotedesktop/</link>
+      <pubDate>Sun, 15 Dec 2019 13:18:17 -0400</pubDate>
+      
+      <guid>/mac/appleremotedesktop/</guid>
+      <description>   Date Added Description Link     2020-1-30 enabling screensharing https://www.techrepublic.com/article/how-to-enable-screen-sharing-on-macs-via-terminal/   2020-1-30 enabling ARD https://support.apple.com/en-us/HT201710    sample commands # restart agent sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -restart -agent # enable agent, including menu item sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -activate -configure -allowAccessFor -allUsers -privs -all -clientopts -setmenuextra -menuextra yes # enable screensharing sudo defaults write /var/db/launchd.db/com.apple.launchd/overrides.plist com.apple.screensharing -dict Disabled -bool false </description>
+    </item>
+    
+    <item>
+      <title>Mac Keychain</title>
+      <link>/mac/mackeychain/</link>
+      <pubDate>Sun, 15 Dec 2019 13:18:17 -0400</pubDate>
+      
+      <guid>/mac/mackeychain/</guid>
+      <description>Date Added Description Link     2019-11-24 Jamf Adding Keychain Discussion https://www.jamf.com/jamf-nation/discussions/22294/adding-a-certificate-to-the-system-keychain-set-to-always-trust    Mac KeyChain Stuff # grab SSL cert in DER format openssl s_client -showcerts -connect HOST:443 &amp;lt;/dev/null 2&amp;gt;/dev/null|openssl x509 -outform DER &amp;gt; /tmp/cerfificate.der # add to keychain /usr/bin/security -v add-trusted-cert -r trustAsRoot -e hostnameMismatch -d -p ssl -p smime -p codeSign -p IPSec -p basic -p swUpdate -p pkgSign -p eap -p timestamping -u -1 -k /Users/gnotch/Library/Keychains/login.</description>
+    </item>
+    
+    <item>
+      <title>Random Mac Gems</title>
+      <link>/mac/randommacgems/</link>
+      <pubDate>Sun, 15 Dec 2019 13:18:17 -0400</pubDate>
+      
+      <guid>/mac/randommacgems/</guid>
+      <description>Date Added Description Link     2019-11-24 hi https://docs.notch.org    ip command on MacOS you can install the ip command on MacOS. see here for more details on how to use it
+brew install iproute2mac disable notarization check in Catalina sudo xattr -dr com.apple.quarantine /Applications/Chromium.app then right click, open
+Installing Catalina in VMware ESXi https://www.jomebrew.com/2019/10/macos-catalina-beta-on-vmwwre-esxi-67-u2.html
+override serial/hw in vmx file (serial must be valid, and of same HW type)</description>
+    </item>
+    
+  </channel>
+</rss>

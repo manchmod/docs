@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reverse Engineering on Documentation</title>
+    <link>/reverseengineering/</link>
+    <description>Recent content in Reverse Engineering on Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 Oct 2019 20:56:03 -0400</lastBuildDate>
+    
+	<atom:link href="/reverseengineering/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>IOS App Dump / Decrypt</title>
+      <link>/reverseengineering/ios-app-dump-decrypt/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/reverseengineering/ios-app-dump-decrypt/</guid>
+      <description>overview https://ivrodriguez.com/decrypting-ios-applications-ios-12-edition/
+https://medium.com/@felipejfc/the-ultimate-guide-for-live-debugging-apps-on-jailbroken-ios-12-4c5b48adf2fb
+brew install usbmuxd git clone https://github.com/AloneMonkey/frida-ios-dump cd frida-ios-dump python2 -m virtualenv . source bin/activate pip install -r requirements.txt iproxy 2222 22 ./dump.py [APPNAME] frida-ios-dump https://github.com/AloneMonkey/frida-ios-dump
+ssh over usb (libusb) https://iphonedevwiki.net/index.php/SSH_Over_USB
+frida https://www.frida.re/docs/ios/#with-jailbreak
+tracing with friday https://techblog.mediaservice.net/2017/09/tracing-arbitrary-methods-and-function-calls-on-android-and-ios
+python2 virtualenv https://help.dreamhost.com/hc/en-us/articles/215489338-Installing-and-using-virtualenv-with-Python-2</description>
+    </item>
+    
+    <item>
+      <title>XCode 11 LLDB Python 2</title>
+      <link>/reverseengineering/maclldbpythonfix/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/reverseengineering/maclldbpythonfix/</guid>
+      <description>Mac Xcode 11 LLDB Python2 config fixes lldb so that python2 is used (so fG!&amp;rsquo;s lldbinit works&amp;rsquo;)
+defaults write com.apple.dt.lldb DefaultPythonVersion 2 https://github.com/facebook/chisel/issues/262</description>
+    </item>
+    
+  </channel>
+</rss>

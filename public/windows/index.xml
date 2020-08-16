@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on Documentation</title>
+    <link>/windows/</link>
+    <description>Recent content in Windows on Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 Oct 2019 20:55:48 -0400</lastBuildDate>
+    
+	<atom:link href="/windows/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Powershell</title>
+      <link>/windows/powershell/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/windows/powershell/</guid>
+      <description>mac powershell https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-6
+brew tap caskroom/cask brew cask install powershell Windows Events Get-WinEvent
+Get-Eventlog
+https://blogs.technet.microsoft.com/ashleymcglone/2013/08/28/powershell-get-winevent-xml-madness-getting-details-from-event-logs/
+https://letitknow.wordpress.com/2012/09/02/powershell-and-the-applications-and-services-logs/
+ # GroupPolicy Examples Get-EventLog -LogName Application | Where-Object {$_.EventId -eq 6006} Get-EventLog -LogName Application | Where-Object {$_.EventId -eq 8000} Get-EventLog -LogName Application | Where-Object {$_.EventId -eq 8001} Get-EventLog -LogName Application | Where-Object {$_.EventId -eq 8006} Get-EventLog -LogName Application | Where-Object {$_.EventId -eq 8007} Get-WinEvent -FilterHashTable @{ LogName = &amp;quot;Microsoft-Windows-GroupPolicy/Operational&amp;quot;; ID = 4016 } -MaxEvents 10 Get-WinEvent -FilterHashTable @{ LogName = &amp;quot;Microsoft-Windows-GroupPolicy/Operational&amp;quot;; ID = 5312 } -MaxEvents 3 | fl (other eventIDs - 4016,5016,5317, etc) # CAPI Examples https://github.</description>
+    </item>
+    
+    <item>
+      <title>Windows 10</title>
+      <link>/windows/windows10/</link>
+      <pubDate>Sun, 27 Oct 2019 14:02:17 -0400</pubDate>
+      
+      <guid>/windows/windows10/</guid>
+      <description>creating a local windows 10 account https://www.groovypost.com/howto/create-local-account-windows-10/
+sysprep for windows vm image  %windir%\system32\sysprep\sysprep.exe /oobe /generalize /shutdown /mode:vm https://www.thomasmaurer.ch/2016/05/windows-sysprep-for-virtual-machines/
+extend a volume launching disk management snapin
+open elevated cmd.exe diskmgmt.msc partition article
+right click on existing partition and select &amp;ldquo;extend&amp;rdquo;, and follow wizard.
+windows 10 updater download https://www.microsoft.com/en-us/software-download/windows10
+Troubleshooting GPO (and speed) https://4sysops.com/archives/troubleshooting-group-policy-part-4-client-problems/
+http://woshub.com/troubleshoot-slow-gpo-processing-and-login-speed-impact/</description>
+    </item>
+    
+    <item>
+      <title>Windows Server</title>
+      <link>/windows/windowsserver/</link>
+      <pubDate>Sun, 27 Oct 2019 14:02:17 -0400</pubDate>
+      
+      <guid>/windows/windowsserver/</guid>
+      <description>TSS Debug Script https://github.com/CSS-Windows/WindowsDiag/tree/master/ALL/TSS
+setting up NTP server in Windows Server https://support.microsoft.com/en-us/help/816042/how-to-configure-an-authoritative-time-server-in-windows-server
+w32tm command
+https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/ff799054(v%3Dws.11)
+How credential processing works https://docs.microsoft.com/en-us/windows-server/security/windows-authentication/credentials-processes-in-windows-authentication
+https://www.ultimatewindowssecurity.com/securitylog/book/page.aspx?spid=chapter3
+window scaling tuning https://www.duckware.com/blog/how-windows-is-killing-internet-download-speeds/index.html
+List filter Drivers (WSC) https://ss64.com/nt/fltmc.html
+List windows drivers https://www.thewindowsclub.com/list-device-drivers-driverquery-command-prompt
+Get-WindowsDriver -Online driverquery /v | Select-String “running” </description>
+    </item>
+    
+    <item>
+      <title>Azure Notes</title>
+      <link>/windows/azurenotes/</link>
+      <pubDate>Sun, 27 Oct 2019 12:32:02 -0400</pubDate>
+      
+      <guid>/windows/azurenotes/</guid>
+      <description>intune setup as MDM https://www.thelazyadministrator.com/2018/11/19/configure-and-deploy-intune-mdm/</description>
+    </item>
+    
+  </channel>
+</rss>
