@@ -26,6 +26,10 @@ https://kb.vmware.com/s/article/2054994
 
 https://kb.vmware.com/s/article/2040626
 
+### host affinity
+
+https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.resmgmt.doc/GUID-0591F865-91B5-4311-ABA6-84FBA5AAFB59.html
+
 
 ### VSphere CLI reference
 
