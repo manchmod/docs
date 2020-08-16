@@ -6,9 +6,632 @@
     <description>Recent content on Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Sat, 26 Oct 2019 20:55:34 -0400</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Apple Remote Desktop</title>
+      <link>/mac/appleremotedesktop/</link>
+      <pubDate>Sun, 15 Dec 2019 13:18:17 -0400</pubDate>
+      
+      <guid>/mac/appleremotedesktop/</guid>
+      <description>   Date Added Description Link     2020-1-30 enabling screensharing https://www.techrepublic.com/article/how-to-enable-screen-sharing-on-macs-via-terminal/   2020-1-30 enabling ARD https://support.apple.com/en-us/HT201710    sample commands # restart agent sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -restart -agent # enable agent, including menu item sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -activate -configure -allowAccessFor -allUsers -privs -all -clientopts -setmenuextra -menuextra yes # enable screensharing sudo defaults write /var/db/launchd.db/com.apple.launchd/overrides.plist com.apple.screensharing -dict Disabled -bool false </description>
+    </item>
+    
+    <item>
+      <title>Mac Keychain</title>
+      <link>/mac/mackeychain/</link>
+      <pubDate>Sun, 15 Dec 2019 13:18:17 -0400</pubDate>
+      
+      <guid>/mac/mackeychain/</guid>
+      <description>Date Added Description Link     2019-11-24 Jamf Adding Keychain Discussion https://www.jamf.com/jamf-nation/discussions/22294/adding-a-certificate-to-the-system-keychain-set-to-always-trust    Mac KeyChain Stuff # grab SSL cert in DER format openssl s_client -showcerts -connect HOST:443 &amp;lt;/dev/null 2&amp;gt;/dev/null|openssl x509 -outform DER &amp;gt; /tmp/cerfificate.der # add to keychain /usr/bin/security -v add-trusted-cert -r trustAsRoot -e hostnameMismatch -d -p ssl -p smime -p codeSign -p IPSec -p basic -p swUpdate -p pkgSign -p eap -p timestamping -u -1 -k /Users/gnotch/Library/Keychains/login.</description>
+    </item>
+    
+    <item>
+      <title>Random Mac Gems</title>
+      <link>/mac/randommacgems/</link>
+      <pubDate>Sun, 15 Dec 2019 13:18:17 -0400</pubDate>
+      
+      <guid>/mac/randommacgems/</guid>
+      <description>Date Added Description Link     2019-11-24 hi https://docs.notch.org    ip command on MacOS you can install the ip command on MacOS. see here for more details on how to use it
+brew install iproute2mac disable notarization check in Catalina sudo xattr -dr com.apple.quarantine /Applications/Chromium.app then right click, open
+Installing Catalina in VMware ESXi https://www.jomebrew.com/2019/10/macos-catalina-beta-on-vmwwre-esxi-67-u2.html
+override serial/hw in vmx file (serial must be valid, and of same HW type)</description>
+    </item>
+    
+    <item>
+      <title>VSphere / ESXi</title>
+      <link>/vmware/vsphereesxi/</link>
+      <pubDate>Sun, 27 Oct 2019 15:57:57 -0400</pubDate>
+      
+      <guid>/vmware/vsphereesxi/</guid>
+      <description>vmware home lab http://techgenix.com/vmware-home-lab/
+Vsan 2 node https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/vcat/vmware-virtual-san-two-node-architecture-service-provider-use-cases.pdf
+VCenter CA Certs https://esxsi.com/2017/09/11/vcenter-ca-certs
+Vmotion https://kb.vmware.com/s/article/2054994
+setting web client timeout https://kb.vmware.com/s/article/2040626
+host affinity https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.resmgmt.doc/GUID-0591F865-91B5-4311-ABA6-84FBA5AAFB59.html
+VSphere CLI reference https://code.vmware.com/docs/6676/vsphere-command-line-interface-reference
+setting maintenance mode from CLI syntax slightly wrong for 6.7 but basics correct https://www.vladan.fr/esxi-maintenance-mode/
+vrni https://www.virtualizationhowto.com/2019/01/installing-vrealize-network-insight-4-0-platform-and-proxy-appliances/
+fixing 10G ethernet problem on smesxi esxcli network nic down -n vmnic0 esxcli network nic up -n vmnic0 [root@smesxi:~] esxcli network nic set --speed 1000 --duplex full -n vmnic2 [root@smesxi:~] esxcli network nic set --speed 1000 --duplex full -n vmnic3 vsish -e set /net/pNics/vmnic3/linkSet 1 vmkload_mod -u drivername vmkload_mod drivername vmware cli - create documentation https://github.</description>
+    </item>
+    
+    <item>
+      <title>Centos Config</title>
+      <link>/linux/centosconfig/</link>
+      <pubDate>Sun, 27 Oct 2019 15:53:35 -0400</pubDate>
+      
+      <guid>/linux/centosconfig/</guid>
+      <description>set up network/hostname nmtui Remove EPEL yum remove epel-release Restore Main Config sys-unconfig Disable Firewall sudo systemctl stop firewalld sudo systemctl disable firewalld Python 3.7 install yum install gcc openssl-devel bzip2-devel libffi-devel cd /usr/src curl -O https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tgz tar zxf Python-3.7.2.tgz ./configure --enable-optimizations make -j4 altinstall NFS tools yum install nfs-utils SELinux https://wiki.centos.org/HowTos/SELinux/</description>
+    </item>
+    
+    <item>
+      <title>ip command</title>
+      <link>/linux/ipcmd/</link>
+      <pubDate>Sun, 27 Oct 2019 15:53:35 -0400</pubDate>
+      
+      <guid>/linux/ipcmd/</guid>
+      <description>for those of us used to ifconfig for 25 years&amp;hellip;.
+show ip interfaces # equivalent to ifconfig -a ip addr show add/remove ip address ip addr add 192.168.50.5 dev eth1 ip addr del 192.168.50.5/24 dev eth1 default gateway ip route add default via 192.168.50.100 link up ip link set eth1 up ip link set eth1 down routes ip route show ip route add 10.10.20.0/24 via 192.168.50.100 dev eth0 ip route del 10.</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu Config</title>
+      <link>/linux/ubuntuconfig/</link>
+      <pubDate>Sun, 27 Oct 2019 15:53:35 -0400</pubDate>
+      
+      <guid>/linux/ubuntuconfig/</guid>
+      <description>set hostname sudo hostnamectl set-hostname linuxconfig Futhermore, check for the existence of /etc/cloud/cloud.cfg configuration. If the file exists edit the file and change the settings within:
+FROM: preserve_hostname: false TO: preserve_hostname: true reset hostid for dhcp https://unix.stackexchange.com/questions/419321/why-are-my-cloned-linux-vms-fighting-for-the-same-ip
+systemd-networkd uses a different method to generate the DUID than dhclient. dhclient by default uses the link-layer address while systemd-networkd uses the contents of /etc/machine-id. Since the VMs were cloned, they have the same machine-id and the DHCP server returns the same IP for both.</description>
+    </item>
+    
+    <item>
+      <title>Iperf</title>
+      <link>/networking/iperf/</link>
+      <pubDate>Sun, 27 Oct 2019 15:48:57 -0400</pubDate>
+      
+      <guid>/networking/iperf/</guid>
+      <description>logfile iperf -o ./iperf.out -f MBytes -c 10.190.184.11 -t 30 -d -y c bidirectional. 300 seconds iperf -e -f MBytes -c 10.190.184.11 -t 300 -i 1 -d single direction iperf -e -f MBytes -c 10.190.184.11 -t 300 -i 1 </description>
+    </item>
+    
+    <item>
+      <title>NSX-T Links</title>
+      <link>/vmware/nsxt/</link>
+      <pubDate>Sun, 27 Oct 2019 15:41:33 -0400</pubDate>
+      
+      <guid>/vmware/nsxt/</guid>
+      <description>home lab config https://ithinkvirtual.com/2019/02/19/nsx-t-home-lab-part-5-configuring-nsx-t-networking/
+learning http://www.vstellar.com/2018/07/27/learning-nsx-t-part-1-introduction/ http://www.vstellar.com/2018/07/27/learning-nsx-t-part-2-nsx-t-architecture/
+http://www.vstellar.com/page/3/
+edge cluster creation https://docs.vmware.com/en/VMware-NSX-T/2.2/com.vmware.nsxt.install.doc/GUID-898099FC-4ED2-4553-809D-B81B494B67E7.html
+unregister vcenter extension https://docs.vmware.com/en/VMware-NSX-T/2.2/com.vmware.nsxt.admin.doc/GUID-E6E2F017-1106-48C5-ABCA-3D3E9130A863.html
+com.vmware.nsx.management.nsxt
+clients https://docs.vmware.com/en/VMware-NSX-T-Data-Center/2.5/administration/GUID-756EF955-F2C1-47DD-946B-1B5E6DDC7BDA.html
+nsx-t manager central CLI http://cloudmaniac.net/nsx-t-central-cli-operations-troubleshooting/
+add ssh key for admin to nsx edge controller set user admin ssh-keys label 2018yyubi type ssh-rsa value [key] vmware nsx videos https://www.youtube.com/user/vmwarensx/featured
+https://docs.vmware.com/en/VMware-NSX-T-Data-Center/2.4/administration/GUID-3F163DEE-1EE6-4D80-BEBF-8D109FDB577C.html
+nsx-t routing Next Steps with NSX-T Edge Routing and BGP
+NSX-T Logical Routing Architecture
+2.4 Edge Transport Appliance
+BGP between T0 and Physical Network</description>
+    </item>
+    
+    <item>
+      <title>NSX-T Networking</title>
+      <link>/vmware/nsxt-networking/</link>
+      <pubDate>Sun, 27 Oct 2019 15:41:33 -0400</pubDate>
+      
+      <guid>/vmware/nsxt-networking/</guid>
+      <description>NSX / DVSwitch https://www.tech-coffee.net/deploy-a-converged-network-with-vsphere-6-5/
+net-dvs http://buildvirtual.net/utilize-net-dvs-to-troubleshoot-vnetwork-distributed-switch-configurations/
+dv video https://www.youtube.com/watch?v=_m9PMWrIGyQ
+NSX http://nxgcloud.com/index.php/2017/03/23/nsx-home-lab-16-deploy-nsx-components/
+http://www.vmwarearena.com/vmware-nsx-installation-part-8-configuring-vxlan-on-the-esxi-hosts/
+create logical network segment ID (a critical step) https://kb.vmware.com/s/article/2081294
+Sample VST config https://kb.vmware.com/s/article/1004074?CoveoV2.CoveoLightningApex.getInitializationData=1&amp;amp;r=3&amp;amp;other.KM_Utility.getArticleDetails=1&amp;amp;other.KM_Utility.getArticleMetadata=1&amp;amp;other.KM_Utility.getUrl=1&amp;amp;other.KM_Utility.getUser=1&amp;amp;other.KM_Utility.getAllTranslatedLanguages=1&amp;amp;ui-comm-runtime-components-aura-components-siteforce-qb.Quarterback.validateRoute=1
+updating NSX VIBS http://www.vmwarearena.com/how-to-manually-install-nsx-6-3-0-vibs-on-esxi-6-5-hosts/
+https://vswitchzero.com/2018/09/05/manual-upgrade-of-nsx-host-vibs/
+Configure DHCP / Relay https://letsv4real.com/2017/06/06/configure-dhcp-services-in-vmware-nsx/
+Dynamic Routing / BGP need to redistribute statics, including allowing default gateways to be pushed from ESG to DLR
+http://www.vstellar.com/2018/05/20/configure-and-manage-routing-in-nsx/
+https://www.virtually-limitless.com/vcix-nv-study-guide/configure-dynamic-routing-protocols-ospf-bgp-is-is/
+route redistribution https://docs.vmware.com/en/VMware-NSX-Data-Center-for-vSphere/6.4/com.vmware.nsx.admin.doc/GUID-6DE97E5F-A147-4294-B162-08CB90B2699A.html
+weaker explanations https://blog.bertello.org/2015/02/nsx-for-newbies-part-6-distributed-logical-router-dlr/
+older but ok http://www.routetocloud.com/2014/06/nsx-distributed-logical-router/
+uninstall NSX-V https://docs.vmware.com/en/VMware-NSX-Data-Center-for-vSphere/6.4/com.vmware.nsx.install.doc/GUID-33D4FCB4-A8C8-4307-B638-AA6BBA0AD2A5.html</description>
+    </item>
+    
+    <item>
+      <title>Ansible</title>
+      <link>/automation/ansible/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/automation/ansible/</guid>
+      <description>Ansible Palo Alto Automation API</description>
+    </item>
+    
+    <item>
+      <title>Azure Setup</title>
+      <link>/azure/setup/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/azure/setup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Centos JetBrains Packer</title>
+      <link>/automation/hashicorp/centosjetbrainspacker/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/automation/hashicorp/centosjetbrainspacker/</guid>
+      <description>Date Added Description Link     2019-11-24 Jetbrains Packer Builder Vsphere https://github.com/jetbrains-infra/packer-builder-vsphere   2019-11-24 VMware Guestinfo Cloud-Init https://github.com/vmware/cloud-init-vmware-guestinfo/releases    Centos Kickstart Reference | https://docs.centos.org/en-US/centos/install-guide/Kickstart2/ | RHEL7 Kickstart Guide | https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-simple-install-kickstart|
+Building a Hardened Centos VM Template using Packer We are going to build for centos-7, which is not one of the examples that Jetbrains provides. However, there are several pull requests on the github repo which contain some examples to work from.</description>
+    </item>
+    
+    <item>
+      <title>Cloudinit</title>
+      <link>/automation/hashicorp/cloudinit/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/automation/hashicorp/cloudinit/</guid>
+      <description>basics directory layout
+https://cloudinit.readthedocs.io/en/latest/topics/dir_layout.html
+UserData and Metadata config files passed in as gzip compressed base64 encoded strings from terraform or govc
+cyberchef is your friend for debugging these.
+debugging https://cloudinit.readthedocs.io/en/latest/topics/debugging.html
+# grab logs cloud-init collect-logs # analyze cloud init cloud-init analyze show -i /var/log/cloud-init.log # see what vmtoolsd sent vmtoolsd --cmd &amp;quot;info-get guestinfo.userdata&amp;quot; # cloud-init --debug init cloud-init --debug modules -m config </description>
+    </item>
+    
+    <item>
+      <title>Docker Basics</title>
+      <link>/docker/dockerbasics/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/docker/dockerbasics/</guid>
+      <description>running images NOTE: order of arguments matters, imagename must be at the end.
+docker run -p 7777/7777 -d &amp;lt;imagename&amp;gt; NOT docker run &amp;lt;imagename&amp;gt; -d -p 7777/7777 you will get an extremely unhelpful error message like if you do not
+docker: Error response from daemon: OCI runtime create failed: container_linux.go:346: starting container process caused &amp;quot;exec: \&amp;quot;-p\&amp;quot;: executable file not found in $PATH&amp;quot;: unknown. run docker image in background docker run -d &amp;lt;image&amp;gt; run docker image mapping a port docker run -p 80:80/tcp run command (shell) in running container docker exec -it &amp;lt;container_id&amp;gt; /bin/bash run command (shell) in image docker run -it &amp;lt;image&amp;gt; /bin/bash building images build docker image from dockerfile in CWD with tag docker build .</description>
+    </item>
+    
+    <item>
+      <title>Docker Setup</title>
+      <link>/docker/dockersetup/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/docker/dockersetup/</guid>
+      <description>installing docker on ubuntu 18.04 DO NOT USE UBUNTU SNAP, SNAP NOT SUPPORTED ANY MORE (20191117) guide: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
+(setup) sudo apt install apt-transport-https ca-certificates curl software-properties-common curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - sudo add-apt-repository &amp;quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable&amp;quot; sudo apt update (check to make sure docker will be installed from the right place) apt-cache policy docker-ce (install) sudo apt install docker-ce sudo apt install docker-compose sudo systemctl status docker </description>
+    </item>
+    
+    <item>
+      <title>Foreman Usage</title>
+      <link>/automation/katello/foremanusage/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/automation/katello/foremanusage/</guid>
+      <description>Foreman Manual
+cstan - orphan task cleanup
+Foreman Plugins List Plugins available to install
+sudo foreman-installer --help | grep enable- adding plugins # can be added post install, eg foreman-installer --enable-foreman-compute-vmware --enable-foreman-compute-vmware --enable-foreman-compute-ec2 --enable-foreman-compute-gce --enable-foreman-plugin-digitalocean --enable-foreman-plugin-ansible --enable-foreman-plugin-openscap foreman debugging # basic health check foreman-maintain health check postgres commands # tasks su - postgres -c &amp;quot;psql foreman -c &#39;select * from foreman_tasks_tasks&#39;&amp;quot; # locks su - postgres -c &amp;quot;psql foreman -c &#39;select * from foreman_tasks_locks&#39;&amp;quot; # really wide query, su to postgres and do this PAGER=&amp;quot;less -S&amp;quot; psql foreman -c &#39;select * from foreman_tasks_tasks&#39; rake commands foreman-rake katello:upgrade_check # clean task log foreman-rake foreman_tasks:cleanup TASK_SEARCH=&amp;quot;&amp;quot; AFTER=1d #resync db, useful after task cleanup foreman-rake katello:reimport # rake console foreman-rake console # delete task by ID, from rake console ForemanTasks::Task.</description>
+    </item>
+    
+    <item>
+      <title>GCP Setup</title>
+      <link>/gcp/setup/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/gcp/setup/</guid>
+      <description>installing SDK (Includes CLI) https://cloud.google.com/sdk/docs/
+linux echo &amp;quot;deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main&amp;quot; | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add - sudo apt-get update &amp;amp;&amp;amp; sudo apt-get install google-cloud-sdk mac download sdk
+https://cloud.google.com/sdk/docs/#mac
+run install.sh
+Basic configuration gcloud init gcloud config configurations list zone us-east4-a</description>
+    </item>
+    
+    <item>
+      <title>govc</title>
+      <link>/vmware/govc/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/vmware/govc/</guid>
+      <description>Date Added Description Link     2019-11-26 Govc Usage https://github.com/vmware/govmomi/blob/master/govc/USAGE.md    Setup installing brew tap govmomi/tap/govc &amp;amp;&amp;amp; brew install govmomi/tap/govc
+note that this might not be the latest version. my homebrew only had 0.19 which notably didn&amp;rsquo;t contain the library commands. I just grabbed the latest release from here: https://github.com/vmware/govmomi/releases and put it in ~/bin
+Configuring govc for use source govc-vars.sh $ alias govc=$(pwd)/govc_darwin_amd64 $ export GOVC_URL=vcenter.</description>
+    </item>
+    
+    <item>
+      <title>Hashicorp Terraform</title>
+      <link>/automation/hashicorp/terraform/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/automation/hashicorp/terraform/</guid>
+      <description>Date Added Description Link     2019-11-26 Terraform Docs https://www.terraform.io/docs   2019-11-29 tf 0.12 release notes https://discuss.hashicorp.com/t/terraform-0-12-14-released/3898   2019-11-29 Vault Provider https://www.terraform.io/docs/providers/vault/index.html   2019-11-29 Vault Generic Secret Provider https://www.terraform.io/docs/providers/vault/d/generic_secret.html   2019-11-29 Terraform clone on vsphere https://sdorsett.github.io/post/2018-12-24-using-terraform-to-clone-a-virtual-machine-on-vsphere/   2019-11-29 tf issues https://itnext.io/things-i-wish-i-knew-about-terraform-before-jumping-into-it-43ee92a9dd65   2019-11-29 local and remote exec provisioners https://sdorsett.github.io/post/2018-12-26-using-local-exec-and-remote-exec-provisioners-with-terraform/   2019-11-29 simple k8s example https://github.com/vmware/simple-k8s-test-env/blob/master/e2e/vsphere.tf   2019-12-1 terraform and vsphere with cloudinit examples https://floating.</description>
+    </item>
+    
+    <item>
+      <title>Hashicorp Vault</title>
+      <link>/automation/hashicorp/vault/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/automation/hashicorp/vault/</guid>
+      <description>Date Added Description Link     2019-11-26 VaultEnv https://github.com/channable/vaultenv   2019-11-29 Vault generic_secret provider https://www.terraform.io/docs/providers/vault/d/generic_secret.html   2019-11-29 Vault kv engine https://www.vaultproject.io/docs/secrets/kv/   2019-11-29 Vault Auth Token API https://www.vaultproject.io/api/auth/token/index.html    Setup start server vault server -config=/Users/gnotch/Dropbox/vault/vault.hcl unseal vault &amp;amp; login (by default, 3x with 3 diff unseal keys)
+vault operator unseal vault login Ignore TLS validation export VAULT_SKIP_VERIFY=true vault -tls-skip-verify VAULT_TOKEN vault login just creates ~/.</description>
+    </item>
+    
+    <item>
+      <title>Katello CentOS 7</title>
+      <link>/automation/katello/katellocentos7/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/automation/katello/katellocentos7/</guid>
+      <description>Initial Setup create product hammer product create --organization-id 1 \ --name &amp;quot;CentOS 7 Linux for x86_64&amp;quot; \ --description &amp;quot;Repositories to use with CentOS 7 Linux&amp;quot; import key hammer gpg create --organization-id 1 \ --key &amp;quot;RPM-GPG-KEY-CentOS-7&amp;quot; \ --name &amp;quot;RPM-GPG-KEY-CentOS-7&amp;quot; http://mirror.cogentco.com/pub/linux/centos/7/os/x86_64/
+Add Repos BaseOS hammer repository create --organization-id 1 \ --product &amp;quot;CentOS 7 Linux for x86_64&amp;quot; \ --name &amp;quot;CentOS 7 Base RPMS&amp;quot; \ --label &amp;quot;CentOS_7_Base_RPMS&amp;quot; \ --content-type &amp;quot;yum&amp;quot; \ --download-policy &amp;quot;on_demand&amp;quot; \ --gpg-key &amp;quot;RPM-GPG-KEY-CentOS-7&amp;quot; \ --url &amp;quot;http://mirror.</description>
+    </item>
+    
+    <item>
+      <title>Katello CentOS 8</title>
+      <link>/automation/katello/katellocentos8/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/automation/katello/katellocentos8/</guid>
+      <description>CentOS 8 Mirrors nearby http://mirror.cogentco.com/pub/linux/centos/8/
+http://mirror.vtti.vt.edu/centos/8/BaseOS/x86_64/
+Adding Centos 8 Repository https://computingforgeeks.com/sync-centos-8-repositories-on-satellite-katello-foreman/
+Initial Setup # Create CentOS 8 Product hammer product create --organization-id 1 \ --name &amp;quot;CentOS 8 Linux for x86_64&amp;quot; \ --description &amp;quot;Repositories to use with CentOS 8 Linux&amp;quot; # import centos PKI mkdir /etc/pki/rpm-gpg/import/ cd /etc/pki/rpm-gpg/import/ wget https://www.centos.org/keys/RPM-GPG-KEY-CentOS-Official hammer gpg create --organization-id 1 \ --key &amp;quot;RPM-GPG-KEY-CentOS-Official&amp;quot; \ --name &amp;quot;RPM-GPG-KEY-CentOS-8&amp;quot; Add Repos # BaseOS hammer repository create --organization-id 1 \ --product &amp;quot;CentOS 8 Linux for x86_64&amp;quot; \ --name &amp;quot;CentOS 8 Base RPMS&amp;quot; \ --label &amp;quot;CentOS_8_Base_RPMS&amp;quot; \ --content-type &amp;quot;yum&amp;quot; \ --download-policy &amp;quot;on_demand&amp;quot; \ --gpg-key &amp;quot;RPM-GPG-KEY-CentOS-8&amp;quot; \ --url &amp;quot;http://mirror.</description>
+    </item>
+    
+    <item>
+      <title>Katello Setup</title>
+      <link>/automation/katello/katellosetup/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/automation/katello/katellosetup/</guid>
+      <description>https://theforeman.org/plugins/katello/3.13/installation/index.html
+http://www.outsidaz.org/2017/02/12/adventures-in-katello-part-1/
+Preflight   The machine needs at least 8G of ram and 2 VCPU (12 and 4 recommended)
+  The path /var/spool/squid/ is used as a temporary location for some types of repository syncs and may grow to consume 10s of GB of space before the files are migrated to /var/lib/pulp. You may wish to put this on the same partition as /var/lib/pulp.
+  TL;DR create big external volumes for /var/spool/squid &amp;amp;/var/lib/pulp</description>
+    </item>
+    
+    <item>
+      <title>Katello Usage</title>
+      <link>/automation/katello/katellousage/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/automation/katello/katellousage/</guid>
+      <description>Katello commands # stop katello katello-service stop # start katello katello-service start # main production log tail -f /var/log/foreman/production.log Hammer commands # list org, get ID hammer organization list # list products hammer product list --organization-id 1 # list repositories for product hammer repository list --organization-id 1 --product &amp;quot;CentOS 8 Linux for x86_64&amp;quot; # sync repos hammer repository synchronize --async --organization-id 1 \ --product &amp;quot;CentOS 8 Linux for x86_64&amp;quot; \ --id &amp;quot;$i&amp;quot;; hammer repository synchronize --organization-id 1 --product &amp;quot;CentOS 8 Linux for x86_64&amp;quot; --id 1 # confirm sync state hammer product list --name &amp;quot;CentOS 8 Linux for x86_64&amp;quot; --organization-id 1 Sync Repos # centos8 for i in $(seq 1 5); do \ hammer repository synchronize --async --organization-id 1 \ --product &amp;quot;CentOS 8 Linux for x86_64&amp;quot; \ --id &amp;quot;$i&amp;quot;; \ done # centos7 for i in $(seq 6 8); do \ hammer repository synchronize --async --organization-id 1 \ --product &amp;quot;CentOS 7 Linux for x86_64&amp;quot; \ --id &amp;quot;$i&amp;quot;; \ done Client # upload initial eratta katello-package-upload -f </description>
+    </item>
+    
+    <item>
+      <title>Mac VMware</title>
+      <link>/vmware/macvmware/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/vmware/macvmware/</guid>
+      <description>govc brew install govmomi/tap/govc mac powershell brew tap caskroom/cask brew cask install powershell PowerCLI Install-Module -Name VMware.PowerCLI -Scope CurrentUser Get-Command -Module *VMWare* </description>
+    </item>
+    
+    <item>
+      <title>OVF / OVA</title>
+      <link>/vmware/ofv-ova/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/vmware/ofv-ova/</guid>
+      <description>OVF Tool https://www.vmware.com/support/developer/ovf/index.html
+Links https://gist.github.com/willianantunes/c8e4ad230c30297c4a1b
+https://vuptime.io/2017/03/06/vmware-dive-into-ovf-properties/
+http://everything-virtual.com/2016/05/06/creating-a-centos-7-2-vmware-gold-template/
+https://stackoverflow.com/questions/33613308/how-can-i-make-a-ova-which-works-with-static-ip-addreses
+https://thevirtualist.org/creating-customizable-linux-ovf-template/</description>
+    </item>
+    
+    <item>
+      <title>Powershell</title>
+      <link>/windows/powershell/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/windows/powershell/</guid>
+      <description>mac powershell https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-6
+brew tap caskroom/cask brew cask install powershell Windows Events Get-WinEvent
+Get-Eventlog
+https://blogs.technet.microsoft.com/ashleymcglone/2013/08/28/powershell-get-winevent-xml-madness-getting-details-from-event-logs/
+https://letitknow.wordpress.com/2012/09/02/powershell-and-the-applications-and-services-logs/
+ # GroupPolicy Examples Get-EventLog -LogName Application | Where-Object {$_.EventId -eq 6006} Get-EventLog -LogName Application | Where-Object {$_.EventId -eq 8000} Get-EventLog -LogName Application | Where-Object {$_.EventId -eq 8001} Get-EventLog -LogName Application | Where-Object {$_.EventId -eq 8006} Get-EventLog -LogName Application | Where-Object {$_.EventId -eq 8007} Get-WinEvent -FilterHashTable @{ LogName = &amp;quot;Microsoft-Windows-GroupPolicy/Operational&amp;quot;; ID = 4016 } -MaxEvents 10 Get-WinEvent -FilterHashTable @{ LogName = &amp;quot;Microsoft-Windows-GroupPolicy/Operational&amp;quot;; ID = 5312 } -MaxEvents 3 | fl (other eventIDs - 4016,5016,5317, etc) # CAPI Examples https://github.</description>
+    </item>
+    
+    <item>
+      <title>Puppet</title>
+      <link>/automation/katello/puppet/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/automation/katello/puppet/</guid>
+      <description>https://www.puppetcookbook.com/
+check client status /opt/puppetlabs/bin/puppet agent --test Install some modules cd /opt/puppetlabs/bin ./puppet module list ./puppet module install puppetlabs/ntp ./puppet module install puppetlabs/motd ./puppet module install puppetlabs/accounts ./puppet module install saz-sudo specify environment puppet module --environment test list validate (on server) puppet parser validate site.pp </description>
+    </item>
+    
+    <item>
+      <title>Rancher</title>
+      <link>/kubernetes/rancher/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/kubernetes/rancher/</guid>
+      <description>single node installation https://rancher.com/docs/rancher/v2.x/en/installation/single-node/
+see below for quickstart (assuming docker running on a unix host)
+Persistent Data Rancher uses etcd as datastore. When using the Single Node Install, the embedded etcd is being used. The persistent data is at the following path in the container: /var/lib/rancher. You can bind mount a host volume to this location to preserve data on the host it is running on. (put in /opt/rancher, chown&amp;rsquo;d to user:docker, g+w)</description>
+    </item>
+    
+    <item>
+      <title>Upgrading</title>
+      <link>/vmware/upgrading/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/vmware/upgrading/</guid>
+      <description>VMware files https://datavak.eu/vmware/
+VMware patch tracker https://esxi-patches.v-front.de/ESXi-6.7.0.html#2018-10-16
+VMware Upgrade https://vmiss.net/2018/10/17/upgrade-esxi-67-u1-vmware-vsphere-update-manager/
+https://virtualizationreview.com/articles/2018/10/22/upgrading-to-vcsa-67u1.aspx
+Updating from CLI (in this case the Jan 2019 version of 6.7.0U1)
+# Cut and paste these commands into an ESXi shell to update your host with this Imageprofile # See the Help page for more instructions # esxcli network firewall ruleset set -e true -r httpClient esxcli software profile update -p ESXi-6.7.0-20190104001-standard \ -d https://hostupdate.vmware.com/software/VUM/PRODUCTION/main/vmw-depot-index.xml esxcli network firewall ruleset set -e false -r httpClient # # Reboot to complete the upgrade </description>
+    </item>
+    
+    <item>
+      <title>Vanilla Packer ESX Scripts</title>
+      <link>/automation/hashicorp/vanillapackeresxscripts/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/automation/hashicorp/vanillapackeresxscripts/</guid>
+      <description>Date Added Description Link     2019-11-24 vmware-iso Packer Docs https://www.packer.io/docs/builders/vmware-iso.html   2019-11-24 VMware Cloud-Init GuestInfo https://github.com/vmware/cloud-init-vmware-guestinfo   2019-11-24 Configuring ESXi Prereqs https://blog.ukotic.net/2019/03/05/configuring-esxi-prerequisites-for-packer/    VMware Packer Scripts for CentOS code is available here https://git.notch.org/notch/vmware-automation/tree/master/vmware-packer NOTE: While this technique and code works, I&amp;rsquo;m would strongly suggest dropping this in favor of using the packer plugins and scripts that Jetbrains has on github. See the article on that in this section.</description>
+    </item>
+    
+    <item>
+      <title>Vmware Govc Cloudinit</title>
+      <link>/automation/hashicorp/vmwaregovccloudinit/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/automation/hashicorp/vmwaregovccloudinit/</guid>
+      <description>Date Added Description Link     2019-11-26 CloudInit Docs https://cloudinit.readthedocs.io/en/latest/v   2019-11-26 Cloud-init for Vsphere https://blah.cloud/infrastructure/using-cloud-init-for-vm-templating-on-vsphere/   2019-11-26 DO Cloud-Init Intro https://www.digitalocean.com/community/tutorials/an-introduction-to-cloud-config-scripting   2019-11-26 DO Cloud-Init Tutorial https://www.digitalocean.com/community/tutorials/how-to-use-cloud-config-for-your-initial-server-setup   2019-11-26 VMware Cloud Init Guestinfo https://github.com/vmware/cloud-init-vmware-guestinfo    Deploying a clone of a template with config Prerequistites  vcenter server govc installed (version &amp;gt; 0.21) template of vm created (see JetBrainsPackerVsphere.md)  this assumes you have 3 things - cloud-config script - network-config script - metadata.</description>
+    </item>
+    
+    <item>
+      <title>VMware Networking </title>
+      <link>/vmware/vmware-networking/</link>
+      <pubDate>Sun, 27 Oct 2019 15:06:15 -0400</pubDate>
+      
+      <guid>/vmware/vmware-networking/</guid>
+      <description>Vlan configuration - vmware https://kb.vmware.com/s/article/1003806
+Esxi network debugging commands https://blogs.vmware.com/vsphere/2018/12/esxi-network-troubleshooting-tools.html</description>
+    </item>
+    
+    <item>
+      <title>PowerCLI</title>
+      <link>/vmware/powercli/</link>
+      <pubDate>Sun, 27 Oct 2019 14:02:17 -0400</pubDate>
+      
+      <guid>/vmware/powercli/</guid>
+      <description>PowerCLI Changelog https://vdc-download.vmware.com/vmwb-repository/dcr-public/306e3e41-2a54-497e-8377-11a1cf36c107/76c39d63-455d-4f3a-af2a-368f3ea6647c/changelog.html
+Power CLI Users Guide https://code.vmware.com/docs/7335/powercli-11-0-0-user-s-guide
+Power CLI CMDlet reference https://code.vmware.com/docs/7336/cmdlet-reference
+PowerCLI Install Install-Module -Name VMWare.PowerCLI Ignore self signed certs Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -Confirm:$false Connect to vcenter connect-viserver -protocol https –server SERVERNAME Get information on VMs Get-VM | fl | more Get-VM | where-object {$_.PowerState –eq “PoweredOff”} Get-VM 〈yourvm〉 | Stop-VMguest iterate across VMs foreach ($var in $vars){ Do something… } Get-vm | where-object {$_.MemoryGB –eq 4 } | select -ExpandProperty Name | out-file c:\VMs.</description>
+    </item>
+    
+    <item>
+      <title>VMware APIs</title>
+      <link>/vmware/vmwareapi/</link>
+      <pubDate>Sun, 27 Oct 2019 14:02:17 -0400</pubDate>
+      
+      <guid>/vmware/vmwareapi/</guid>
+      <description>vsphere api stuff https://www.digitalocean.com/community/tutorials/how-to-use-web-apis-in-python-3
+https://code.vmware.com/apis/366/vsphere-automation https://github.com/vmware/vsphere-automation-sdk-python https://www.vmware.com/support/developer/vcsa-mgmt-sdk/index.html
+https://code.vmware.com/web/sdk/6.7/vsphere-automation-python https://vdc-download.vmware.com/vmwb-repository/dcr-public/3f9d46be-a5f4-452c-8b1c-ae2bb05bc0a6/58d6917d-4da9-45b1-869a-f68550834f8e/vsphere/index.html</description>
+    </item>
+    
+    <item>
+      <title>Windows 10</title>
+      <link>/windows/windows10/</link>
+      <pubDate>Sun, 27 Oct 2019 14:02:17 -0400</pubDate>
+      
+      <guid>/windows/windows10/</guid>
+      <description>creating a local windows 10 account https://www.groovypost.com/howto/create-local-account-windows-10/
+sysprep for windows vm image  %windir%\system32\sysprep\sysprep.exe /oobe /generalize /shutdown /mode:vm https://www.thomasmaurer.ch/2016/05/windows-sysprep-for-virtual-machines/
+extend a volume launching disk management snapin
+open elevated cmd.exe diskmgmt.msc partition article
+right click on existing partition and select &amp;ldquo;extend&amp;rdquo;, and follow wizard.
+windows 10 updater download https://www.microsoft.com/en-us/software-download/windows10
+Troubleshooting GPO (and speed) https://4sysops.com/archives/troubleshooting-group-policy-part-4-client-problems/
+http://woshub.com/troubleshoot-slow-gpo-processing-and-login-speed-impact/</description>
+    </item>
+    
+    <item>
+      <title>Windows Server</title>
+      <link>/windows/windowsserver/</link>
+      <pubDate>Sun, 27 Oct 2019 14:02:17 -0400</pubDate>
+      
+      <guid>/windows/windowsserver/</guid>
+      <description>TSS Debug Script https://github.com/CSS-Windows/WindowsDiag/tree/master/ALL/TSS
+setting up NTP server in Windows Server https://support.microsoft.com/en-us/help/816042/how-to-configure-an-authoritative-time-server-in-windows-server
+w32tm command
+https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/ff799054(v%3Dws.11)
+How credential processing works https://docs.microsoft.com/en-us/windows-server/security/windows-authentication/credentials-processes-in-windows-authentication
+https://www.ultimatewindowssecurity.com/securitylog/book/page.aspx?spid=chapter3
+window scaling tuning https://www.duckware.com/blog/how-windows-is-killing-internet-download-speeds/index.html
+List filter Drivers (WSC) https://ss64.com/nt/fltmc.html
+List windows drivers https://www.thewindowsclub.com/list-device-drivers-driverquery-command-prompt
+Get-WindowsDriver -Online driverquery /v | Select-String “running” </description>
+    </item>
+    
+    <item>
+      <title>Wireshark SSL Handshake</title>
+      <link>/networking/wiresharksslhandshake/</link>
+      <pubDate>Sun, 27 Oct 2019 13:52:21 -0400</pubDate>
+      
+      <guid>/networking/wiresharksslhandshake/</guid>
+      <description>ssl handshake searches in wireshark ssl.handshake.extensions_server_name == &amp;quot;graph.facebook.com&amp;quot; ssl.handshake.extensions_server_name != &amp;quot;graph.facebook.com&amp;quot; &amp;amp;&amp;amp; ssl.handshake.extensions_server_name != &amp;quot;itunes.apple.com&amp;quot; &amp;amp;&amp;amp; ssl.handshake.type ==1 </description>
+    </item>
+    
+    <item>
+      <title>SSL / Certificate Authority</title>
+      <link>/miscellaneous/certificateauthority/</link>
+      <pubDate>Sun, 27 Oct 2019 13:18:17 -0400</pubDate>
+      
+      <guid>/miscellaneous/certificateauthority/</guid>
+      <description>Date Added Description Link     2019-10-27 Smart Card / HSM Backed CA https://framkant.org/2018/04/smartcard-hsm-backed-openssl-ca/   2019-10-27 ECDSA PKI https://tools.ietf.org/id/draft-moskowitz-ecdsa-pki-01.html   2019-10-27 Jamielinux guide https://jamielinux.com/docs/openssl-certificate-authority/index.html?origin_team=TFEM4UUP7   2019-9-23 PanOS Cert Management https://www.paloaltonetworks.com/documentation/71/pan-os/pan-os/certificate-management/obtain-a-certificate-from-an-external-ca   2019-8-14 xca quick start https://blogs.sap.com/2017/06/26/how-to-guide-xca-quick-start-guide/   2019-8-14 common ssl commands https://www.sslshopper.com/article-most-common-openssl-commands.html   2019-8-14 openssl quick reference https://www.digicert.com/ssl-support/openssl-quick-reference-guide.htm   2019-8-14 soarez gist https://gist.github.com/Soarez/9688998    Generate TLS Certificate openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out MyCertificate.</description>
+    </item>
+    
+    <item>
+      <title>Arista</title>
+      <link>/networking/arista/</link>
+      <pubDate>Sun, 27 Oct 2019 12:32:02 -0400</pubDate>
+      
+      <guid>/networking/arista/</guid>
+      <description>getting vm working on esxi https://www.arista.com/en/cg-veos-router/veos-router-launching-vmware-esxi-60-and-65
+https://eos.arista.com/forum/how-to-boot-veos-combined-on-esxi/
+bgp design https://the-bitmask.com/2017/08/02/arista-veos-l3slv-part3/
+initial config https://www.arista.com/assets/data/pdf/user-manual/um-eos/Chapters/Initial%20Configuration%20and%20Recovery.pdf
+zerotouch cancel (reboots) login admin username admin secret pxq123 interface management 1 ip address 192.0.2.8/24 end copy running-config startup-config </description>
+    </item>
+    
+    <item>
+      <title>Azure Notes</title>
+      <link>/windows/azurenotes/</link>
+      <pubDate>Sun, 27 Oct 2019 12:32:02 -0400</pubDate>
+      
+      <guid>/windows/azurenotes/</guid>
+      <description>intune setup as MDM https://www.thelazyadministrator.com/2018/11/19/configure-and-deploy-intune-mdm/</description>
+    </item>
+    
+    <item>
+      <title>Cisco 3850</title>
+      <link>/networking/cisco3850/</link>
+      <pubDate>Sun, 27 Oct 2019 12:32:02 -0400</pubDate>
+      
+      <guid>/networking/cisco3850/</guid>
+      <description>wireshark on switch https://www.cisco.com/c/en/us/support/docs/switches/catalyst-3850-series-switches/117639-configure-wireshark-00.html
+capture reference https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/epc/command/epc-cr-book/epc-cr-m1.html#wp1398253443
+mac tftp server https://rick.cogley.info/post/run-a-tftp-server-on-mac-osx/
+config fragments ! vlan 99 name 99 ! interface GigabitEthernet1/0/11 description smesxi-vmnic1 switchport mode trunk 3850(config)#int Gi1/0/11 3850(config-if)#switchport trunk allowed vlan all trunking interface GigabitEthernet1/0/23 description ubnt24-uplink2 switchport mode trunk channel-group 1 mode active ! interface GigabitEthernet1/0/24 description ubnt24-uplink1 switchport mode trunk channel-group 1 mode active ! </description>
+    </item>
+    
+    <item>
+      <title>Palo Cheat Sheet</title>
+      <link>/paloalto/paloclicheatsheet/</link>
+      <pubDate>Sun, 27 Oct 2019 12:32:02 -0400</pubDate>
+      
+      <guid>/paloalto/paloclicheatsheet/</guid>
+      <description>Show general system health information.
+ show system info
+Show percent usage of disk partitions.
+ show system disk-space
+Show the maximum log file size.
+ show system logdb-quota
+Show running processes.
+ show system software status
+Show processes running in the management plane.
+ show system resources
+Show resource utilization in the dataplane.
+ show running resource-monitor
+Show the licenses installed on the device.
+ request license info
+Show when commits, downloads, and/or upgrades are completed.</description>
+    </item>
+    
+    <item>
+      <title>Palo Notes</title>
+      <link>/paloalto/palonotes/</link>
+      <pubDate>Sun, 27 Oct 2019 12:32:02 -0400</pubDate>
+      
+      <guid>/paloalto/palonotes/</guid>
+      <description>seting client timeout https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000CmATCA0
+commit config https://docs.paloaltonetworks.com/pan-os/7-1/pan-os-cli-quick-start/use-the-cli/commit-configuration-changes
+vm information sources https://docs.paloaltonetworks.com/pan-os/7-1/pan-os-web-interface-help/device/device-vm-information-sources
+pan-python https://github.com/kevinsteves/pan-python
+api browser http://api-lab.paloaltonetworks.com/introduction.html#the-api-browser
+Ansible API Ansible Palo Alto Automation API
+Pandevice Python Framework PanDevice Tutorial
+PanDevice Chats PanDevice Chat 2</description>
+    </item>
+    
+    <item>
+      <title>IOS App Dump / Decrypt</title>
+      <link>/reverseengineering/ios-app-dump-decrypt/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/reverseengineering/ios-app-dump-decrypt/</guid>
+      <description>overview https://ivrodriguez.com/decrypting-ios-applications-ios-12-edition/
+https://medium.com/@felipejfc/the-ultimate-guide-for-live-debugging-apps-on-jailbroken-ios-12-4c5b48adf2fb
+brew install usbmuxd git clone https://github.com/AloneMonkey/frida-ios-dump cd frida-ios-dump python2 -m virtualenv . source bin/activate pip install -r requirements.txt iproxy 2222 22 ./dump.py [APPNAME] frida-ios-dump https://github.com/AloneMonkey/frida-ios-dump
+ssh over usb (libusb) https://iphonedevwiki.net/index.php/SSH_Over_USB
+frida https://www.frida.re/docs/ios/#with-jailbreak
+tracing with friday https://techblog.mediaservice.net/2017/09/tracing-arbitrary-methods-and-function-calls-on-android-and-ios
+python2 virtualenv https://help.dreamhost.com/hc/en-us/articles/215489338-Installing-and-using-virtualenv-with-Python-2</description>
+    </item>
+    
+    <item>
+      <title>Powerline</title>
+      <link>/linux/powerline/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/powerline/</guid>
+      <description>install powerline https://powerline.readthedocs.io/en/latest/
+(ensure you are installing this into the right pip place)
+pip install powerline-status install patched powerline fonts https://github.com/powerline/fonts
+ meslo slashed (LG S) GoMono Cousine Droid Sans Mono Slashed ***  add powerline to tmux https://powerline.readthedocs.io/en/latest/usage/other.html#tmux-statusline
+# add to .tmux.conf run-shell &amp;quot;powerline-daemon -q&amp;quot; source &amp;quot;/usr/local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf&amp;quot; # if necessary run (on linux this will be in .local/bin with the python modules) powerline-config tmux setup config locations https://powerline.readthedocs.io/en/latest/configuration/local.html#powerline-script-overrides
+# get powerline install location pip show powerline-status | grep Location | awk &#39;{print $2}&#39; # main config $powerline/powerline/config_files/themes/tmux # tmux theme $powerline/powerline/config_files/config.</description>
+    </item>
+    
+    <item>
+      <title>Random Unix Gems</title>
+      <link>/linux/randomunixgems/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/randomunixgems/</guid>
+      <description>Generate Unique MAC address for host GiantDorks Bash Function
+GetMAC() { if [ -n &amp;#34;$1&amp;#34; ]; then OID=&amp;#34;00:16:3e&amp;#34; RAND=$(echo $1 | md5sum | sed &amp;#39;s/\(..\)\(..\)\(..\).*/\1:\2:\3/&amp;#39;) echo &amp;#34;$OID:$RAND&amp;#34; else echo &amp;#34;ERROR: please supply hostname to create MAC address from, e.g.:&amp;#34; echo &amp;#34; $FUNCNAMEmyhost&amp;#34; fi } CommandLineFu OneLiner
+echo 00:16:3e$(gethostip 10.1.2.11 | awk &#39;{ print tolower(substr($3,3)) }&#39; |sed &#39;s/.\{2\}/:&amp;amp;/g&#39; ) Iterate across a list of items in a file read a list of IP addresses from a file and do a dig reverse look up</description>
+    </item>
+    
+    <item>
+      <title>Tmux</title>
+      <link>/linux/tmux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/tmux/</guid>
+      <description>quick commands hit man command (command-b) then
+   Command Description     C-o swap panes    cheat sheet https://gist.github.com/MohamedAlaa/2961058
+tutorial https://lukaszwrobel.pl/blog/tmux-tutorial-split-terminal-windows-easily/
+https://medium.com/@joe_wolfe_21/the-ultimate-terminal-67e93665459d
+dotfile https://github.com/tangledhelix/dotfiles/blob/master/tmux.conf
+iterm2 keymaps http://tangledhelix.com/blog/2012/04/28/iterm2-keymaps-for-tmux/
+customizing info https://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/
+iterm scrollback Main&amp;gt; terminal may access clipboard advanced &amp;gt; scroll wheel sends arrow keys when in alternate screen mode profile &amp;gt; both save lines to scrollback when…. boxes checked https://dan.carley.co/blog/2013/01/11/tmux-scrollback-with-iterm2/
+https://stackoverflow.com/questions/36594420/how-can-i-turn-off-scrolling-the-history-in-iterm2
+https://medium.freecodecamp.org/tmux-in-practice-scrollback-buffer-47d5ffa71c93
+vim solarized vim, tmux, truecolor</description>
+    </item>
+    
+    <item>
+      <title>XCode 11 LLDB Python 2</title>
+      <link>/reverseengineering/maclldbpythonfix/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/reverseengineering/maclldbpythonfix/</guid>
+      <description>Mac Xcode 11 LLDB Python2 config fixes lldb so that python2 is used (so fG!&amp;rsquo;s lldbinit works&amp;rsquo;)
+defaults write com.apple.dt.lldb DefaultPythonVersion 2 https://github.com/facebook/chisel/issues/262</description>
+    </item>
+    
+    <item>
+      <title>Zsh</title>
+      <link>/linux/zsh/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/zsh/</guid>
+      <description>install oh-my-zsh (yolo!) sh -c &amp;quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&amp;quot; redo new user setup autoload -U zsh-newuser-install zsh-newuser-install -f fix compinit errors for sudo https://github.com/robbyrussell/oh-my-zsh/issues/6835</description>
+    </item>
     
   </channel>
 </rss>

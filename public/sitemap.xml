@@ -3,8 +3,318 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/basics/</loc>
-    <lastmod>2019-10-26T20:23:43-04:00</lastmod>
+    <loc>/reverseengineering/</loc>
+    <lastmod>2019-10-26T20:56:03-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/networking/</loc>
+    <lastmod>2019-10-26T20:55:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/paloalto/</loc>
+    <lastmod>2019-10-26T20:55:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/vmware/</loc>
+    <lastmod>2019-10-26T20:55:48-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/windows/</loc>
+    <lastmod>2019-10-26T20:55:48-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2019-10-26T20:55:34-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/python/</loc>
+    <lastmod>2019-10-26T20:55:34-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/mac/appleremotedesktop/</loc>
+    <lastmod>2019-12-15T13:18:17-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/mac/mackeychain/</loc>
+    <lastmod>2019-12-15T13:18:17-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/mac/randommacgems/</loc>
+    <lastmod>2019-12-15T13:18:17-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/automation/</loc>
+    <lastmod>2019-11-23T11:31:11-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/automation/hashicorp/</loc>
+    <lastmod>2019-11-23T11:31:11-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/automation/katello/</loc>
+    <lastmod>2019-11-23T11:31:11-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/gcp/</loc>
+    <lastmod>2019-11-20T11:31:05-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/azure/</loc>
+    <lastmod>2019-11-20T11:31:05-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/vmware/vsphereesxi/</loc>
+    <lastmod>2019-10-27T15:57:57-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/linux/centosconfig/</loc>
+    <lastmod>2019-10-27T15:53:35-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/linux/ipcmd/</loc>
+    <lastmod>2019-10-27T15:53:35-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/linux/ubuntuconfig/</loc>
+    <lastmod>2019-10-27T15:53:35-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/networking/iperf/</loc>
+    <lastmod>2019-10-27T15:48:57-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/vmware/nsxt/</loc>
+    <lastmod>2019-10-27T15:41:33-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/vmware/nsxt-networking/</loc>
+    <lastmod>2019-10-27T15:41:33-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/automation/ansible/</loc>
+    <lastmod>2019-10-27T15:06:15-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/azure/setup/</loc>
+    <lastmod>2019-10-27T15:06:15-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/automation/hashicorp/centosjetbrainspacker/</loc>
+    <lastmod>2019-10-27T15:06:15-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/automation/hashicorp/cloudinit/</loc>
+    <lastmod>2019-10-27T15:06:15-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docker/dockerbasics/</loc>
+    <lastmod>2019-10-27T15:06:15-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docker/dockersetup/</loc>
+    <lastmod>2019-10-27T15:06:15-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/automation/katello/foremanusage/</loc>
+    <lastmod>2019-10-27T15:06:15-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/gcp/setup/</loc>
+    <lastmod>2019-10-27T15:06:15-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/vmware/govc/</loc>
+    <lastmod>2019-10-27T15:06:15-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/automation/hashicorp/terraform/</loc>
+    <lastmod>2019-10-27T15:06:15-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/automation/hashicorp/vault/</loc>
+    <lastmod>2019-10-27T15:06:15-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/automation/katello/katellocentos7/</loc>
+    <lastmod>2019-10-27T15:06:15-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/automation/katello/katellocentos8/</loc>
+    <lastmod>2019-10-27T15:06:15-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/automation/katello/katellosetup/</loc>
+    <lastmod>2019-10-27T15:06:15-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/automation/katello/katellousage/</loc>
+    <lastmod>2019-10-27T15:06:15-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/vmware/macvmware/</loc>
+    <lastmod>2019-10-27T15:06:15-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/vmware/ofv-ova/</loc>
+    <lastmod>2019-10-27T15:06:15-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/windows/powershell/</loc>
+    <lastmod>2019-10-27T15:06:15-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/automation/katello/puppet/</loc>
+    <lastmod>2019-10-27T15:06:15-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/kubernetes/rancher/</loc>
+    <lastmod>2019-10-27T15:06:15-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/vmware/upgrading/</loc>
+    <lastmod>2019-10-27T15:06:15-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/automation/hashicorp/vanillapackeresxscripts/</loc>
+    <lastmod>2019-10-27T15:06:15-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/automation/hashicorp/vmwaregovccloudinit/</loc>
+    <lastmod>2019-10-27T15:06:15-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/vmware/vmware-networking/</loc>
+    <lastmod>2019-10-27T15:06:15-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/vmware/powercli/</loc>
+    <lastmod>2019-10-27T14:02:17-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/vmware/vmwareapi/</loc>
+    <lastmod>2019-10-27T14:02:17-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/windows/windows10/</loc>
+    <lastmod>2019-10-27T14:02:17-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/windows/windowsserver/</loc>
+    <lastmod>2019-10-27T14:02:17-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/networking/wiresharksslhandshake/</loc>
+    <lastmod>2019-10-27T13:52:21-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/miscellaneous/certificateauthority/</loc>
+    <lastmod>2019-10-27T13:18:17-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/networking/arista/</loc>
+    <lastmod>2019-10-27T12:32:02-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/windows/azurenotes/</loc>
+    <lastmod>2019-10-27T12:32:02-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/networking/cisco3850/</loc>
+    <lastmod>2019-10-27T12:32:02-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/paloalto/paloclicheatsheet/</loc>
+    <lastmod>2019-10-27T12:32:02-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/paloalto/palonotes/</loc>
+    <lastmod>2019-10-27T12:32:02-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docker/</loc>
+    <lastmod>2019-10-27T11:31:11-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/mac/</loc>
+    <lastmod>2019-10-27T11:31:11-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/miscellaneous/</loc>
+    <lastmod>2019-10-27T11:31:11-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/kubernetes/</loc>
+    <lastmod>2019-10-27T11:31:05-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/linux/</loc>
+    <lastmod>2019-10-27T11:31:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/aws/</loc>
+    <lastmod>2019-10-27T11:30:43-04:00</lastmod>
   </url>
   
   <url>
@@ -12,11 +322,31 @@
   </url>
   
   <url>
-    <loc>/</loc>
+    <loc>/reverseengineering/ios-app-dump-decrypt/</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/powerline/</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/randomunixgems/</loc>
   </url>
   
   <url>
     <loc>/tags/</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/tmux/</loc>
+  </url>
+  
+  <url>
+    <loc>/reverseengineering/maclldbpythonfix/</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/zsh/</loc>
   </url>
   
 </urlset>

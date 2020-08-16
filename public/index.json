@@ -1,10 +1,444 @@
 [
 {
-	"uri": "/basics/",
-	"title": "Basics",
+	"uri": "/reverseengineering/",
+	"title": "Reverse Engineering",
 	"tags": [],
 	"description": "",
-	"content": " Chapter X Some Chapter title Lorem Ipsum.\n"
+	"content": "Links    Date Added Description Link     2019-10-27 LLDB Tutorial https://lldb.llvm.org/use/tutorial.html   2019-10-27 Simtaco Ghidra https://hackaday.io/project/164346-andxor-dc27-badge/log/164366-reverse-engineering-with-ghidra-simtaco-floppy-challenge   2019-8-27 KaiTai Struct https://kaitai.io/#what-is-it   2019-8-27 Veles https://codisec.com/veles/    "
+},
+{
+	"uri": "/networking/",
+	"title": "Networking",
+	"tags": [],
+	"description": "",
+	"content": "Links    Date Added Description Link     2019-10-27 Hugo Learn Docs https://learn.netlify.com/en/    "
+},
+{
+	"uri": "/paloalto/",
+	"title": "Palo Alto",
+	"tags": [],
+	"description": "",
+	"content": "Links    Date Added Description Link     2019-10-27 Hugo Learn Docs https://learn.netlify.com/en/    "
+},
+{
+	"uri": "/vmware/",
+	"title": "VMware",
+	"tags": [],
+	"description": "",
+	"content": "Links    Date Added Description Link     2019-10-27 NSX-T 2.5 Release Notes https://docs.vmware.com/en/VMware-NSX-T-Data-Center/2.5/rn/VMware-NSX-T-Data-Center-250-Release-Notes.html   2019-10-27 NSX-T BGP Configuration https://www.spillthensxt.com/base-bgp-configuration-in-nsx-t/   2019-12-26 Cloning a VM with Instant Clone https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.vm_admin.doc/GUID-853B1E2B-76CE-4240-A654-3806912820EB.html    "
+},
+{
+	"uri": "/windows/",
+	"title": "Windows",
+	"tags": [],
+	"description": "",
+	"content": "Links    Date Added Description Link     2019-10-27 Hugo Learn Docs https://learn.netlify.com/en/    "
+},
+{
+	"uri": "/",
+	"title": "Documentation",
+	"tags": [],
+	"description": "",
+	"content": "Documentation Documentation for various things I\u0026rsquo;m working on: links, references, config fragments, snippets, etc.\ncreate new page\ncd content hugo new --kind page VMware/MacVMware.md create new chapter\ncd content hugo new --kind chapter python/_index.md Links    Date Added Description Link     2019-10-27 Hugo Learn Docs https://learn.netlify.com/en/   2019-10-27 Markdown CheatSheet https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet   2019-12-31 Markdown Reference https://www.markdownguide.org/extended-syntax/   2020-1-1 Firefox Markdown Clipper https://addons.mozilla.org/en-US/firefox/addon/markdown-clipper/?src=search https://github.com/enrico-kaack/markdown-clipper    \n"
+},
+{
+	"uri": "/python/",
+	"title": "Python",
+	"tags": [],
+	"description": "",
+	"content": "Links    Date Added Description Link     2019-10-27 Hugo Learn Docs https://learn.netlify.com/en/    "
+},
+{
+	"uri": "/mac/appleremotedesktop/",
+	"title": "Apple Remote Desktop",
+	"tags": [],
+	"description": "",
+	"content": "   Date Added Description Link     2020-1-30 enabling screensharing https://www.techrepublic.com/article/how-to-enable-screen-sharing-on-macs-via-terminal/   2020-1-30 enabling ARD https://support.apple.com/en-us/HT201710    sample commands # restart agent sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -restart -agent # enable agent, including menu item sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -activate -configure -allowAccessFor -allUsers -privs -all -clientopts -setmenuextra -menuextra yes # enable screensharing sudo defaults write /var/db/launchd.db/com.apple.launchd/overrides.plist com.apple.screensharing -dict Disabled -bool false "
+},
+{
+	"uri": "/mac/mackeychain/",
+	"title": "Mac Keychain",
+	"tags": [],
+	"description": "",
+	"content": "   Date Added Description Link     2019-11-24 Jamf Adding Keychain Discussion https://www.jamf.com/jamf-nation/discussions/22294/adding-a-certificate-to-the-system-keychain-set-to-always-trust    Mac KeyChain Stuff # grab SSL cert in DER format openssl s_client -showcerts -connect HOST:443 \u0026lt;/dev/null 2\u0026gt;/dev/null|openssl x509 -outform DER \u0026gt; /tmp/cerfificate.der # add to keychain /usr/bin/security -v add-trusted-cert -r trustAsRoot -e hostnameMismatch -d -p ssl -p smime -p codeSign -p IPSec -p basic -p swUpdate -p pkgSign -p eap -p timestamping -u -1 -k /Users/gnotch/Library/Keychains/login.keychain-db cerfificate.der Other Greasy Options # Login Keychain /usr/bin/security -v add-trusted-cert -r trustRoot -e hostnameMismatch -d -k /Users/gnotch/Library/Keychains/login.keychain-db certificate.pem # System Keychain Trustroot /usr/bin/security -v add-trusted-cert -r trustRoot -e hostnameMismatch -d -k /Library/Keychains/System.keychain /tmp/certificate.der "
+},
+{
+	"uri": "/mac/randommacgems/",
+	"title": "Random Mac Gems",
+	"tags": [],
+	"description": "",
+	"content": "   Date Added Description Link     2019-11-24 hi https://docs.notch.org    ip command on MacOS you can install the ip command on MacOS. see here for more details on how to use it\nbrew install iproute2mac disable notarization check in Catalina sudo xattr -dr com.apple.quarantine /Applications/Chromium.app then right click, open\nInstalling Catalina in VMware ESXi https://www.jomebrew.com/2019/10/macos-catalina-beta-on-vmwwre-esxi-67-u2.html\noverride serial/hw in vmx file (serial must be valid, and of same HW type)\nserialNumber = \u0026quot;SERIAL-NUM\u0026quot; hw.model = \u0026quot;MacPro6,1\u0026quot; "
+},
+{
+	"uri": "/automation/",
+	"title": "Automation",
+	"tags": [],
+	"description": "",
+	"content": "VMware Cloud Init    Date Added Description Link     2019-11-23 Enabling or disabling Linux guest customization with cloud-init https://kb.vmware.com/s/article/59557   2019-11-23 Customizing Guest Operating Systems https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.vm_admin.doc/GUID-58E346FF-83AE-42B8-BE58-253641D257BC.html   2019-11-23 Cloud Init Vmware GuestInfo https://github.com/vmware/cloud-init-vmware-guestinfo   2019-11-24 Jetbrains Packer Builder Vsphere https://github.com/jetbrains-infra/packer-builder-vsphere    "
+},
+{
+	"uri": "/automation/hashicorp/",
+	"title": "Hashicorp",
+	"tags": [],
+	"description": "",
+	"content": "   Date Added Description Link    "
+},
+{
+	"uri": "/automation/katello/",
+	"title": "Katello",
+	"tags": [],
+	"description": "",
+	"content": "Foreman And Katello    Date Added Description Link     2019-11-23 Foreman Quick Start Guide https://theforeman.org/manuals/1.23/quickstart_guide.html   2019-11-23 Katello Installation https://theforeman.org/plugins/katello/3.13/installation/index.html   2019-11-23 Katello User Guide https://theforeman.org/plugins/katello/nightly/user_guide/content_hosts/index.html   2019-11-23 Syncing Repos to Katello https://computingforgeeks.com/sync-centos-8-repositories-on-satellite-katello-foreman/   2019-11-23 Subscribing a CentoOS server to Katello https://computingforgeeks.com/how-to-subscribe-centos-server-to-katello-foreman/    VMware Cloud Init    Date Added Description Link     2019-11-23 Enabling or disabling Linux guest customization with cloud-init https://kb.vmware.com/s/article/59557   2019-11-23 Customizing Guest Operating Systems https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.vm_admin.doc/GUID-58E346FF-83AE-42B8-BE58-253641D257BC.html   2019-11-23 Cloud Init Vmware GuestInfo https://github.com/vmware/cloud-init-vmware-guestinfo    "
+},
+{
+	"uri": "/gcp/",
+	"title": "Google Cloud Platform",
+	"tags": [],
+	"description": "",
+	"content": "Links    Date Added Description Link     2019-11-27 GCP Console https://console.cloud.google.com/    "
+},
+{
+	"uri": "/azure/",
+	"title": "Microsoft Azure",
+	"tags": [],
+	"description": "",
+	"content": "Links    Date Added Description Link     2019-11-27 Azure Console https://portal.azure.com    "
+},
+{
+	"uri": "/vmware/vsphereesxi/",
+	"title": "VSphere / ESXi",
+	"tags": [],
+	"description": "",
+	"content": "vmware home lab http://techgenix.com/vmware-home-lab/\nVsan 2 node https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/vcat/vmware-virtual-san-two-node-architecture-service-provider-use-cases.pdf\nVCenter CA Certs https://esxsi.com/2017/09/11/vcenter-ca-certs\nVmotion https://kb.vmware.com/s/article/2054994\nsetting web client timeout https://kb.vmware.com/s/article/2040626\nhost affinity https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.resmgmt.doc/GUID-0591F865-91B5-4311-ABA6-84FBA5AAFB59.html\nVSphere CLI reference https://code.vmware.com/docs/6676/vsphere-command-line-interface-reference\nsetting maintenance mode from CLI syntax slightly wrong for 6.7 but basics correct https://www.vladan.fr/esxi-maintenance-mode/\nvrni https://www.virtualizationhowto.com/2019/01/installing-vrealize-network-insight-4-0-platform-and-proxy-appliances/\nfixing 10G ethernet problem on smesxi esxcli network nic down -n vmnic0 esxcli network nic up -n vmnic0 [root@smesxi:~] esxcli network nic set --speed 1000 --duplex full -n vmnic2 [root@smesxi:~] esxcli network nic set --speed 1000 --duplex full -n vmnic3 vsish -e set /net/pNics/vmnic3/linkSet 1 vmkload_mod -u drivername vmkload_mod drivername vmware cli - create documentation https://github.com/arielsanchezmora/vDocumentation ### instant clones https://www.virtuallyghetto.com/2018/04/new-instant-clone-architecture-in-vsphere-6-7-part-1.html https://www.virtuallyghetto.com/2018/04/new-instant-clone-architecture-in-vsphere-6-7-part-2.html http://www.yellow-bricks.com/2018/05/01/instant-clone-vsphere-67/ import VMDKs and convert https://kb.vmware.com/s/article/1028943\nvmkfstools -i HostedVirtualDisk ESXVirtualDisk Where HostedVirtualDisk is the path to the vmdk on the host and ESXVirtualDisk is the vmdk to be output by the command.\nFor example:\nvmkfstools -i /vmfs/volumes/datastore/virtual_machine_folder/ virtual_machine.vmdk /vmfs/volumes/datastore/new_virtual_machine_folder/ virtual_machine.vmdk make copy/paste work from individual ESXi VM https://kb.vmware.com/s/article/57122\nisolation.tools.copy.disable FALSE isolation.tools.paste.disable FALSE isolation.tools.setGUIOptions.enable TRUE vcenter root password reset https://www.kieri.com/how-to-fix-or-change-vcenter-root-password-expired-6-5-and-6-7/\nnetwork adapter disappears from windows VM https://kb.vmware.com/s/article/1020718\n"
+},
+{
+	"uri": "/linux/centosconfig/",
+	"title": "Centos Config",
+	"tags": [],
+	"description": "",
+	"content": "set up network/hostname nmtui Remove EPEL yum remove epel-release Restore Main Config sys-unconfig Disable Firewall sudo systemctl stop firewalld sudo systemctl disable firewalld Python 3.7 install yum install gcc openssl-devel bzip2-devel libffi-devel cd /usr/src curl -O https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tgz tar zxf Python-3.7.2.tgz ./configure --enable-optimizations make -j4 altinstall NFS tools yum install nfs-utils SELinux https://wiki.centos.org/HowTos/SELinux/\n"
+},
+{
+	"uri": "/linux/ipcmd/",
+	"title": "ip command",
+	"tags": [],
+	"description": "",
+	"content": "for those of us used to ifconfig for 25 years\u0026hellip;.\nshow ip interfaces # equivalent to ifconfig -a ip addr show add/remove ip address ip addr add 192.168.50.5 dev eth1 ip addr del 192.168.50.5/24 dev eth1 default gateway ip route add default via 192.168.50.100 link up ip link set eth1 up ip link set eth1 down routes ip route show ip route add 10.10.20.0/24 via 192.168.50.100 dev eth0 ip route del 10.10.20.0/24 MacOS you can install the ip command on MacOS with\nbrew install iproute2mac "
+},
+{
+	"uri": "/linux/ubuntuconfig/",
+	"title": "Ubuntu Config",
+	"tags": [],
+	"description": "",
+	"content": "set hostname sudo hostnamectl set-hostname linuxconfig Futhermore, check for the existence of /etc/cloud/cloud.cfg configuration. If the file exists edit the file and change the settings within:\nFROM: preserve_hostname: false TO: preserve_hostname: true reset hostid for dhcp https://unix.stackexchange.com/questions/419321/why-are-my-cloned-linux-vms-fighting-for-the-same-ip\nsystemd-networkd uses a different method to generate the DUID than dhclient. dhclient by default uses the link-layer address while systemd-networkd uses the contents of /etc/machine-id. Since the VMs were cloned, they have the same machine-id and the DHCP server returns the same IP for both. To fix, replace the contents of one or both of /etc/machine-id. This can be anything, but deleting the file and running systemd-machine-id-setup will create a random machine-id in the same way done on machine setup.\nrestart networking\nnetplan apply\niface eth0 inet static address 10.0.0.41 netmask 255.255.255.0 network 10.0.0.0 broadcast 10.0.0.255 gateway 10.0.0.1 dns-nameservers 10.0.0.1 8.8.8.8 dns-domain acme.com dns-search acme.com enable universe repo https://askubuntu.com/questions/148638/how-do-i-enable-the-universe-repository\nEnable RDP for desktop c-nergy.be blog\nxrdp on ubuntu 18.04 LTS\nxrdp issues\ninstall docker snap install docker sudo addgroup --system docker sudo adduser notch docker newgrp docker "
+},
+{
+	"uri": "/networking/iperf/",
+	"title": "Iperf",
+	"tags": [],
+	"description": "",
+	"content": "logfile iperf -o ./iperf.out -f MBytes -c 10.190.184.11 -t 30 -d -y c bidirectional. 300 seconds iperf -e -f MBytes -c 10.190.184.11 -t 300 -i 1 -d single direction iperf -e -f MBytes -c 10.190.184.11 -t 300 -i 1 "
+},
+{
+	"uri": "/vmware/nsxt/",
+	"title": "NSX-T Links",
+	"tags": [],
+	"description": "",
+	"content": "home lab config https://ithinkvirtual.com/2019/02/19/nsx-t-home-lab-part-5-configuring-nsx-t-networking/\nlearning http://www.vstellar.com/2018/07/27/learning-nsx-t-part-1-introduction/ http://www.vstellar.com/2018/07/27/learning-nsx-t-part-2-nsx-t-architecture/\nhttp://www.vstellar.com/page/3/\nedge cluster creation https://docs.vmware.com/en/VMware-NSX-T/2.2/com.vmware.nsxt.install.doc/GUID-898099FC-4ED2-4553-809D-B81B494B67E7.html\nunregister vcenter extension https://docs.vmware.com/en/VMware-NSX-T/2.2/com.vmware.nsxt.admin.doc/GUID-E6E2F017-1106-48C5-ABCA-3D3E9130A863.html\ncom.vmware.nsx.management.nsxt\nclients https://docs.vmware.com/en/VMware-NSX-T-Data-Center/2.5/administration/GUID-756EF955-F2C1-47DD-946B-1B5E6DDC7BDA.html\nnsx-t manager central CLI http://cloudmaniac.net/nsx-t-central-cli-operations-troubleshooting/\nadd ssh key for admin to nsx edge controller set user admin ssh-keys label 2018yyubi type ssh-rsa value [key] vmware nsx videos https://www.youtube.com/user/vmwarensx/featured\nhttps://docs.vmware.com/en/VMware-NSX-T-Data-Center/2.4/administration/GUID-3F163DEE-1EE6-4D80-BEBF-8D109FDB577C.html\nnsx-t routing Next Steps with NSX-T Edge Routing and BGP\nNSX-T Logical Routing Architecture\n2.4 Edge Transport Appliance\nBGP between T0 and Physical Network\nvmware.com: nsx-t routing pt 2\npivotal labs: nsx-t deploy\n2.3 cli ref https://www.vmware.com/support/nsxt/doc/nsxt_23_cli.html\n2.3 manager API https://www.vmware.com/support/nsxt/doc/nsxt_23_api.html\n2.3 cloud service manager API https://www.vmware.com/support/nsxt/doc/nsxt_23_csm_api.html\n2.3 policy API https://www.vmware.com/support/nsxt/doc/nsxt_23_policy_api.html\n"
+},
+{
+	"uri": "/vmware/nsxt-networking/",
+	"title": "NSX-T Networking",
+	"tags": [],
+	"description": "",
+	"content": "NSX / DVSwitch https://www.tech-coffee.net/deploy-a-converged-network-with-vsphere-6-5/\nnet-dvs http://buildvirtual.net/utilize-net-dvs-to-troubleshoot-vnetwork-distributed-switch-configurations/\ndv video https://www.youtube.com/watch?v=_m9PMWrIGyQ\nNSX http://nxgcloud.com/index.php/2017/03/23/nsx-home-lab-16-deploy-nsx-components/\nhttp://www.vmwarearena.com/vmware-nsx-installation-part-8-configuring-vxlan-on-the-esxi-hosts/\ncreate logical network segment ID (a critical step) https://kb.vmware.com/s/article/2081294\nSample VST config https://kb.vmware.com/s/article/1004074?CoveoV2.CoveoLightningApex.getInitializationData=1\u0026amp;r=3\u0026amp;other.KM_Utility.getArticleDetails=1\u0026amp;other.KM_Utility.getArticleMetadata=1\u0026amp;other.KM_Utility.getUrl=1\u0026amp;other.KM_Utility.getUser=1\u0026amp;other.KM_Utility.getAllTranslatedLanguages=1\u0026amp;ui-comm-runtime-components-aura-components-siteforce-qb.Quarterback.validateRoute=1\nupdating NSX VIBS http://www.vmwarearena.com/how-to-manually-install-nsx-6-3-0-vibs-on-esxi-6-5-hosts/\nhttps://vswitchzero.com/2018/09/05/manual-upgrade-of-nsx-host-vibs/\nConfigure DHCP / Relay https://letsv4real.com/2017/06/06/configure-dhcp-services-in-vmware-nsx/\nDynamic Routing / BGP need to redistribute statics, including allowing default gateways to be pushed from ESG to DLR\nhttp://www.vstellar.com/2018/05/20/configure-and-manage-routing-in-nsx/\nhttps://www.virtually-limitless.com/vcix-nv-study-guide/configure-dynamic-routing-protocols-ospf-bgp-is-is/\nroute redistribution https://docs.vmware.com/en/VMware-NSX-Data-Center-for-vSphere/6.4/com.vmware.nsx.admin.doc/GUID-6DE97E5F-A147-4294-B162-08CB90B2699A.html\nweaker explanations https://blog.bertello.org/2015/02/nsx-for-newbies-part-6-distributed-logical-router-dlr/\nolder but ok http://www.routetocloud.com/2014/06/nsx-distributed-logical-router/\nuninstall NSX-V https://docs.vmware.com/en/VMware-NSX-Data-Center-for-vSphere/6.4/com.vmware.nsx.install.doc/GUID-33D4FCB4-A8C8-4307-B638-AA6BBA0AD2A5.html\n"
+},
+{
+	"uri": "/automation/ansible/",
+	"title": "Ansible",
+	"tags": [],
+	"description": "",
+	"content": "Ansible Palo Alto Automation API\n"
+},
+{
+	"uri": "/azure/setup/",
+	"title": "Azure Setup",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/automation/hashicorp/centosjetbrainspacker/",
+	"title": "Centos JetBrains Packer",
+	"tags": [],
+	"description": "",
+	"content": "   Date Added Description Link     2019-11-24 Jetbrains Packer Builder Vsphere https://github.com/jetbrains-infra/packer-builder-vsphere   2019-11-24 VMware Guestinfo Cloud-Init https://github.com/vmware/cloud-init-vmware-guestinfo/releases    Centos Kickstart Reference | https://docs.centos.org/en-US/centos/install-guide/Kickstart2/ | RHEL7 Kickstart Guide | https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-simple-install-kickstart|\nBuilding a Hardened Centos VM Template using Packer We are going to build for centos-7, which is not one of the examples that Jetbrains provides. However, there are several pull requests on the github repo which contain some examples to work from. At a high level, we\u0026rsquo;re going to use packer to build a centos vm from a base ISO using kickstart, configure it further using cloud-init, and finally use packer provisioners to run some hardening scripts against it. The goal is a template vm (either in or out of a VMware Content Library) that can be provisioned via govc or terraform as a clone (linked or full)\nmy centos7 implementation is here: https://git.notch.org/notch/vmware-automation/tree/master/winternotch-hardened-centos7 Theory of Operation Packer Builder This is the main packer scipt. The first part executes now (the builder part), and the rest executes after the image is built by kickstart and cloud-init (the provisioner part). Note that we use vault to store the credentials in the configuration file\n downloads the base ISO to packer_cache locally, validates the checksum, takes the kickstart file (ks.cfg) and the cloud-init script (cloud-init.json) and builds a floppy image logs into vcenter, and copies the iso and floppy image up to the data store specified. configures the vm profile according to the parameters in the packer JSON mounts the media (ISO and floppy image) on the VM boots the vm and begins the installation  Kickstart Config (ks.cfg) This is a redhat format unattended install script which does the following:\n Boots unattended install of Centos Configures disk geometry, etc. Installs packages from the ISO Configures the network (this is a temp config) enables sshd, turns on the firewall Adds the centos user with centos password (more on this later) installs the cloud-init RPM installs the special vmware-cloud-init-guestinfo RPM. NOTE: you need a yum repo to serve this up. I store it on a katello server but really any yum repo will do, or you can point directly to the github repo if your environment has internet access https://github.com/vmware/cloud-init-vmware-guestinfo/releases/download/v1.1.0/cloud-init-vmware-guestinfo-1.1.0-1.el7.noarch.rpm . you just need to make sure this repo is added to your ks.cfg. Copies the initial cloud-init script. This is very important because the default cloud-init that comes with the rpm by default uses dhcp for IPs (which is fine, but doesnt allow it to work in non dhcp environments) Even more importantly it disables password based logins, which will prevent packer from being able to log into the vm and complete its provisioning run later. So we take this opportunity to lay down our own initial cloudinit config so we can control what happens on the next boot once all of this is complete, kickstart ejects the removable media and reboots the machine  Cloud-Init Script This is the bootstrap cloud init script. Once kickstart reboots the machine and it comes up, cloud-init takes over the configuration of the machine.\n reconfigures centos user, adds a ssh key and maintains the centos password. really this will only ever be used to debug the image and the image creation process, which should be done in a controlled environment, so this is OK. Later on in the process we will remove this user entirely, probably with puppet. disables the root user entirely removes default sshd keys and certificates sets up the network interface again  It can do a lot more. There are seveal other things that should go here. Honestly you could probably put all of the rest of the stuff that gets executed by packer provisioners (see below) in the cloud-init script if you wanted to.\n yum repo configuration (point to internal repos) puppet rpm installation from that repo any other configuration management  Packer Provisioner This is the \u0026ldquo;provisioner\u0026rdquo; part of the Packer script. What we use this for is to ssh into the image as the centos user and execute a series of shell scripts as root using sudo. The reason we do it this way is because we\u0026rsquo;ve already locked the root user down in previous steps. These scripts are designed to run on the image just prior to it being shut down, and handle genericization of the image. This includes\n SCAP lockdown and other OS hardening (auditd rules, selinux etc.) remove any UUIDS, and reset MAC addresses so that the image is vanilla and unique when cloned remove any log files or any other traces of the install process remove lingering ssh keys for the centos user. (we still want the password for console access until the machine enters normal configuration management ) disable password authentication for sshd zero out the filesystem so the image is smaller (optional) put final desired version of cloud-init configuration in place  Once this is complete, packer shuts down the image, and turns it into a template in vcenter that you can clone.\nPrerequisites  vcenter server. API access required esxi host (note that no ssh or vnc should be required on the host, you just need the name of one in the cluster to build on) hashicorp vault  setup with credentials for vcenter server   packer jetbrains packer plugins installed in $HOME/.packer.d/plugins yum repo of some sort to serve up custom rpms (potentially optional) network connectivity between the location where scripts are run, the vcenter and esxi servers, and the DV-switch where the VM will reside (packer will log into the vm and run scripts)  Setup packer script (json) for the vsphere configuration, there are a number of ways to do this, including standalone esx. This is just how I did it. the jetbrains git repo has more information, and the parameters you need might change depending on your approach)\n server name vcenter username and password. I use vault, you can hardcode if you really want, but thats a bad idea. datacenter name datastore name (storage where you want the image to go, packer_cache will go there too ) cluster esxi host (this is the host in the cluster that will do the build, must be in datacenter, and have access to the datastore) ISO url and checksum (make sure this is up to date with current iso)  ks.cfg network config (DHCP or static)\nnetwork --device=eth0 --bootproto=dhcp --activate network --device=eth0 --bootproto=static --ip=10.4.20.161 --netmask=255.255.255.0 --gateway=10.4.20.1 --nameserver=10.4.20.211 --hostname=centos7 --activate yum repos\nrepo --name=\u0026quot;base\u0026quot; --baseurl=\u0026quot;http://mirror.centos.org/centos/$releasever/os/$basearch\u0026quot; repo --name=\u0026quot;updates\u0026quot; --baseurl=\u0026quot;http://mirror.centos.org/centos/$releasever/updates/$basearch\u0026quot; repo --name=\u0026quot;epel\u0026quot; --baseurl=\u0026quot;http://download.fedoraproject.org/pub/epel/$releasever/$basearch\u0026quot; repo --name=\u0026quot;winternotch\u0026quot; --baseurl=\u0026quot;http://foreman.winternotch.com/pulp/repos/Default_Organization/Library/custom/Winternotch_Packages/Winternotch_Repo/\u0026quot; at the end, make sure the bootstrap cloud-init filename you are copying is correct\ncp /floppy/winternotch-cloud.cfg /mnt/sysimage/etc/cloud/cloud.cfg cloud-init script building jetbrains packer plugins (recommended) (requires docker)\ngit clone https://github.com/jetbrains-infra/packer-builder-vsphere cd packer-builder-vsphere docker-compose run build install plugins https://www.packer.io/docs/extending/plugins.html#installing-plugins\ncd packer-builder-vsphere mkdir -p $HOME/.packer.d/plugins cp bin/*.macos $HOME/.packer.d/plugins Configuration example configs https://github.com/jetbrains-infra/packer-builder-vsphere/tree/master/examples/\ncentos examples (unmerged pulls) centos8 : https://github.com/nelg/packer-builder-vsphere\ncentos7 : https://github.com/remijouannet/packer-builder-vsphere\nrunning packer # normal build packer build hardened-centos7.json # force continuation if artifacts exist packer build -force hardened-centos7.json # dont destroy vm on abort (to debug errors) packer build -on-error=abort hardened-centos7.json # debug logging PACKER_LOG=1 packer build -force hardened-centos7.json # step by step debugging packer build -debug whardened-centos7.json "
+},
+{
+	"uri": "/automation/hashicorp/cloudinit/",
+	"title": "Cloudinit",
+	"tags": [],
+	"description": "",
+	"content": "basics directory layout\nhttps://cloudinit.readthedocs.io/en/latest/topics/dir_layout.html\nUserData and Metadata config files passed in as gzip compressed base64 encoded strings from terraform or govc\ncyberchef is your friend for debugging these.\ndebugging https://cloudinit.readthedocs.io/en/latest/topics/debugging.html\n# grab logs cloud-init collect-logs # analyze cloud init cloud-init analyze show -i /var/log/cloud-init.log # see what vmtoolsd sent vmtoolsd --cmd \u0026quot;info-get guestinfo.userdata\u0026quot; # cloud-init --debug init cloud-init --debug modules -m config "
+},
+{
+	"uri": "/docker/dockerbasics/",
+	"title": "Docker Basics",
+	"tags": [],
+	"description": "",
+	"content": "running images NOTE: order of arguments matters, imagename must be at the end.\ndocker run -p 7777/7777 -d \u0026lt;imagename\u0026gt; NOT docker run \u0026lt;imagename\u0026gt; -d -p 7777/7777 you will get an extremely unhelpful error message like if you do not\ndocker: Error response from daemon: OCI runtime create failed: container_linux.go:346: starting container process caused \u0026quot;exec: \\\u0026quot;-p\\\u0026quot;: executable file not found in $PATH\u0026quot;: unknown. run docker image in background docker run -d \u0026lt;image\u0026gt; run docker image mapping a port docker run -p 80:80/tcp run command (shell) in running container docker exec -it \u0026lt;container_id\u0026gt; /bin/bash run command (shell) in image docker run -it \u0026lt;image\u0026gt; /bin/bash building images build docker image from dockerfile in CWD with tag docker build . -t \u0026lt;tag\u0026gt; delete all local docker images / cache docker system prune -a RUN vs CMD vs ENTRYPOINT https://goinbigdata.com/docker-run-vs-cmd-vs-entrypoint/\n"
+},
+{
+	"uri": "/docker/dockersetup/",
+	"title": "Docker Setup",
+	"tags": [],
+	"description": "",
+	"content": "installing docker on ubuntu 18.04 DO NOT USE UBUNTU SNAP, SNAP NOT SUPPORTED ANY MORE (20191117) guide: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04\n(setup) sudo apt install apt-transport-https ca-certificates curl software-properties-common curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - sudo add-apt-repository \u0026quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable\u0026quot; sudo apt update (check to make sure docker will be installed from the right place) apt-cache policy docker-ce (install) sudo apt install docker-ce sudo apt install docker-compose sudo systemctl status docker "
+},
+{
+	"uri": "/automation/katello/foremanusage/",
+	"title": "Foreman Usage",
+	"tags": [],
+	"description": "",
+	"content": "Foreman Manual\ncstan - orphan task cleanup\nForeman Plugins List Plugins available to install\nsudo foreman-installer --help | grep enable- adding plugins # can be added post install, eg foreman-installer --enable-foreman-compute-vmware --enable-foreman-compute-vmware --enable-foreman-compute-ec2 --enable-foreman-compute-gce --enable-foreman-plugin-digitalocean --enable-foreman-plugin-ansible --enable-foreman-plugin-openscap foreman debugging # basic health check foreman-maintain health check postgres commands # tasks su - postgres -c \u0026quot;psql foreman -c 'select * from foreman_tasks_tasks'\u0026quot; # locks su - postgres -c \u0026quot;psql foreman -c 'select * from foreman_tasks_locks'\u0026quot; # really wide query, su to postgres and do this PAGER=\u0026quot;less -S\u0026quot; psql foreman -c 'select * from foreman_tasks_tasks' rake commands foreman-rake katello:upgrade_check # clean task log foreman-rake foreman_tasks:cleanup TASK_SEARCH=\u0026quot;\u0026quot; AFTER=1d #resync db, useful after task cleanup foreman-rake katello:reimport # rake console foreman-rake console # delete task by ID, from rake console ForemanTasks::Task.find(\u0026quot;e140a579-a4a2-4a5f-9c32-97b6ae3700e8\u0026quot;).destroy Puppet  puppet agent --test puppet module install puppetlabs/ntp  Foreman Quick Install NOTE: You cannot install Katello over Foreman. This is for standalone only https://theforeman.org/manuals/1.23/quickstart_guide.html\nsudo yum -y install https://yum.puppet.com/puppet6-release-el-7.noarch.rpm sudo yum -y install https://yum.theforeman.org/releases/1.23/el7/x86_64/foreman-release.rpm sudo yum -y install foreman-installer sudo foreman-installer "
+},
+{
+	"uri": "/gcp/setup/",
+	"title": "GCP Setup",
+	"tags": [],
+	"description": "",
+	"content": "installing SDK (Includes CLI) https://cloud.google.com/sdk/docs/\nlinux echo \u0026quot;deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main\u0026quot; | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add - sudo apt-get update \u0026amp;\u0026amp; sudo apt-get install google-cloud-sdk mac download sdk\nhttps://cloud.google.com/sdk/docs/#mac\nrun install.sh\nBasic configuration gcloud init gcloud config configurations list zone us-east4-a\n"
+},
+{
+	"uri": "/vmware/govc/",
+	"title": "govc",
+	"tags": [],
+	"description": "",
+	"content": "   Date Added Description Link     2019-11-26 Govc Usage https://github.com/vmware/govmomi/blob/master/govc/USAGE.md    Setup installing brew tap govmomi/tap/govc \u0026amp;\u0026amp; brew install govmomi/tap/govc\nnote that this might not be the latest version. my homebrew only had 0.19 which notably didn\u0026rsquo;t contain the library commands. I just grabbed the latest release from here: https://github.com/vmware/govmomi/releases and put it in ~/bin\nConfiguring govc for use source govc-vars.sh $ alias govc=$(pwd)/govc_darwin_amd64 $ export GOVC_URL=vcenter.foo.com $ export GOVC_USERNAME=x@x.com $ export GOVC_PASSWORD=password $ export GOVC_INSECURE=1 Usage VM list vms govc ls /datacenter/vm/\nget vm info govc vm.info /datacenter/vm/new-vm\nclone vm  govc vm.clone -vm template-vm new-vm govc vm.clone -vm template-vm -link new-vm govc vm.clone -vm template-vm -snapshot s-name new-vm govc vm.clone -vm template-vm -link -snapshot s-name new-vm govc vm.clone -vm template-vm -snapshot $(govc snapshot.tree -vm template-vm -C) new-vm clone template from library  govc library.deploy /library_name/ovf_template vm_name govc library.deploy /library_name/ovf_template -options deploy.json export ovf govc export.ovf -vm $vm DIR\nimport spec file from ovf govc import.spec govc import.spec file.ova | python -m json.tool \u0026gt; ubuntu.json govc import.spec file.ova | jq \u0026gt; spec.json change vm size govc vm.change -vm vm_name -c 4 -m 4096\nopen VM console in VMRC (MacOS) open $(govc vm.console my-vm)\nlist processes in vm  govc guest.ps -vm $name govc guest.ps -vm $name -e govc guest.ps -vm $name -p 12345 govc guest.ps -vm $name -U roo Vsphere Commands get event log govc events\n"
+},
+{
+	"uri": "/automation/hashicorp/terraform/",
+	"title": "Hashicorp Terraform",
+	"tags": [],
+	"description": "",
+	"content": "   Date Added Description Link     2019-11-26 Terraform Docs https://www.terraform.io/docs   2019-11-29 tf 0.12 release notes https://discuss.hashicorp.com/t/terraform-0-12-14-released/3898   2019-11-29 Vault Provider https://www.terraform.io/docs/providers/vault/index.html   2019-11-29 Vault Generic Secret Provider https://www.terraform.io/docs/providers/vault/d/generic_secret.html   2019-11-29 Terraform clone on vsphere https://sdorsett.github.io/post/2018-12-24-using-terraform-to-clone-a-virtual-machine-on-vsphere/   2019-11-29 tf issues https://itnext.io/things-i-wish-i-knew-about-terraform-before-jumping-into-it-43ee92a9dd65   2019-11-29 local and remote exec provisioners https://sdorsett.github.io/post/2018-12-26-using-local-exec-and-remote-exec-provisioners-with-terraform/   2019-11-29 simple k8s example https://github.com/vmware/simple-k8s-test-env/blob/master/e2e/vsphere.tf   2019-12-1 terraform and vsphere with cloudinit examples https://floating.io/2019/04/iaas-terraform-and-vsphere/    running terraform init terraform plan TF_LOG=TRACE terraform plan terraform apply -auto-approve terraform destroy -auto-approve debugging # show the actual config that was deployed, useful for debugging cloud-init parameters. terraform show configuration files main.tf\nvariables.tf\noutputs.tf\ntfvars\nfffffuuu interpolation only syntax changed in 0.12 (20191113)\nalso, fucking strings vs integers\na.k.a no quotes on values in either the tfvars or the .tf file. beacuse fuck you thats why.\nhttps://discuss.hashicorp.com/t/terraform-0-12-14-released/3898 https://www.terraform.io/upgrade-guides/0-12.html#referring-to-list-variables\nalso that ^M shit in tmux terminal. wtf.\nterraform with vault is fucking broken, generic_secret requires a namespace? wtf?\nhttps://github.com/terraform-providers/terraform-provider-vault/issues/470\ncloning vm image with larger size breaks\nError: error reconfiguring virtual machine: error reconfiguring virtual machine: File is larger than the maximum size supported by datastore '\u0026rsquo;\nhttps://kb.vmware.com/s/article/1012384\ncloudinit notes some example stuff:\nhttps://github.com/terraform-providers/terraform-provider-vsphere/issues/588 https://github.com/akutz/yake2e/blob/master/vsphere.tf#L102 https://github.com/akutz/yake2e/blob/master/cloud_config.tf\nnotes even standalone esxi servers have resource pools, as do vcenter ones\u0026hellip;\nhttps://www.terraform.io/docs/providers/vsphere/d/resource_pool.html\ndata \u0026quot;vsphere_resource_pool\u0026quot; \u0026quot;pool\u0026quot; { name = \u0026quot;esxi1/Resources\u0026quot; datacenter_id = \u0026quot;${data.vsphere_datacenter.dc.id}\u0026quot; } whats the difference? is this why partitioning broke?\nexpected scsi_type to be one of [pvscsi lsilogic lsilogic-sas] (pvscsi best)\nwhats the difference?\nexpected network_interface.0.adapter_type to be one of [e1000 e1000e vmxnet3],\n"
+},
+{
+	"uri": "/automation/hashicorp/vault/",
+	"title": "Hashicorp Vault",
+	"tags": [],
+	"description": "",
+	"content": "   Date Added Description Link     2019-11-26 VaultEnv https://github.com/channable/vaultenv   2019-11-29 Vault generic_secret provider https://www.terraform.io/docs/providers/vault/d/generic_secret.html   2019-11-29 Vault kv engine https://www.vaultproject.io/docs/secrets/kv/   2019-11-29 Vault Auth Token API https://www.vaultproject.io/api/auth/token/index.html    Setup start server vault server -config=/Users/gnotch/Dropbox/vault/vault.hcl unseal vault \u0026amp; login (by default, 3x with 3 diff unseal keys)\nvault operator unseal vault login Ignore TLS validation export VAULT_SKIP_VERIFY=true vault -tls-skip-verify VAULT_TOKEN vault login just creates ~/.vault-token If you want other processes to use it from the einvronment, you must put the value of the token into env var with\nexport VAULT_TOKEN=\nexport VAULT_TOKEN=$(cat ~/.vault-token) Operations using vaults # create path + secrets engine vault secrets enable -path=winternotch kv # list secrets vault secrets list vault secrets list -detailed using secrets  # put vault kv put winternotch/test foo=no vault kv put winternotch/test foo=yes bar=no # get vault kv get winternotch/test # list vault kv list winternotch/ packer variable to key mapping # key storage vault kv put secret/hello foo=world # packer variable { \u0026quot;variables\u0026quot;: { \u0026quot;my_secret\u0026quot;: \u0026quot;{{ vault `/secret/data/hello` `foo`}}\u0026quot; } } # example vault kv put winternotch/vsphere_username value=\u0026quot;administrator@winternotch.com\u0026quot; \u0026quot;vsphere_username\u0026quot;: \u0026quot;{{ vault `winternotch/data/vsphere_username` `value`}}\u0026quot;, create vault https://www.vaultproject.io/docs/commands/operator/init.html\nvault operator init # only make 1 unseal keys and only require one of them to unseal (sane for single user) vault operator init \\ -key-shares=1 \\ -key-threshold=1 # encrypt vault keys with GPG vault operator init \\ -key-shares=3 \\ -key-threshold=1 \\ -pgp-keys=\u0026quot;/Users/gnotch/Dropbox/crt/yubi-20180814-public-gpg.txt\u0026quot; "
+},
+{
+	"uri": "/automation/katello/katellocentos7/",
+	"title": "Katello CentOS 7",
+	"tags": [],
+	"description": "",
+	"content": "Initial Setup create product hammer product create --organization-id 1 \\ --name \u0026quot;CentOS 7 Linux for x86_64\u0026quot; \\ --description \u0026quot;Repositories to use with CentOS 7 Linux\u0026quot; import key hammer gpg create --organization-id 1 \\ --key \u0026quot;RPM-GPG-KEY-CentOS-7\u0026quot; \\ --name \u0026quot;RPM-GPG-KEY-CentOS-7\u0026quot; http://mirror.cogentco.com/pub/linux/centos/7/os/x86_64/\nAdd Repos BaseOS hammer repository create --organization-id 1 \\ --product \u0026quot;CentOS 7 Linux for x86_64\u0026quot; \\ --name \u0026quot;CentOS 7 Base RPMS\u0026quot; \\ --label \u0026quot;CentOS_7_Base_RPMS\u0026quot; \\ --content-type \u0026quot;yum\u0026quot; \\ --download-policy \u0026quot;on_demand\u0026quot; \\ --gpg-key \u0026quot;RPM-GPG-KEY-CentOS-7\u0026quot; \\ --url \u0026quot;http://mirror.cogentco.com/pub/linux/centos/7/os/x86_64/\u0026quot; \\ --mirror-on-sync \u0026quot;no\u0026quot; Updates hammer repository create --organization-id 1 \\ --product \u0026quot;CentOS 7 Linux for x86_64\u0026quot; \\ --name \u0026quot;CentOS 7 Update RPMS\u0026quot; \\ --label \u0026quot;CentOS_7_Update_RPMS\u0026quot; \\ --content-type \u0026quot;yum\u0026quot; \\ --download-policy \u0026quot;on_demand\u0026quot; \\ --gpg-key \u0026quot;RPM-GPG-KEY-CentOS-7\u0026quot; \\ --url \u0026quot;http://mirror.cogentco.com/pub/linux/centos/7/updates/x86_64/\u0026quot; \\ --mirror-on-sync \u0026quot;no\u0026quot; Extras hammer repository create --organization-id 1 \\ --product \u0026quot;CentOS 7 Linux for x86_64\u0026quot; \\ --name \u0026quot;CentOS 7 Extras RPMS\u0026quot; \\ --label \u0026quot;CentOS_7_Extras_RPMS\u0026quot; \\ --content-type \u0026quot;yum\u0026quot; \\ --download-policy \u0026quot;on_demand\u0026quot; \\ --gpg-key \u0026quot;RPM-GPG-KEY-CentOS-7\u0026quot; \\ --url \u0026quot;http://mirror.cogentco.com/pub/linux/centos/7/extras/x86_64/\u0026quot; \\ --mirror-on-sync \u0026quot;no\u0026quot; sclo repo: http://mirror.cogentco.com/pub/linux/centos/7/sclo/x86_64/\nEPEL hammer repository create --organization-id 1 \\ --product \u0026quot;CentOS 7 Linux for x86_64\u0026quot; \\ --name \u0026quot;CentOS 7 EPEL RPMS\u0026quot; \\ --label \u0026quot;CentOS_7_EPEL_RPMS\u0026quot; \\ --content-type \u0026quot;yum\u0026quot; \\ --download-policy \u0026quot;on_demand\u0026quot; \\ --gpg-key \u0026quot;RPM-GPG-KEY-CentOS-7\u0026quot; \\ --url \u0026quot;http://mirror.cogentco.com/pub/linux/epel/7/x86_64/\u0026quot; \\ --mirror-on-sync \u0026quot;no\u0026quot; Create Content View hammer content-view create --organization-id 1 \\ --name \u0026quot;CentOS_7\u0026quot; \\ --description \u0026quot;Content view for CentOS 7\u0026quot; Add Repos to Content View # change $(seq a b) to list from hammer repository list --organization-id 1 --product \u0026quot;CentOS 7 Linux for x86_64\u0026quot; for i in $(seq 6 8); do \\ hammer content-view add-repository --organization-id 1 \\ --name \u0026quot;CentOS_7\u0026quot; \\ --product \u0026quot;CentOS 7 Linux for x86_64\u0026quot; \\ --repository-id \u0026quot;$i\u0026quot;; \\ done Publish Content View hammer content-view publish --organization-id 1 \\ --name \u0026quot;CentOS_7\u0026quot; \\ --description \u0026quot;Publishing repositories\u0026quot; Create Activation Key hammer lifecycle-environment list --organization-id 1 hammer activation-key create --organization-id 1 \\ --name \u0026quot;centos7\u0026quot; \\ --description \u0026quot;CentOS 7 Activation Key\u0026quot; \\ --lifecycle-environment \u0026quot;Library\u0026quot; \\ --content-view \u0026quot;CentOS_7\u0026quot; \\ --unlimited-hosts hammer activation-key list --organization-id 1 Add Subscription to Activation key # list subscriptions for org hammer subscription list --organization-id 1 # use subscription-id from above hammer activation-key add-subscription --organization-id 1 \\ --name \u0026quot;centos7\u0026quot; \\ --quantity \u0026quot;1\u0026quot; \\ --subscription-id \u0026quot;3\u0026quot; "
+},
+{
+	"uri": "/automation/katello/katellocentos8/",
+	"title": "Katello CentOS 8",
+	"tags": [],
+	"description": "",
+	"content": "CentOS 8 Mirrors nearby http://mirror.cogentco.com/pub/linux/centos/8/\nhttp://mirror.vtti.vt.edu/centos/8/BaseOS/x86_64/\nAdding Centos 8 Repository https://computingforgeeks.com/sync-centos-8-repositories-on-satellite-katello-foreman/\nInitial Setup # Create CentOS 8 Product hammer product create --organization-id 1 \\ --name \u0026quot;CentOS 8 Linux for x86_64\u0026quot; \\ --description \u0026quot;Repositories to use with CentOS 8 Linux\u0026quot; # import centos PKI mkdir /etc/pki/rpm-gpg/import/ cd /etc/pki/rpm-gpg/import/ wget https://www.centos.org/keys/RPM-GPG-KEY-CentOS-Official hammer gpg create --organization-id 1 \\ --key \u0026quot;RPM-GPG-KEY-CentOS-Official\u0026quot; \\ --name \u0026quot;RPM-GPG-KEY-CentOS-8\u0026quot; Add Repos # BaseOS hammer repository create --organization-id 1 \\ --product \u0026quot;CentOS 8 Linux for x86_64\u0026quot; \\ --name \u0026quot;CentOS 8 Base RPMS\u0026quot; \\ --label \u0026quot;CentOS_8_Base_RPMS\u0026quot; \\ --content-type \u0026quot;yum\u0026quot; \\ --download-policy \u0026quot;on_demand\u0026quot; \\ --gpg-key \u0026quot;RPM-GPG-KEY-CentOS-8\u0026quot; \\ --url \u0026quot;http://mirror.cogentco.com/pub/linux/centos/8/BaseOS/x86_64/os/\u0026quot; \\ --mirror-on-sync \u0026quot;no\u0026quot; # AppStream hammer repository create --organization-id 1 \\ --product \u0026quot;CentOS 8 Linux for x86_64\u0026quot; \\ --name \u0026quot;CentOS 8 AppStream RPMS\u0026quot; \\ --label \u0026quot;CentOS_8_AppStream_RPMS\u0026quot; \\ --content-type \u0026quot;yum\u0026quot; \\ --download-policy \u0026quot;on_demand\u0026quot; \\ --gpg-key \u0026quot;RPM-GPG-KEY-CentOS-8\u0026quot; \\ --url \u0026quot;http://mirror.cogentco.com/pub/linux/centos/8/AppStream/x86_64/os/\u0026quot; \\ --mirror-on-sync \u0026quot;no\u0026quot; # PowerTools hammer repository create --organization-id 1 \\ --product \u0026quot;CentOS 8 Linux for x86_64\u0026quot; \\ --name \u0026quot;CentOS 8 PowerTools RPMS\u0026quot; \\ --label \u0026quot;CentOS_8_PowerTools_RPMS\u0026quot; \\ --content-type \u0026quot;yum\u0026quot; \\ --download-policy \u0026quot;on_demand\u0026quot; \\ --gpg-key \u0026quot;RPM-GPG-KEY-CentOS-8\u0026quot; \\ --url \u0026quot;http://mirror.cogentco.com/pub/linux/centos/8/PowerTools/x86_64/os/\u0026quot; \\ --mirror-on-sync \u0026quot;no\u0026quot; # CentosPlus hammer repository create --organization-id 1 \\ --product \u0026quot;CentOS 8 Linux for x86_64\u0026quot; \\ --name \u0026quot;CentOS 8 centosplus RPMS\u0026quot; \\ --label \u0026quot;CentOS_8_centosplus_RPMS\u0026quot; \\ --content-type \u0026quot;yum\u0026quot; \\ --download-policy \u0026quot;on_demand\u0026quot; \\ --gpg-key \u0026quot;RPM-GPG-KEY-CentOS-8\u0026quot; \\ --url \u0026quot;http://mirror.cogentco.com/pub/linux/centos/8/centosplus/x86_64/os/\u0026quot; \\ --mirror-on-sync \u0026quot;no\u0026quot; # Extras hammer repository create --organization-id 1 \\ --product \u0026quot;CentOS 8 Linux for x86_64\u0026quot; \\ --name \u0026quot;CentOS 8 extras RPMS\u0026quot; \\ --label \u0026quot;CentOS_8_extras_RPMS\u0026quot; \\ --content-type \u0026quot;yum\u0026quot; \\ --download-policy \u0026quot;on_demand\u0026quot; \\ --gpg-key \u0026quot;RPM-GPG-KEY-CentOS-8\u0026quot; \\ --url \u0026quot;http://mirror.cogentco.com/pub/linux/centos/8/extras/x86_64/os/\u0026quot; \\ --mirror-on-sync \u0026quot;no\u0026quot; Create Content View hammer content-view create --organization-id 1 \\ --name \u0026quot;CentOS_8\u0026quot; \\ --description \u0026quot;Content view for CentOS 8\u0026quot; Add Repos to Content View # change $(seq a b) to list from hammer repository list --organization-id 1 --product \u0026quot;CentOS 8 Linux for x86_64\u0026quot; for i in $(seq 1 5); do \\ hammer content-view add-repository --organization-id 1 \\ --name \u0026quot;CentOS_8\u0026quot; \\ --product \u0026quot;CentOS 8 Linux for x86_64\u0026quot; \\ --repository-id \u0026quot;$i\u0026quot;; \\ done Publish Content View hammer content-view publish --organization-id 1 \\ --name \u0026quot;CentOS_8\u0026quot; \\ --description \u0026quot;Publishing repositories\u0026quot; Create Activation Key hammer lifecycle-environment list --organization-id 1 hammer activation-key create --organization-id 1 \\ --name \u0026quot;centos8\u0026quot; \\ --description \u0026quot;CentOS 8 Activation Key\u0026quot; \\ --lifecycle-environment \u0026quot;Library\u0026quot; \\ --content-view \u0026quot;CentOS_8\u0026quot; \\ --unlimited-hosts hammer activation-key list --organization-id 1 Add Subscription to Activation key # list subscriptions for org hammer subscription list --organization-id 1 # use subscription-id from above hammer activation-key add-subscription --organization-id 1 \\ --name \u0026quot;centos8\u0026quot; \\ --quantity \u0026quot;1\u0026quot; \\ --subscription-id \u0026quot;2\u0026quot; "
+},
+{
+	"uri": "/automation/katello/katellosetup/",
+	"title": "Katello Setup",
+	"tags": [],
+	"description": "",
+	"content": "https://theforeman.org/plugins/katello/3.13/installation/index.html\nhttp://www.outsidaz.org/2017/02/12/adventures-in-katello-part-1/\nPreflight   The machine needs at least 8G of ram and 2 VCPU (12 and 4 recommended)\n  The path /var/spool/squid/ is used as a temporary location for some types of repository syncs and may grow to consume 10s of GB of space before the files are migrated to /var/lib/pulp. You may wish to put this on the same partition as /var/lib/pulp.\n  TL;DR create big external volumes for /var/spool/squid \u0026amp;/var/lib/pulp\n  selinux # allow read on /var/www/html chcon -R -h -t httpd_sys_content_t /var/www/html # YOLO /etc/selinux/config SELINUX=disabled reboot #verify getenforce firewall firewall-cmd --list-ports firewall-cmd --list-services firewall-cmd --permanent --add-service=http firewall-cmd --permanent --add-service=https firewall-cmd --permanent --add-port=5000/tcp firewall-cmd --permanent --add-port=5646-5647/tcp firewall-cmd --permanent --add-port=5671/tcp firewall-cmd --permanent --add-port=8000/tcp firewall-cmd --permanent --add-port=8080/tcp firewall-cmd --permanent --add-port=8140/tcp firewall-cmd --permanent --add-port=9090/tcp firewall-cmd --permanent --add-port=67-69/udp firewall-cmd --permanent --add-port=53/udp firewall-cmd --permanent --add-port=53/tcp firewall-cmd --reload # YOLO systemctl stop firewalld systemctl disable firewalld systemctl status firewalld Install Prep (Assumes EPEL already there) sudo -s yum -y localinstall https://fedorapeople.org/groups/katello/releases/yum/3.13/katello/el7/x86_64/katello-repos-latest.rpm yum -y localinstall https://yum.theforeman.org/releases/1.23/el7/x86_64/foreman-release.rpm yum -y localinstall https://yum.puppet.com/puppet6-release-el-7.noarch.rpm yum -y install foreman-release-scl yum -y update (20191123) on a Centos7 image, this last part broke due to some dependencies for libsolv on a newer version by pulp.\nyum remove libsolv-0.6.34-4.el7.x86_64 yum install libsolv-0.7.3-3.el7.x86_64 yum -y update This resolves the dependency problem by updating libsolv, However, this uninstalls dnf\nKatello Install yum -y install katello # list install options foreman-installer --scenario katello --help # install with defaults foreman-installer --scenario katello # interactive install foreman-installer --scenario katello -i # The full log is at /var/log/foreman-installer/katello.log Additional Proxies  Katello is running at https://foreman.winternotch.com To install an additional Foreman proxy on separate machine continue by running:  foreman-proxy-certs-generate --foreman-proxy-fqdn \u0026quot;$FOREMAN_PROXY\u0026quot; --certs-tar \u0026quot;/root/$FOREMAN_PROXY-certs.tar\u0026quot; "
+},
+{
+	"uri": "/automation/katello/katellousage/",
+	"title": "Katello Usage",
+	"tags": [],
+	"description": "",
+	"content": "Katello commands # stop katello katello-service stop # start katello katello-service start # main production log tail -f /var/log/foreman/production.log Hammer commands # list org, get ID hammer organization list # list products hammer product list --organization-id 1 # list repositories for product hammer repository list --organization-id 1 --product \u0026quot;CentOS 8 Linux for x86_64\u0026quot; # sync repos hammer repository synchronize --async --organization-id 1 \\ --product \u0026quot;CentOS 8 Linux for x86_64\u0026quot; \\ --id \u0026quot;$i\u0026quot;; hammer repository synchronize --organization-id 1 --product \u0026quot;CentOS 8 Linux for x86_64\u0026quot; --id 1 # confirm sync state hammer product list --name \u0026quot;CentOS 8 Linux for x86_64\u0026quot; --organization-id 1 Sync Repos # centos8 for i in $(seq 1 5); do \\ hammer repository synchronize --async --organization-id 1 \\ --product \u0026quot;CentOS 8 Linux for x86_64\u0026quot; \\ --id \u0026quot;$i\u0026quot;; \\ done # centos7 for i in $(seq 6 8); do \\ hammer repository synchronize --async --organization-id 1 \\ --product \u0026quot;CentOS 7 Linux for x86_64\u0026quot; \\ --id \u0026quot;$i\u0026quot;; \\ done Client # upload initial eratta katello-package-upload -f "
+},
+{
+	"uri": "/vmware/macvmware/",
+	"title": "Mac VMware",
+	"tags": [],
+	"description": "",
+	"content": "govc brew install govmomi/tap/govc mac powershell brew tap caskroom/cask brew cask install powershell PowerCLI Install-Module -Name VMware.PowerCLI -Scope CurrentUser Get-Command -Module *VMWare* "
+},
+{
+	"uri": "/vmware/ofv-ova/",
+	"title": "OVF / OVA",
+	"tags": [],
+	"description": "",
+	"content": "OVF Tool https://www.vmware.com/support/developer/ovf/index.html\nLinks https://gist.github.com/willianantunes/c8e4ad230c30297c4a1b\nhttps://vuptime.io/2017/03/06/vmware-dive-into-ovf-properties/\nhttp://everything-virtual.com/2016/05/06/creating-a-centos-7-2-vmware-gold-template/\nhttps://stackoverflow.com/questions/33613308/how-can-i-make-a-ova-which-works-with-static-ip-addreses\nhttps://thevirtualist.org/creating-customizable-linux-ovf-template/\n"
+},
+{
+	"uri": "/windows/powershell/",
+	"title": "Powershell",
+	"tags": [],
+	"description": "",
+	"content": "mac powershell https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-6\nbrew tap caskroom/cask brew cask install powershell Windows Events Get-WinEvent\nGet-Eventlog\nhttps://blogs.technet.microsoft.com/ashleymcglone/2013/08/28/powershell-get-winevent-xml-madness-getting-details-from-event-logs/\nhttps://letitknow.wordpress.com/2012/09/02/powershell-and-the-applications-and-services-logs/\n # GroupPolicy Examples Get-EventLog -LogName Application | Where-Object {$_.EventId -eq 6006} Get-EventLog -LogName Application | Where-Object {$_.EventId -eq 8000} Get-EventLog -LogName Application | Where-Object {$_.EventId -eq 8001} Get-EventLog -LogName Application | Where-Object {$_.EventId -eq 8006} Get-EventLog -LogName Application | Where-Object {$_.EventId -eq 8007} Get-WinEvent -FilterHashTable @{ LogName = \u0026quot;Microsoft-Windows-GroupPolicy/Operational\u0026quot;; ID = 4016 } -MaxEvents 10 Get-WinEvent -FilterHashTable @{ LogName = \u0026quot;Microsoft-Windows-GroupPolicy/Operational\u0026quot;; ID = 5312 } -MaxEvents 3 | fl (other eventIDs - 4016,5016,5317, etc) # CAPI Examples https://github.com/jajp777/powershell-scripts-1/blob/master/Enable-Capi2Logging.ps1 Get-WinEvent -FilterHashTable @{ LogName = \u0026quot;Microsoft-Windows-CAPI2/Operational\u0026quot;; LevelDisplayName = Error} -MaxEvents 100 (Get-WinEvent -ListProvider Microsoft-Windows-CAPI2).Events | Where-Object {$_.Id -eq 41} # For a keyword in the event data (Get-WinEvent -ListProvider Microsoft-Windows-GroupPolicy).Events | Where-Object {$_.Template -like \u0026quot;*reason*\u0026quot;} # Find an event ID across all ETW providers: Get-WinEvent -ListProvider * | ForEach-Object { $_.Events | Where-Object {$_.ID -eq 4168} } string searches (a.k.a. grep ) https://www.thomasmaurer.ch/2011/03/powershell-search-for-string-or-grep-for-powershell/\nSelect-String getting credentials to pass https://ss64.com/ps/get-credential.html\nGet-Credential "
+},
+{
+	"uri": "/automation/katello/puppet/",
+	"title": "Puppet",
+	"tags": [],
+	"description": "",
+	"content": "https://www.puppetcookbook.com/\ncheck client status /opt/puppetlabs/bin/puppet agent --test Install some modules cd /opt/puppetlabs/bin ./puppet module list ./puppet module install puppetlabs/ntp ./puppet module install puppetlabs/motd ./puppet module install puppetlabs/accounts ./puppet module install saz-sudo specify environment puppet module --environment test list validate (on server) puppet parser validate site.pp "
+},
+{
+	"uri": "/kubernetes/rancher/",
+	"title": "Rancher",
+	"tags": [],
+	"description": "",
+	"content": "single node installation https://rancher.com/docs/rancher/v2.x/en/installation/single-node/\nsee below for quickstart (assuming docker running on a unix host)\nPersistent Data Rancher uses etcd as datastore. When using the Single Node Install, the embedded etcd is being used. The persistent data is at the following path in the container: /var/lib/rancher. You can bind mount a host volume to this location to preserve data on the host it is running on. (put in /opt/rancher, chown\u0026rsquo;d to user:docker, g+w)\nNote that this will NOT work with snap installed versions of docker on ubuntu\nLaunch Command (maps rancher data to local directory) docker run -d --restart=unless-stopped \\ --name rancher \\ -p 80:80 -p 443:443 \\ -v /opt/rancher:/var/lib/rancher \\ rancher/rancher:latest manual quick start https://rancher.com/docs/rancher/v2.x/en/quick-start-guide/deployment/quickstart-manual-setup/\ncreating a vpshere cluster https://rancher.com/docs/rancher/v2.x/en/cluster-provisioning/rke-clusters/node-pools/vsphere/\nError with pre-create check: \u0026ldquo;host \u0026lsquo;Compute\u0026rsquo; not found\u0026rdquo;; Timeout waiting for ssh key\n\u0026ldquo;Host\u0026rdquo; setting wrong. Need to leave blank for Cluster with DRS.\nError with pre-create check: \u0026ldquo;default resource pool resolves to multiple instances, please specify\u0026rdquo;; Timeout waiting for ssh key\nNeed to create a Resource Pool for this\nupdating rancher docker image https://rancher.com/docs/rancher/v2.x/en/upgrades/upgrades/single-node/\n ensure data is properly externalized  docker ps docker stop \u0026lt;imagename\u0026gt; docker pull rancher/rancher:latest docker start \u0026lt;imagename\u0026gt; "
+},
+{
+	"uri": "/vmware/upgrading/",
+	"title": "Upgrading",
+	"tags": [],
+	"description": "",
+	"content": "VMware files https://datavak.eu/vmware/\nVMware patch tracker https://esxi-patches.v-front.de/ESXi-6.7.0.html#2018-10-16\nVMware Upgrade https://vmiss.net/2018/10/17/upgrade-esxi-67-u1-vmware-vsphere-update-manager/\nhttps://virtualizationreview.com/articles/2018/10/22/upgrading-to-vcsa-67u1.aspx\nUpdating from CLI (in this case the Jan 2019 version of 6.7.0U1)\n# Cut and paste these commands into an ESXi shell to update your host with this Imageprofile # See the Help page for more instructions # esxcli network firewall ruleset set -e true -r httpClient esxcli software profile update -p ESXi-6.7.0-20190104001-standard \\ -d https://hostupdate.vmware.com/software/VUM/PRODUCTION/main/vmw-depot-index.xml esxcli network firewall ruleset set -e false -r httpClient # # Reboot to complete the upgrade "
+},
+{
+	"uri": "/automation/hashicorp/vanillapackeresxscripts/",
+	"title": "Vanilla Packer ESX Scripts",
+	"tags": [],
+	"description": "",
+	"content": "   Date Added Description Link     2019-11-24 vmware-iso Packer Docs https://www.packer.io/docs/builders/vmware-iso.html   2019-11-24 VMware Cloud-Init GuestInfo https://github.com/vmware/cloud-init-vmware-guestinfo   2019-11-24 Configuring ESXi Prereqs https://blog.ukotic.net/2019/03/05/configuring-esxi-prerequisites-for-packer/    VMware Packer Scripts for CentOS code is available here https://git.notch.org/notch/vmware-automation/tree/master/vmware-packer NOTE: While this technique and code works, I\u0026rsquo;m would strongly suggest dropping this in favor of using the packer plugins and scripts that Jetbrains has on github. See the article on that in this section. The information here is still useful if you are interested in how this all works. Overview A packer template and associated scripts to provision a hardened CentOS 7 build\nhttps://www.packer.io/intro/\nOutput images include cloud-init package to initialize system on first launch (cloud-init.sh)\n resize partitions change and lock default centos user set up initial users to allow ssh key-based access in case of puppet failure (to be cleaned up/overwritten with puppet once the first check-in succeeds) check in with puppet  A Makefile is included - to build: make build\nThis script currently leaves the machine built on ESXi server, it can be exported as OVF, or VMX/VMDK\nMore info here: https://www.packer.io/docs/builders/vmware-iso.html\nIn its final state, this script should be run from or on a machine that can provision guests using DHCP or an expected static range isolated from the rest of our network\nThis script currently builds machines with static IP addresses - this should be templated so we can re-use a single OVF and dynamically set IP before boot\nCAVEATS - README!  this ONLY works against an esxi host and not vcenter for some reason this only works against local storage in the esxi host. vmkfstools appears to make a truncated vmdk when used against NFS, at least in my environment. you cannot use a distributed port group for the network, those can only be used by vcenter. You must use a local portgruop.  requirements  ssh enabled on the esxi host govc (brew install govmomi/tap/govc) ovftool (can be part of Fusion, tools at /Applications/VMware\\ Fusion.app/Contents/Library/) packer web server  ks.cfg vmware-cloud-init rpm   GuestIPHack is required, enable by running this esxcli system settings advanced set -o /Net/GuestIPHack -i 1  enable VNC in the ESXi firewall (5900-6000) chmod 644 /etc/vmware/firewall/service.xml chmod +t /etc/vmware/firewall/service.xml vi /etc/vmware/firewall/service.xml add this right before /ConfigRoot\n\u0026lt;service id=\u0026quot;1000\u0026quot;\u0026gt; \u0026lt;id\u0026gt;packer-vnc\u0026lt;/id\u0026gt; \u0026lt;rule id=\u0026quot;0000\u0026quot;\u0026gt; \u0026lt;direction\u0026gt;inbound\u0026lt;/direction\u0026gt; \u0026lt;protocol\u0026gt;tcp\u0026lt;/protocol\u0026gt; \u0026lt;porttype\u0026gt;dst\u0026lt;/porttype\u0026gt; \u0026lt;port\u0026gt; \u0026lt;begin\u0026gt;5900\u0026lt;/begin\u0026gt; \u0026lt;end\u0026gt;6000\u0026lt;/end\u0026gt; \u0026lt;/port\u0026gt; \u0026lt;/rule\u0026gt; \u0026lt;enabled\u0026gt;true\u0026lt;/enabled\u0026gt; \u0026lt;required\u0026gt;true\u0026lt;/required\u0026gt; \u0026lt;/service\u0026gt; chmod 444 /etc/vmware/firewall/service.xml esxcli network firewall refresh # list rules esxcli network firewall ruleset list esxcli network firewall ruleset rule list running packer packer build -force centos7-hardened-esx.json # debug logging PACKER_LOG=1 packer build -force centos7-hardened-esx.json "
+},
+{
+	"uri": "/automation/hashicorp/vmwaregovccloudinit/",
+	"title": "Vmware Govc Cloudinit",
+	"tags": [],
+	"description": "",
+	"content": "   Date Added Description Link     2019-11-26 CloudInit Docs https://cloudinit.readthedocs.io/en/latest/v   2019-11-26 Cloud-init for Vsphere https://blah.cloud/infrastructure/using-cloud-init-for-vm-templating-on-vsphere/   2019-11-26 DO Cloud-Init Intro https://www.digitalocean.com/community/tutorials/an-introduction-to-cloud-config-scripting   2019-11-26 DO Cloud-Init Tutorial https://www.digitalocean.com/community/tutorials/how-to-use-cloud-config-for-your-initial-server-setup   2019-11-26 VMware Cloud Init Guestinfo https://github.com/vmware/cloud-init-vmware-guestinfo    Deploying a clone of a template with config Prerequistites  vcenter server govc installed (version \u0026gt; 0.21) template of vm created (see JetBrainsPackerVsphere.md)  this assumes you have 3 things - cloud-config script - network-config script - metadata.json\nProviding vmware metadata support for cloud-init via vmtoolsd vmtoolsd --cmd 'info-get /vm/path' Create files and set env variables $ export CLOUD_CONFIG=$(gzip -c9 \u0026lt;cloud-config.yaml | base64) $ export METADATA=$(sed 's~NETWORK_CONFIG~'\u0026quot;$(gzip -c9 \u0026lt;network.config.yaml | \\ base64)\u0026quot;'~' \u0026lt;metadata.json | gzip -9 | base64) Assign vm metadata $ govc vm.change -vm \u0026quot;${VM}\u0026quot; -e guestinfo.metadata=\u0026quot;${METADATA}\u0026quot; $ govc vm.change -vm \u0026quot;${VM}\u0026quot; -e guestinfo.metadata.encoding=gzip+base64 $ govc vm.change -vm \u0026quot;${VM}\u0026quot; -e guestinfo.userdata=\u0026quot;${CLOUD_CONFIG}\u0026quot; $ govc vm.change -vm \u0026quot;${VM}\u0026quot; -e guestinfo.userdata.encoding=gzip+base64 Assigning the cloud-config data to the VM\u0026rsquo;s GuestInfo Guestinfo can be assigned to VMs using the vmware-cmd command on the console, or a tool like PowerCLI or govc.\nhttps://tech.lazyllama.com/2010/06/22/passing-info-from-powercli-into-your-vm-using-guestinfo-variables/\nGenerating $6$ password for cloud-init config not sure if this actually works\nmkpasswd --method=SHA-512 --rounds=4096 make clone  image in library clone image with govc whip up paramters into env vars govc vm.change them boot and reap rewards.  Find VM with ls $ govc ls $ govc ls /datacenter/ $ govc ls /datacenter/vm/ $ export VM=\u0026quot;/datacenter/vm/vm-name\u0026quot; Create files and set env variables $ cd guesttools $ export CLOUD_CONFIG=$(gzip -c9 \u0026lt;cloud-config.yaml | base64) $ export METADATA=$(sed 's~NETWORK_CONFIG~'\u0026quot;$(gzip -c9 \u0026lt;network.config.yaml | \\ base64)\u0026quot;'~' \u0026lt;metadata.json | gzip -9 | base64) Assign vm metadata $ govc vm.change -vm \u0026quot;${VM}\u0026quot; -e guestinfo.metadata=\u0026quot;${METADATA}\u0026quot; $ govc vm.change -vm \u0026quot;${VM}\u0026quot; -e guestinfo.metadata.encoding=gzip+base64 $ govc vm.change -vm \u0026quot;${VM}\u0026quot; -e guestinfo.userdata=\u0026quot;${CLOUD_CONFIG}\u0026quot; $ govc vm.change -vm \u0026quot;${VM}\u0026quot; -e guestinfo.userdata.encoding=gzip+base64 Power on VM Winternotch Local source ~/Dropbox/src/govc-winternotch-vars.sh govc ls /Winternotch/vm export VM=\u0026quot;/Winternotch/vm/centos7-vm\u0026quot; export CLOUD_CONFIG=$(gzip -c9 \u0026lt; guesttools/winternotch-cloud-config.yaml | base64) export METADATA=$(sed 's~NETWORK_CONFIG~'\u0026quot;$(gzip -c9 \u0026lt; guesttools/winternotch-network-config.yaml | \\ base64)\u0026quot;'~' \u0026lt;guesttools/metadata.json | gzip -9 | base64) govc vm.change -vm \u0026quot;${VM}\u0026quot; -e guestinfo.metadata=\u0026quot;${METADATA}\u0026quot; govc vm.change -vm \u0026quot;${VM}\u0026quot; -e guestinfo.metadata.encoding=gzip+base64 govc vm.change -vm \u0026quot;${VM}\u0026quot; -e guestinfo.userdata=\u0026quot;${CLOUD_CONFIG}\u0026quot; govc vm.change -vm \u0026quot;${VM}\u0026quot; -e guestinfo.userdata.encoding=gzip+base64 "
+},
+{
+	"uri": "/vmware/vmware-networking/",
+	"title": "VMware Networking ",
+	"tags": [],
+	"description": "",
+	"content": "Vlan configuration - vmware https://kb.vmware.com/s/article/1003806\nEsxi network debugging commands https://blogs.vmware.com/vsphere/2018/12/esxi-network-troubleshooting-tools.html\n"
+},
+{
+	"uri": "/vmware/powercli/",
+	"title": "PowerCLI",
+	"tags": [],
+	"description": "",
+	"content": "PowerCLI Changelog https://vdc-download.vmware.com/vmwb-repository/dcr-public/306e3e41-2a54-497e-8377-11a1cf36c107/76c39d63-455d-4f3a-af2a-368f3ea6647c/changelog.html\nPower CLI Users Guide https://code.vmware.com/docs/7335/powercli-11-0-0-user-s-guide\nPower CLI CMDlet reference https://code.vmware.com/docs/7336/cmdlet-reference\nPowerCLI Install Install-Module -Name VMWare.PowerCLI Ignore self signed certs Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -Confirm:$false Connect to vcenter connect-viserver -protocol https –server SERVERNAME Get information on VMs Get-VM | fl | more Get-VM | where-object {$_.PowerState –eq “PoweredOff”} Get-VM 〈yourvm〉 | Stop-VMguest iterate across VMs foreach ($var in $vars){ Do something… } Get-vm | where-object {$_.MemoryGB –eq 4 } | select -ExpandProperty Name | out-file c:\\VMs.txt $vms = get-content c:\\VMs.txt Foreach-object ($vm in $vms) { new-networkadapter -vm $vms -NetworkName \u0026#34;〈Port group name〉\u0026#34; -Type \u0026#34;VMXNET3\u0026#34; –startconnected } Links 5 powercli cmdlets every admin should know\nVMware PowerCLI example scripts\n"
+},
+{
+	"uri": "/vmware/vmwareapi/",
+	"title": "VMware APIs",
+	"tags": [],
+	"description": "",
+	"content": "vsphere api stuff https://www.digitalocean.com/community/tutorials/how-to-use-web-apis-in-python-3\nhttps://code.vmware.com/apis/366/vsphere-automation https://github.com/vmware/vsphere-automation-sdk-python https://www.vmware.com/support/developer/vcsa-mgmt-sdk/index.html\nhttps://code.vmware.com/web/sdk/6.7/vsphere-automation-python https://vdc-download.vmware.com/vmwb-repository/dcr-public/3f9d46be-a5f4-452c-8b1c-ae2bb05bc0a6/58d6917d-4da9-45b1-869a-f68550834f8e/vsphere/index.html\n"
+},
+{
+	"uri": "/windows/windows10/",
+	"title": "Windows 10",
+	"tags": [],
+	"description": "",
+	"content": "creating a local windows 10 account https://www.groovypost.com/howto/create-local-account-windows-10/\nsysprep for windows vm image  %windir%\\system32\\sysprep\\sysprep.exe /oobe /generalize /shutdown /mode:vm https://www.thomasmaurer.ch/2016/05/windows-sysprep-for-virtual-machines/\nextend a volume launching disk management snapin\nopen elevated cmd.exe diskmgmt.msc partition article\nright click on existing partition and select \u0026ldquo;extend\u0026rdquo;, and follow wizard.\nwindows 10 updater download https://www.microsoft.com/en-us/software-download/windows10\nTroubleshooting GPO (and speed) https://4sysops.com/archives/troubleshooting-group-policy-part-4-client-problems/\nhttp://woshub.com/troubleshoot-slow-gpo-processing-and-login-speed-impact/\n"
+},
+{
+	"uri": "/windows/windowsserver/",
+	"title": "Windows Server",
+	"tags": [],
+	"description": "",
+	"content": "TSS Debug Script https://github.com/CSS-Windows/WindowsDiag/tree/master/ALL/TSS\nsetting up NTP server in Windows Server https://support.microsoft.com/en-us/help/816042/how-to-configure-an-authoritative-time-server-in-windows-server\nw32tm command\nhttps://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/ff799054(v%3Dws.11)\nHow credential processing works https://docs.microsoft.com/en-us/windows-server/security/windows-authentication/credentials-processes-in-windows-authentication\nhttps://www.ultimatewindowssecurity.com/securitylog/book/page.aspx?spid=chapter3\nwindow scaling tuning https://www.duckware.com/blog/how-windows-is-killing-internet-download-speeds/index.html\nList filter Drivers (WSC) https://ss64.com/nt/fltmc.html\nList windows drivers https://www.thewindowsclub.com/list-device-drivers-driverquery-command-prompt\nGet-WindowsDriver -Online driverquery /v | Select-String “running” "
+},
+{
+	"uri": "/networking/wiresharksslhandshake/",
+	"title": "Wireshark SSL Handshake",
+	"tags": [],
+	"description": "",
+	"content": "ssl handshake searches in wireshark ssl.handshake.extensions_server_name == \u0026quot;graph.facebook.com\u0026quot;\u2029ssl.handshake.extensions_server_name != \u0026quot;graph.facebook.com\u0026quot; \u0026amp;\u0026amp; ssl.handshake.extensions_server_name != \u0026quot;itunes.apple.com\u0026quot; \u0026amp;\u0026amp; ssl.handshake.type ==1 "
+},
+{
+	"uri": "/miscellaneous/certificateauthority/",
+	"title": "SSL / Certificate Authority",
+	"tags": [],
+	"description": "",
+	"content": "   Date Added Description Link     2019-10-27 Smart Card / HSM Backed CA https://framkant.org/2018/04/smartcard-hsm-backed-openssl-ca/   2019-10-27 ECDSA PKI https://tools.ietf.org/id/draft-moskowitz-ecdsa-pki-01.html   2019-10-27 Jamielinux guide https://jamielinux.com/docs/openssl-certificate-authority/index.html?origin_team=TFEM4UUP7   2019-9-23 PanOS Cert Management https://www.paloaltonetworks.com/documentation/71/pan-os/pan-os/certificate-management/obtain-a-certificate-from-an-external-ca   2019-8-14 xca quick start https://blogs.sap.com/2017/06/26/how-to-guide-xca-quick-start-guide/   2019-8-14 common ssl commands https://www.sslshopper.com/article-most-common-openssl-commands.html   2019-8-14 openssl quick reference https://www.digicert.com/ssl-support/openssl-quick-reference-guide.htm   2019-8-14 soarez gist https://gist.github.com/Soarez/9688998    Generate TLS Certificate openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out MyCertificate.crt -keyout MyKey.key Generate4 TLS Certificate with SAN Config file (san.cnf) [req] default_bits = 2048 prompt = no default_md = sha256 x509_extensions = v3_req distinguished_name = dn [dn] C = ES ST = MyState L = MyCity O = MyOrg emailAddress = email@mydomain.com CN = mydomain.com [v3_req] subjectAltName = @alt_names [alt_names] DNS.1 = mydomain.com DNS.2 = www.mydomain.com and for IP based SAN\n[alt_names] IP.1 = 127.0.0.1 Command openssl req -new -x509 -newkey rsa:2048 -sha256 -nodes -keyout my.key -days 3560 -out my.crt -config san.cnf "
+},
+{
+	"uri": "/networking/arista/",
+	"title": "Arista",
+	"tags": [],
+	"description": "",
+	"content": "getting vm working on esxi https://www.arista.com/en/cg-veos-router/veos-router-launching-vmware-esxi-60-and-65\nhttps://eos.arista.com/forum/how-to-boot-veos-combined-on-esxi/\nbgp design https://the-bitmask.com/2017/08/02/arista-veos-l3slv-part3/\ninitial config https://www.arista.com/assets/data/pdf/user-manual/um-eos/Chapters/Initial%20Configuration%20and%20Recovery.pdf\nzerotouch cancel (reboots) login admin username admin secret pxq123 interface management 1 ip address 192.0.2.8/24 end copy running-config startup-config "
+},
+{
+	"uri": "/windows/azurenotes/",
+	"title": "Azure Notes",
+	"tags": [],
+	"description": "",
+	"content": "intune setup as MDM https://www.thelazyadministrator.com/2018/11/19/configure-and-deploy-intune-mdm/\n"
+},
+{
+	"uri": "/networking/cisco3850/",
+	"title": "Cisco 3850",
+	"tags": [],
+	"description": "",
+	"content": "wireshark on switch https://www.cisco.com/c/en/us/support/docs/switches/catalyst-3850-series-switches/117639-configure-wireshark-00.html\ncapture reference https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/epc/command/epc-cr-book/epc-cr-m1.html#wp1398253443\nmac tftp server https://rick.cogley.info/post/run-a-tftp-server-on-mac-osx/\nconfig fragments ! vlan 99 name 99 ! interface GigabitEthernet1/0/11 description smesxi-vmnic1 switchport mode trunk 3850(config)#int Gi1/0/11 3850(config-if)#switchport trunk allowed vlan all trunking interface GigabitEthernet1/0/23 description ubnt24-uplink2 switchport mode trunk channel-group 1 mode active ! interface GigabitEthernet1/0/24 description ubnt24-uplink1 switchport mode trunk channel-group 1 mode active ! "
+},
+{
+	"uri": "/paloalto/paloclicheatsheet/",
+	"title": "Palo Cheat Sheet",
+	"tags": [],
+	"description": "",
+	"content": "Show general system health information.\n show system info\nShow percent usage of disk partitions.\n show system disk-space\nShow the maximum log file size.\n show system logdb-quota\nShow running processes.\n show system software status\nShow processes running in the management plane.\n show system resources\nShow resource utilization in the dataplane.\n show running resource-monitor\nShow the licenses installed on the device.\n request license info\nShow when commits, downloads, and/or upgrades are completed.\n show jobs processed\nShow session information.\n show session info\nShow information about a specific session.\n show session id \u0026lt;session-id\u0026gt;\nShow the running security policy.\n show running security-policy\nShow the authentication logs.\n less mp-log authd.log\nRestart the device.\n request restart system\nShow the administrators who are currently logged in to the web interface, CLI, or API.\n show admins\nShow the administrators who can access the web interface, CLI, or API, regardless of whether those administrators are currently logged in. When you run this command on the firewall, the output includes both local administrators and those pushed from a Panorama template.\n show admins all\nConfigure the management interface as a DHCP client. For a successful commit, you must include each of the parameters: accept-dhcp-domain, accept-dhcp-hostname, send-client-id, and send-hostname.\nset deviceconfig system type dhcp-client accept-dhcp-domain \u0026lt;yes|no\u0026gt; accept-dhcp-hostname \u0026lt;yes|no\u0026gt; send-client-id \u0026lt;yes|no\u0026gt; send-hostname \u0026lt;yes|no\u0026gt;\n"
+},
+{
+	"uri": "/paloalto/palonotes/",
+	"title": "Palo Notes",
+	"tags": [],
+	"description": "",
+	"content": "seting client timeout https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000CmATCA0\ncommit config https://docs.paloaltonetworks.com/pan-os/7-1/pan-os-cli-quick-start/use-the-cli/commit-configuration-changes\nvm information sources https://docs.paloaltonetworks.com/pan-os/7-1/pan-os-web-interface-help/device/device-vm-information-sources\npan-python https://github.com/kevinsteves/pan-python\napi browser http://api-lab.paloaltonetworks.com/introduction.html#the-api-browser\nAnsible API Ansible Palo Alto Automation API\nPandevice Python Framework PanDevice Tutorial\nPanDevice Chats PanDevice Chat 2\n"
+},
+{
+	"uri": "/docker/",
+	"title": "Docker",
+	"tags": [],
+	"description": "",
+	"content": "Links    Date Added Description Link     2019-11-23 Docker CLI Reference https://docs.docker.com/engine/reference/commandline/cli/   2019-11-23 Docker Build Reference https://docs.docker.com/engine/reference/builder/    "
+},
+{
+	"uri": "/mac/",
+	"title": "Mac",
+	"tags": [],
+	"description": "",
+	"content": "Links    Date Added Description Link     2019-10-27 Hugo Learn Docs https://learn.netlify.com/en/    "
+},
+{
+	"uri": "/miscellaneous/",
+	"title": "Miscellaneous",
+	"tags": [],
+	"description": "",
+	"content": "Links    Date Added Description Link     2019-10-27 Hugo Learn Docs https://learn.netlify.com/en/    "
+},
+{
+	"uri": "/kubernetes/",
+	"title": "Kubernetes",
+	"tags": [],
+	"description": "",
+	"content": "Links    Date Added Description Link     2019-11-16 Raspberry pi k8s cluster https://blogs.vmware.com/code/2019/06/14/kubernetes-raspberry-pi-cluster/    "
+},
+{
+	"uri": "/linux/",
+	"title": "Linux",
+	"tags": [],
+	"description": "",
+	"content": "Links    Date Added Description Link     2019-10-27 Illustrated Guide to Useful Command Tools (HN) https://www.wezm.net/technical/2019/10/useful-command-line-tools (https://news.ycombinator.com/item?id=21363121)   2019-10-27 Ncurses Disk Usage https://dev.yorhel.nl/ncdu   2019-10-27 nnn file manager https://github.com/jarun/nnn    "
+},
+{
+	"uri": "/aws/",
+	"title": "AWS",
+	"tags": [],
+	"description": "",
+	"content": "Links    Date Added Description Link     2019-10-27 Hugo Learn Docs https://learn.netlify.com/en/    "
 },
 {
 	"uri": "/categories/",
@@ -14,11 +448,25 @@
 	"content": ""
 },
 {
-	"uri": "/",
-	"title": "Documentation",
+	"uri": "/reverseengineering/ios-app-dump-decrypt/",
+	"title": "IOS App Dump / Decrypt",
 	"tags": [],
-	"description": "",
-	"content": " Documentation This is some documentation\n"
+	"description": "Dump and Decrypt IOS apps with a Jailbroken iPhone",
+	"content": "overview https://ivrodriguez.com/decrypting-ios-applications-ios-12-edition/\nhttps://medium.com/@felipejfc/the-ultimate-guide-for-live-debugging-apps-on-jailbroken-ios-12-4c5b48adf2fb\nbrew install usbmuxd git clone https://github.com/AloneMonkey/frida-ios-dump cd frida-ios-dump python2 -m virtualenv . source bin/activate pip install -r requirements.txt iproxy 2222 22 ./dump.py [APPNAME] frida-ios-dump https://github.com/AloneMonkey/frida-ios-dump\nssh over usb (libusb) https://iphonedevwiki.net/index.php/SSH_Over_USB\nfrida https://www.frida.re/docs/ios/#with-jailbreak\ntracing with friday https://techblog.mediaservice.net/2017/09/tracing-arbitrary-methods-and-function-calls-on-android-and-ios\npython2 virtualenv https://help.dreamhost.com/hc/en-us/articles/215489338-Installing-and-using-virtualenv-with-Python-2\n"
+},
+{
+	"uri": "/linux/powerline/",
+	"title": "Powerline",
+	"tags": [],
+	"description": "Powerline configuration",
+	"content": "install powerline https://powerline.readthedocs.io/en/latest/\n(ensure you are installing this into the right pip place)\npip install powerline-status install patched powerline fonts https://github.com/powerline/fonts\n meslo slashed (LG S) GoMono Cousine Droid Sans Mono Slashed ***  add powerline to tmux https://powerline.readthedocs.io/en/latest/usage/other.html#tmux-statusline\n# add to .tmux.conf run-shell \u0026quot;powerline-daemon -q\u0026quot; source \u0026quot;/usr/local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf\u0026quot; # if necessary run (on linux this will be in .local/bin with the python modules) powerline-config tmux setup config locations https://powerline.readthedocs.io/en/latest/configuration/local.html#powerline-script-overrides\n# get powerline install location pip show powerline-status | grep Location | awk '{print $2}' # main config $powerline/powerline/config_files/themes/tmux # tmux theme $powerline/powerline/config_files/config.json powerline segment documentation https://powerline.readthedocs.io/en/master/configuration/segments/common.html#module-powerline.segments.common.net\ntmux_getcwd shellcmd https://github.com/erikw/tmux-powerline/blob/master/lib/tmux_adapter.sh\nadd powerline to zshrc get installation root\npip show powerline-status # add to zshrc . /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh "
+},
+{
+	"uri": "/linux/randomunixgems/",
+	"title": "Random Unix Gems",
+	"tags": [],
+	"description": "Random Unix Gems",
+	"content": "Generate Unique MAC address for host GiantDorks Bash Function\nGetMAC() { if [ -n \u0026#34;$1\u0026#34; ]; then OID=\u0026#34;00:16:3e\u0026#34; RAND=$(echo $1 | md5sum | sed \u0026#39;s/\\(..\\)\\(..\\)\\(..\\).*/\\1:\\2:\\3/\u0026#39;) echo \u0026#34;$OID:$RAND\u0026#34; else echo \u0026#34;ERROR: please supply hostname to create MAC address from, e.g.:\u0026#34; echo \u0026#34; $FUNCNAMEmyhost\u0026#34; fi } CommandLineFu OneLiner\necho 00:16:3e$(gethostip 10.1.2.11 | awk '{ print tolower(substr($3,3)) }' |sed 's/.\\{2\\}/:\u0026amp;/g' ) Iterate across a list of items in a file read a list of IP addresses from a file and do a dig reverse look up\n while read ip; do dig +noall +answer -x $ip; done \u0026lt; ip-list.txt find and xargs couldnt write a better tut myself\u0026hellip;\neverythingcli find/xargs\n"
 },
 {
 	"uri": "/tags/",
@@ -26,4 +474,25 @@
 	"tags": [],
 	"description": "",
 	"content": ""
+},
+{
+	"uri": "/linux/tmux/",
+	"title": "Tmux",
+	"tags": [],
+	"description": "Tmux configuration",
+	"content": "quick commands hit man command (command-b) then\n   Command Description     C-o swap panes    cheat sheet https://gist.github.com/MohamedAlaa/2961058\ntutorial https://lukaszwrobel.pl/blog/tmux-tutorial-split-terminal-windows-easily/\nhttps://medium.com/@joe_wolfe_21/the-ultimate-terminal-67e93665459d\ndotfile https://github.com/tangledhelix/dotfiles/blob/master/tmux.conf\niterm2 keymaps http://tangledhelix.com/blog/2012/04/28/iterm2-keymaps-for-tmux/\ncustomizing info https://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/\niterm scrollback Main\u0026gt; terminal may access clipboard advanced \u0026gt; scroll wheel sends arrow keys when in alternate screen mode profile \u0026gt; both save lines to scrollback when…. boxes checked https://dan.carley.co/blog/2013/01/11/tmux-scrollback-with-iterm2/\nhttps://stackoverflow.com/questions/36594420/how-can-i-turn-off-scrolling-the-history-in-iterm2\nhttps://medium.freecodecamp.org/tmux-in-practice-scrollback-buffer-47d5ffa71c93\nvim solarized vim, tmux, truecolor\nsolarized in vim\n# terminal overrides set -g default-terminal 'tmux-256color' set -as terminal-overrides ',xterm*:Tc:sitm=\\E[3m' true color support Tmux True Color Support\n# test to ensure color working awk 'BEGIN{ s=\u0026quot;/\\\\/\\\\/\\\\/\\\\/\\\\\u0026quot;; s=s s s s s s s s; for (colnum = 0; colnum\u0026lt;77; colnum++) { r = 255-(colnum*255/76); g = (colnum*510/76); b = (colnum*255/76); if (g\u0026gt;255) g = 510-g; printf \u0026quot;\\033[48;2;%d;%d;%dm\u0026quot;, r,g,b; printf \u0026quot;\\033[38;2;%d;%d;%dm\u0026quot;, 255-r,255-g,255-b; printf \u0026quot;%s\\033[0m\u0026quot;, substr(s,colnum+1,1); } printf \u0026quot;\\n\u0026quot;; }' fixing remote unicode rendering github issue\n# alias for unicode tmux -u # or export LANG=en_US.UTF-8 export LC_CTYPE=en_US.UTF-8 "
+},
+{
+	"uri": "/reverseengineering/maclldbpythonfix/",
+	"title": "XCode 11 LLDB Python 2",
+	"tags": [],
+	"description": "Dump and Decrypt IOS apps with a Jailbroken iPhone",
+	"content": "Mac Xcode 11 LLDB Python2 config fixes lldb so that python2 is used (so fG!\u0026rsquo;s lldbinit works\u0026rsquo;)\ndefaults write com.apple.dt.lldb DefaultPythonVersion 2 https://github.com/facebook/chisel/issues/262\n"
+},
+{
+	"uri": "/linux/zsh/",
+	"title": "Zsh",
+	"tags": [],
+	"description": "Zsh configuration",
+	"content": "install oh-my-zsh (yolo!) sh -c \u0026quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)\u0026quot; redo new user setup autoload -U zsh-newuser-install zsh-newuser-install -f fix compinit errors for sudo https://github.com/robbyrussell/oh-my-zsh/issues/6835\n"
 }]
