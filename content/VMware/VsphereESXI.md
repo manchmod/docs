@@ -4,9 +4,12 @@ date: 2019-10-27T15:57:57-04:00
 draft: false
 ---
 
-## vmware home lab
+## enable vcenter shell
+```
+Command> shell.set --enabled True
+Command> shell
+```
 
-http://techgenix.com/vmware-home-lab/
 
 
 ### Vsan 2 node
@@ -102,6 +105,9 @@ https://www.kieri.com/how-to-fix-or-change-vcenter-root-password-expired-6-5-and
 https://kb.vmware.com/s/article/1020718
 
 
+## vmware home lab
+
+http://techgenix.com/vmware-home-lab/
 
 
 

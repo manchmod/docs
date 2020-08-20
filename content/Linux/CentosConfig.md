@@ -27,6 +27,11 @@ sudo systemctl stop firewalld
 sudo systemctl disable firewalld
 ```
 
+## Configure Firewall
+
+https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7
+
+
 ## Python 3.7 install
 ```
 yum install gcc openssl-devel bzip2-devel libffi-devel
@@ -45,3 +50,12 @@ yum install nfs-utils
 ## SELinux
 
 https://wiki.centos.org/HowTos/SELinux/
+
+## Install Webmin
+
+http://www.webmin.com/rpm.html
+```
+ sudo yum -y install perl perl-Net-SSLeay openssl perl-IO-Tty perl-Encode-Detect unzip perl-Data-Dumper
+ rpm -U [webmin RPM]
+ firewall-cmd --zone=public --add-port=10000/tcp
+```

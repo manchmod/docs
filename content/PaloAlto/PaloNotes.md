@@ -36,3 +36,8 @@ http://api-lab.paloaltonetworks.com/introduction.html#the-api-browser
 
 [PanDevice Chats](https://gitter.im/PaloAltoNetworks/pandevice?at=59e630cf614889d475c794d6)
 [PanDevice Chat 2](https://gitter.im/PaloAltoNetworks/pandevice/archives/2017/02/01)
+
+
+## capturing OSPF and BGP traffic
+
+https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000ClEWCA0
