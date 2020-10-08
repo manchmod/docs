@@ -39,3 +39,14 @@ read a list of IP addresses from a file and do a dig reverse look up
 couldnt write a better tut myself...
 
 [everythingcli find/xargs](https://www.everythingcli.org/find-exec-vs-find-xargs/)
+
+##### ss command (netstat replacements)
+
+```
+ss -aunp  (udp with process and all info)
+
+ss -ltpn (tcp listeners with processes) 
+
+ss -ltpan (tcp with all and processe info )
+
+```

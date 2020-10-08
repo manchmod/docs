@@ -28,3 +28,11 @@ https://manojchoudhari.wordpress.com/2020/08/17/installing-the-windows-subsystem
 
 https://blog.nillsf.com/index.php/2020/02/17/setting-up-wsl2-windows-terminal-and-oh-my-zsh/
 
+## mount a USB key 
+
+```
+(as root)
+mkdir /mnt/d
+mount -t drvfs d: /mnt/d
+
+```

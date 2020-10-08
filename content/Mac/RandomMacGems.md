@@ -35,3 +35,11 @@ override serial/hw in vmx file (serial must be valid, and of same HW type)
 serialNumber = "SERIAL-NUM"
 hw.model = "MacPro6,1"
 ```
+
+
+#### remount NTFS volume as read write
+```
+umount /Volumes/SecureKey128
+mkdir /Volumes/SecureKey128
+mount -t ntfs -o rw /dev/disk2s1 /Volumes/SecureKey128
+```

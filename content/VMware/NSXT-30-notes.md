@@ -21,6 +21,8 @@ Useful Steps
 	- static default route
 
 
+Note you still must add an additional switch (1 for overlay, 1 for vlan) when creating an edge node and manually assign it to an fp interface. this interface must correspond to the edge vm's NICs in Vcenter, and be on the correct vlans. 
+
 ## setting up Postman API
 
 https://rutgerblom.com/2019/06/16/getting-started-with-the-nsx-t-api-and-postman/
