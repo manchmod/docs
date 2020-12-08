@@ -39,7 +39,8 @@ hw.model = "MacPro6,1"
 
 #### remount NTFS volume as read write
 ```
+diskutil list
 umount /Volumes/SecureKey128
 mkdir /Volumes/SecureKey128
-mount -t ntfs -o rw /dev/disk2s1 /Volumes/SecureKey128
+mount_ntfs -o rw /dev/disk2s1 /Volumes/SecureKey128
 ```

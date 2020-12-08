@@ -42,3 +42,14 @@ https://www.microsoft.com/en-us/software-download/windows10
 https://4sysops.com/archives/troubleshooting-group-policy-part-4-client-problems/
 
 http://woshub.com/troubleshoot-slow-gpo-processing-and-login-speed-impact/
+
+### cleanup WinSXS and system files
+
+```
+# cleanup components
+Dism.exe /online /Cleanup-Image /StartComponentCleanup
+# remove old versions
+Dism.exe /online /Cleanup-Image /StartComponentCleanup /ResetBase
+# superseded packages
+Dism.exe /online /Cleanup-Image /SPSuperseded
+```
