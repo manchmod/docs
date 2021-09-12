@@ -59,3 +59,7 @@ http://www.webmin.com/rpm.html
  rpm -U [webmin RPM]
  firewall-cmd --zone=public --add-port=10000/tcp
 ```
+
+## Resize filesystem
+
+https://pocketadmin.tech/en/centos-8-extend-lvm/
