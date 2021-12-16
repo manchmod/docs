@@ -100,6 +100,10 @@ isolation.tools.setGUIOptions.enable TRUE
 ### vcenter root password reset
 https://www.kieri.com/how-to-fix-or-change-vcenter-root-password-expired-6-5-and-6-7/
 
+### how to stop vcenter password expiry
+https://kb.vmware.com/s/article/67414
+
+
 ### network adapter disappears from windows VM
 
 https://kb.vmware.com/s/article/1020718
