@@ -45,10 +45,31 @@ mount_ntfs -o rw /dev/disk2s1 /Volumes/SecureKey128
 ```
 
 #### Fixing Synergy Mouse issue
+
+https://github.com/symless/synergy-core/issues/5203
+
 ``` 
 # detecting the problem
 ioreg -l -w 0 | grep SecureInput
 
 # fixing the issue
 pmset displaysleepnow
+```
+
+
+#### Set Mac Hostname 
+
+https://apple.stackexchange.com/questions/287760/set-the-hostname-computer-name-for-macos
+
+https://knowledge.autodesk.com/support/smoke/learn-explore/caas/sfdcarticles/sfdcarticles/Setting-the-Mac-hostname-or-computer-name-from-the-terminal.html
+
+```
+# hostname (fix local dns/dhcp override)
+sudo scutil --set HostName <new host name>
+
+# bonjour
+sudo scutil --set LocalHostName <new host name>
+
+# friendly computername
+sudo scutil --set ComputerName <new name>
 ```
